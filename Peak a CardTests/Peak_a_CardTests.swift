@@ -1,11 +1,3 @@
-//
-//  Peak_a_CardTests.swift
-//  Peak a CardTests
-//
-//  Created by Miquel Alvarado on 12/02/2020.
-//  Copyright © 2020 peakacard. All rights reserved.
-//
-
 import XCTest
 @testable import Peak_a_Card
 

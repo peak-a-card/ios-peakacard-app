@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,14 @@
 		7232AEEE23F477BA00FAEAA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7232AEED23F477BA00FAEAA9 /* Preview Assets.xcassets */; };
 		7232AEF123F477BB00FAEAA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7232AEEF23F477BB00FAEAA9 /* LaunchScreen.storyboard */; };
 		7232AEFC23F477BB00FAEAA9 /* Peak_a_CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7232AEFB23F477BB00FAEAA9 /* Peak_a_CardTests.swift */; };
+		7232AF0E23F5BFDD00FAEAA9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7232AF0D23F5BFDD00FAEAA9 /* Card.swift */; };
+		7232AF1023F5C63700FAEAA9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7232AF0F23F5C63700FAEAA9 /* Colors.xcassets */; };
+		7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F5BE23F5C81800A8DF54 /* Colors.swift */; };
+		7275F67123F5D60400A8DF54 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 7275F67023F5D60400A8DF54 /* GridStack */; };
+		7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67323F67F6000A8DF54 /* Stylesheet.swift */; };
+		7275F67623F67F6D00A8DF54 /* MainTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67523F67F6D00A8DF54 /* MainTheme.swift */; };
+		7275F67823F67F8000A8DF54 /* StylesheetTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67723F67F8000A8DF54 /* StylesheetTheme.swift */; };
+		7275F70623F6868B00A8DF54 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7275F70423F6868A00A8DF54 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +46,13 @@
 		7232AEF723F477BB00FAEAA9 /* Peak a CardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Peak a CardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7232AEFB23F477BB00FAEAA9 /* Peak_a_CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peak_a_CardTests.swift; sourceTree = "<group>"; };
 		7232AEFD23F477BB00FAEAA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7232AF0D23F5BFDD00FAEAA9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		7232AF0F23F5C63700FAEAA9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		7275F5BE23F5C81800A8DF54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		7275F67323F67F6000A8DF54 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
+		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
+		7275F67723F67F8000A8DF54 /* StylesheetTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesheetTheme.swift; sourceTree = "<group>"; };
+		7275F70523F6868A00A8DF54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = "Peak a Card/Base.lproj/Localizable.strings"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7275F67123F5D60400A8DF54 /* GridStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +80,7 @@
 				7232AEE323F477B700FAEAA9 /* Peak a Card */,
 				7232AEFA23F477BB00FAEAA9 /* Peak a CardTests */,
 				7232AEE223F477B700FAEAA9 /* Products */,
+				AC95BAA14742EAA4D03B34F6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,10 +96,13 @@
 		7232AEE323F477B700FAEAA9 /* Peak a Card */ = {
 			isa = PBXGroup;
 			children = (
+				7275F67223F67D5000A8DF54 /* Style */,
+				7275F66B23F5CE9900A8DF54 /* Custom Views */,
+				7275F5BD23F5C80400A8DF54 /* Extensions */,
 				7232AEE423F477B700FAEAA9 /* AppDelegate.swift */,
 				7232AEE623F477B700FAEAA9 /* SceneDelegate.swift */,
 				7232AEE823F477B700FAEAA9 /* ContentView.swift */,
-				7232AEEA23F477BA00FAEAA9 /* Assets.xcassets */,
+				7275F70123F6861B00A8DF54 /* Resources */,
 				7232AEEF23F477BB00FAEAA9 /* LaunchScreen.storyboard */,
 				7232AEF223F477BB00FAEAA9 /* Info.plist */,
 				7232AEEC23F477BA00FAEAA9 /* Preview Content */,
@@ -107,6 +127,65 @@
 			path = "Peak a CardTests";
 			sourceTree = "<group>";
 		};
+		7232AF0A23F5BF5100FAEAA9 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				7232AF0D23F5BFDD00FAEAA9 /* Card.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		7275F5BD23F5C80400A8DF54 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7275F5BE23F5C81800A8DF54 /* Colors.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7275F66B23F5CE9900A8DF54 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				7232AF0A23F5BF5100FAEAA9 /* Card */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		7275F67223F67D5000A8DF54 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				7275F67923F67FFB00A8DF54 /* Themes */,
+				7275F67323F67F6000A8DF54 /* Stylesheet.swift */,
+				7275F67723F67F8000A8DF54 /* StylesheetTheme.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		7275F67923F67FFB00A8DF54 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				7275F67523F67F6D00A8DF54 /* MainTheme.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		7275F70123F6861B00A8DF54 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7232AEEA23F477BA00FAEAA9 /* Assets.xcassets */,
+				7232AF0F23F5C63700FAEAA9 /* Colors.xcassets */,
+				7275F70423F6868A00A8DF54 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AC95BAA14742EAA4D03B34F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,6 +202,9 @@
 			dependencies = (
 			);
 			name = "Peak a Card";
+			packageProductDependencies = (
+				7275F67023F5D60400A8DF54 /* GridStack */,
+			);
 			productName = "Peak a Card";
 			productReference = 7232AEE123F477B700FAEAA9 /* Peak a Card.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +255,9 @@
 				Base,
 			);
 			mainGroup = 7232AED823F477B700FAEAA9;
+			packageReferences = (
+				7275F66F23F5D60400A8DF54 /* XCRemoteSwiftPackageReference "GridStack" */,
+			);
 			productRefGroup = 7232AEE223F477B700FAEAA9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -188,7 +273,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7275F70623F6868B00A8DF54 /* Localizable.strings in Resources */,
 				7232AEF123F477BB00FAEAA9 /* LaunchScreen.storyboard in Resources */,
+				7232AF1023F5C63700FAEAA9 /* Colors.xcassets in Resources */,
 				7232AEEE23F477BA00FAEAA9 /* Preview Assets.xcassets in Resources */,
 				7232AEEB23F477BA00FAEAA9 /* Assets.xcassets in Resources */,
 			);
@@ -209,8 +296,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7232AEE523F477B700FAEAA9 /* AppDelegate.swift in Sources */,
+				7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */,
 				7232AEE723F477B700FAEAA9 /* SceneDelegate.swift in Sources */,
 				7232AEE923F477B700FAEAA9 /* ContentView.swift in Sources */,
+				7232AF0E23F5BFDD00FAEAA9 /* Card.swift in Sources */,
+				7275F67823F67F8000A8DF54 /* StylesheetTheme.swift in Sources */,
+				7275F67623F67F6D00A8DF54 /* MainTheme.swift in Sources */,
+				7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +331,14 @@
 				7232AEF023F477BB00FAEAA9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7275F70423F6868A00A8DF54 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7275F70523F6868A00A8DF54 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -371,7 +471,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.peakacard.Peak-a-Card";
+				PRODUCT_BUNDLE_IDENTIFIER = com.peakacard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -391,7 +491,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.peakacard.Peak-a-Card";
+				PRODUCT_BUNDLE_IDENTIFIER = com.peakacard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -473,6 +573,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7275F66F23F5D60400A8DF54 /* XCRemoteSwiftPackageReference "GridStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pietropizzi/GridStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7275F67023F5D60400A8DF54 /* GridStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7275F66F23F5D60400A8DF54 /* XCRemoteSwiftPackageReference "GridStack" */;
+			productName = GridStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7232AED923F477B700FAEAA9 /* Project object */;
 }
