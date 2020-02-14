@@ -6,15 +6,15 @@ struct Card: View {
     var body: some View {
         ZStack {
             Rectangle()
-            .foregroundColor(Stylesheet.color(.background))
-            .overlay(RoundedRectangle(cornerRadius: 4)
-                .stroke(Stylesheet.color(.primary)))
+                .foregroundColor(Stylesheet.color(.background))
+                .cornerRadius(4)
+                .overlay(RoundedRectangle(cornerRadius: 4)
+                    .stroke(Stylesheet.color(.primary)))
 
             Text(number)
                 .fontWeight(.medium)
                 .font(Stylesheet.font(.h3))
                 .foregroundColor(Stylesheet.color(.primary))
-
                 .padding()
                 .lineLimit(.none)
                 .multilineTextAlignment(.center)
