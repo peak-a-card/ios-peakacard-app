@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7231912023F70A9100A3ECFC /* HostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7231911F23F70A9100A3ECFC /* HostingViewController.swift */; };
 		7232AEE523F477B700FAEAA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7232AEE423F477B700FAEAA9 /* AppDelegate.swift */; };
 		7232AEE723F477B700FAEAA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7232AEE623F477B700FAEAA9 /* SceneDelegate.swift */; };
 		7232AEE923F477B700FAEAA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7232AEE823F477B700FAEAA9 /* ContentView.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7231911F23F70A9100A3ECFC /* HostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingViewController.swift; sourceTree = "<group>"; };
 		7232AEE123F477B700FAEAA9 /* Peak a Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Peak a Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7232AEE423F477B700FAEAA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7232AEE623F477B700FAEAA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7231911E23F70A8000A3ECFC /* HostingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7231911F23F70A9100A3ECFC /* HostingViewController.swift */,
+			);
+			path = HostingViewController;
+			sourceTree = "<group>";
+		};
 		7232AED823F477B700FAEAA9 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +156,7 @@
 		7275F66B23F5CE9900A8DF54 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				7231911E23F70A8000A3ECFC /* HostingViewController */,
 				7232AF0A23F5BF5100FAEAA9 /* Card */,
 			);
 			path = "Custom Views";
@@ -303,6 +314,7 @@
 				7275F67823F67F8000A8DF54 /* StylesheetTheme.swift in Sources */,
 				7275F67623F67F6D00A8DF54 /* MainTheme.swift in Sources */,
 				7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */,
+				7231912023F70A9100A3ECFC /* HostingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
