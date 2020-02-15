@@ -10,7 +10,7 @@
 		7231912023F70A9100A3ECFC /* HostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7231911F23F70A9100A3ECFC /* HostingViewController.swift */; };
 		7232AEE523F477B700FAEAA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7232AEE423F477B700FAEAA9 /* AppDelegate.swift */; };
 		7232AEE723F477B700FAEAA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7232AEE623F477B700FAEAA9 /* SceneDelegate.swift */; };
-		7232AEE923F477B700FAEAA9 /* CardGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7232AEE823F477B700FAEAA9 /* CardGridView.swift */; };
+		7232AEE923F477B700FAEAA9 /* CardGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7232AEE823F477B700FAEAA9 /* CardGrid.swift */; };
 		7232AEEB23F477BA00FAEAA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7232AEEA23F477BA00FAEAA9 /* Assets.xcassets */; };
 		7232AEEE23F477BA00FAEAA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7232AEED23F477BA00FAEAA9 /* Preview Assets.xcassets */; };
 		7232AEF123F477BB00FAEAA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7232AEEF23F477BB00FAEAA9 /* LaunchScreen.storyboard */; };
@@ -40,7 +40,7 @@
 		7232AEE123F477B700FAEAA9 /* Peak a Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Peak a Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7232AEE423F477B700FAEAA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7232AEE623F477B700FAEAA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7232AEE823F477B700FAEAA9 /* CardGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGridView.swift; sourceTree = "<group>"; };
+		7232AEE823F477B700FAEAA9 /* CardGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGrid.swift; sourceTree = "<group>"; };
 		7232AEEA23F477BA00FAEAA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7232AEED23F477BA00FAEAA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7232AEF023F477BB00FAEAA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 				7275F5BD23F5C80400A8DF54 /* Extensions */,
 				7232AEE423F477B700FAEAA9 /* AppDelegate.swift */,
 				7232AEE623F477B700FAEAA9 /* SceneDelegate.swift */,
-				7232AEE823F477B700FAEAA9 /* CardGridView.swift */,
+				7232AEE823F477B700FAEAA9 /* CardGrid.swift */,
 				7275F70123F6861B00A8DF54 /* Resources */,
 				7232AEEF23F477BB00FAEAA9 /* LaunchScreen.storyboard */,
 				7232AEF223F477BB00FAEAA9 /* Info.plist */,
@@ -309,7 +309,7 @@
 				7232AEE523F477B700FAEAA9 /* AppDelegate.swift in Sources */,
 				7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */,
 				7232AEE723F477B700FAEAA9 /* SceneDelegate.swift in Sources */,
-				7232AEE923F477B700FAEAA9 /* CardGridView.swift in Sources */,
+				7232AEE923F477B700FAEAA9 /* CardGrid.swift in Sources */,
 				7232AF0E23F5BFDD00FAEAA9 /* Card.swift in Sources */,
 				7275F67823F67F8000A8DF54 /* StylesheetTheme.swift in Sources */,
 				7275F67623F67F6D00A8DF54 /* MainTheme.swift in Sources */,

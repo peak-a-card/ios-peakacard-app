@@ -1,7 +1,7 @@
 import SwiftUI
 import GridStack
 
-struct CardGridView: View {
+struct CardGrid: View {
 
     let deckValues = ["0", "1/2", "1", "2", "3", "5", "8", "13", "20", "40", "100", "∞", "?", "☕️" ]
     @State private var animationAmount: Double = 0.0
@@ -40,6 +40,6 @@ struct CardGridView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CardGridView()
+        CardGrid()
     }
 }
