@@ -1,7 +1,7 @@
 import SwiftUI
 import GridStack
 
-struct ContentView: View {
+struct CardGridView: View {
 
     let deckValues = ["0", "1/2", "1", "2", "3", "5", "8", "13", "20", "40", "100", "∞", "?", "☕️" ]
     @State private var animationAmount: Double = 0.0
@@ -22,6 +22,12 @@ struct ContentView: View {
                             self.animationAmount = 1.0
                             self.yOffset[index] = .zero
                         }
+                    .gesture(
+                        TapGesture()
+                            .onEnded { _ in
+
+                            }
+                    )
                 }
                 .background(Stylesheet.color(.background))
                 .edgesIgnoringSafeArea(.bottom)
@@ -34,6 +40,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CardGridView()
     }
 }
