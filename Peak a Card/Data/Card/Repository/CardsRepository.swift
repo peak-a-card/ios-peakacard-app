@@ -1,6 +1,10 @@
 import Foundation
 
-class CardsRepository {
+protocol CardsRepositoryProtocol {
+    func getCards() -> [CardDomainModel]
+}
+
+class CardsRepository: CardsRepositoryProtocol {
 
     private let dataSource: InMemoryCardsDataSource
 

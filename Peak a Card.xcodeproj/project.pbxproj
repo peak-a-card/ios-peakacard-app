@@ -28,6 +28,10 @@
 		7232AF0E23F5BFDD00FAEAA9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7232AF0D23F5BFDD00FAEAA9 /* CardView.swift */; };
 		7232AF1023F5C63700FAEAA9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7232AF0F23F5C63700FAEAA9 /* Colors.xcassets */; };
 		723FABF1240A9F2900226D43 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723FABF0240A9F2900226D43 /* CardDetailView.swift */; };
+		723FABF5240B0B6900226D43 /* DataServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723FABF4240B0B6900226D43 /* DataServiceLocator.swift */; };
+		723FAC9D240B0C4900226D43 /* CardsDataServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723FAC9C240B0C4900226D43 /* CardsDataServiceLocator.swift */; };
+		723FACA2240B0E6E00226D43 /* DomainServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723FACA1240B0E6E00226D43 /* DomainServiceLocator.swift */; };
+		723FACA4240B0EEA00226D43 /* CardsDomainServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723FACA3240B0EEA00226D43 /* CardsDomainServiceLocator.swift */; };
 		7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F5BE23F5C81800A8DF54 /* Colors.swift */; };
 		7275F67123F5D60400A8DF54 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 7275F67023F5D60400A8DF54 /* GridStack */; };
 		7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67323F67F6000A8DF54 /* Stylesheet.swift */; };
@@ -72,6 +76,10 @@
 		7232AF0D23F5BFDD00FAEAA9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7232AF0F23F5C63700FAEAA9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		723FABF0240A9F2900226D43 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		723FABF4240B0B6900226D43 /* DataServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceLocator.swift; sourceTree = "<group>"; };
+		723FAC9C240B0C4900226D43 /* CardsDataServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDataServiceLocator.swift; sourceTree = "<group>"; };
+		723FACA1240B0E6E00226D43 /* DomainServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainServiceLocator.swift; sourceTree = "<group>"; };
+		723FACA3240B0EEA00226D43 /* CardsDomainServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDomainServiceLocator.swift; sourceTree = "<group>"; };
 		7275F5BE23F5C81800A8DF54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7275F67323F67F6000A8DF54 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
@@ -118,6 +126,7 @@
 		721664BE24084A6200C9A0FF /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				723FAC9E240B0DF800226D43 /* Base */,
 				721664CA24084CFA00C9A0FF /* Card */,
 			);
 			path = Domain;
@@ -126,6 +135,7 @@
 		721664BF24084A6800C9A0FF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				723FABF3240B0B5D00226D43 /* Base */,
 				721664C024084B8400C9A0FF /* Card */,
 			);
 			path = Data;
@@ -134,6 +144,7 @@
 		721664C024084B8400C9A0FF /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				723FABF2240B0B5200226D43 /* Service Locator */,
 				721664C724084C9800C9A0FF /* Repository */,
 				721664C424084BCE00C9A0FF /* DataSources */,
 				721664C324084BC700C9A0FF /* Model */,
@@ -168,6 +179,7 @@
 		721664CA24084CFA00C9A0FF /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				723FACA0240B0E0800226D43 /* Service Locator */,
 				721664CE24084D7700C9A0FF /* Use Case */,
 				721664CB24084D0200C9A0FF /* Model */,
 			);
@@ -347,6 +359,46 @@
 			path = "Card Detail";
 			sourceTree = "<group>";
 		};
+		723FABF2240B0B5200226D43 /* Service Locator */ = {
+			isa = PBXGroup;
+			children = (
+				723FAC9C240B0C4900226D43 /* CardsDataServiceLocator.swift */,
+			);
+			path = "Service Locator";
+			sourceTree = "<group>";
+		};
+		723FABF3240B0B5D00226D43 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				723FABF4240B0B6900226D43 /* DataServiceLocator.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		723FAC9E240B0DF800226D43 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				723FAC9F240B0DFF00226D43 /* Service Locator */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		723FAC9F240B0DFF00226D43 /* Service Locator */ = {
+			isa = PBXGroup;
+			children = (
+				723FACA1240B0E6E00226D43 /* DomainServiceLocator.swift */,
+			);
+			path = "Service Locator";
+			sourceTree = "<group>";
+		};
+		723FACA0240B0E0800226D43 /* Service Locator */ = {
+			isa = PBXGroup;
+			children = (
+				723FACA3240B0EEA00226D43 /* CardsDomainServiceLocator.swift */,
+			);
+			path = "Service Locator";
+			sourceTree = "<group>";
+		};
 		7275F5BD23F5C80400A8DF54 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,6 +553,7 @@
 			files = (
 				721664C624084BE000C9A0FF /* InMemoryCardsDataSource.swift in Sources */,
 				7232AEE523F477B700FAEAA9 /* AppDelegate.swift in Sources */,
+				723FAC9D240B0C4900226D43 /* CardsDataServiceLocator.swift in Sources */,
 				7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */,
 				7232AEE723F477B700FAEAA9 /* SceneDelegate.swift in Sources */,
 				7232AEE923F477B700FAEAA9 /* CardsView.swift in Sources */,
@@ -517,7 +570,10 @@
 				7275F67623F67F6D00A8DF54 /* MainTheme.swift in Sources */,
 				7231912A23F7F38E00A3ECFC /* Card.swift in Sources */,
 				7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */,
+				723FABF5240B0B6900226D43 /* DataServiceLocator.swift in Sources */,
+				723FACA4240B0EEA00226D43 /* CardsDomainServiceLocator.swift in Sources */,
 				721664C224084B9400C9A0FF /* CardDataModel.swift in Sources */,
+				723FACA2240B0E6E00226D43 /* DomainServiceLocator.swift in Sources */,
 				7231912023F70A9100A3ECFC /* HostingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

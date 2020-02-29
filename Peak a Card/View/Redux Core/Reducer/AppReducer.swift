@@ -15,9 +15,7 @@ fileprivate func reduce(state: AppState, action: CardsAction) -> AppState {
     var state = state
     switch action {
     case .get:
-        let dataSource = InMemoryCardsDataSource()
-        let repository = CardsRepository(dataSource: dataSource)
-        let getCardsUseCase = GetCardsUseCase(cardsRepository: repository)
+        let getCardsUseCase = DomainServiceLocator.shared.cards.provideGetCardsUseCase()
         let cards = getCardsUseCase.getCards()
         state.cards = cards.map { Card(score: $0.score) }
     case .select(let card):

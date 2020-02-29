@@ -1,10 +1,14 @@
 import Foundation
 
-class GetCardsUseCase {
+protocol GetCardsUseCase {
+    func getCards() -> [CardDomainModel]
+}
 
-    private let cardsRepository: CardsRepository
+class GetCards: GetCardsUseCase {
 
-    init(cardsRepository: CardsRepository) {
+    private let cardsRepository: CardsRepositoryProtocol
+
+    init(cardsRepository: CardsRepositoryProtocol) {
         self.cardsRepository = cardsRepository
     }
 
