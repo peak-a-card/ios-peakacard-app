@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct Card: View {
-    var number: String
+struct CardView: View {
+    var card: Card
 
     var body: some View {
         ZStack {
@@ -11,7 +11,7 @@ struct Card: View {
                 .overlay(RoundedRectangle(cornerRadius: 4)
                     .stroke(Stylesheet.color(.primary)))
 
-            Text(number)
+            Text(card.text)
                 .fontWeight(.medium)
                 .font(Stylesheet.font(.h3))
                 .foregroundColor(Stylesheet.color(.primary))
@@ -24,6 +24,6 @@ struct Card: View {
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        Card(number: "1")
+        CardView(card: Card(id: .one))
     }
 }
