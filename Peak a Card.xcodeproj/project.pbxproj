@@ -32,6 +32,7 @@
 		723FAC9D240B0C4900226D43 /* CardsDataServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723FAC9C240B0C4900226D43 /* CardsDataServiceLocator.swift */; };
 		723FACA2240B0E6E00226D43 /* DomainServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723FACA1240B0E6E00226D43 /* DomainServiceLocator.swift */; };
 		723FACA4240B0EEA00226D43 /* CardsDomainServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723FACA3240B0EEA00226D43 /* CardsDomainServiceLocator.swift */; };
+		723FACAA240B1FB400226D43 /* CardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723FACA9240B1FB400226D43 /* CardBackView.swift */; };
 		7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F5BE23F5C81800A8DF54 /* Colors.swift */; };
 		7275F67123F5D60400A8DF54 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 7275F67023F5D60400A8DF54 /* GridStack */; };
 		7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67323F67F6000A8DF54 /* Stylesheet.swift */; };
@@ -80,6 +81,7 @@
 		723FAC9C240B0C4900226D43 /* CardsDataServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDataServiceLocator.swift; sourceTree = "<group>"; };
 		723FACA1240B0E6E00226D43 /* DomainServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainServiceLocator.swift; sourceTree = "<group>"; };
 		723FACA3240B0EEA00226D43 /* CardsDomainServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDomainServiceLocator.swift; sourceTree = "<group>"; };
+		723FACA9240B1FB400226D43 /* CardBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackView.swift; sourceTree = "<group>"; };
 		7275F5BE23F5C81800A8DF54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7275F67323F67F6000A8DF54 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 			children = (
 				7232AF0D23F5BFDD00FAEAA9 /* CardView.swift */,
 				723FABF0240A9F2900226D43 /* CardDetailView.swift */,
+				723FACA9240B1FB400226D43 /* CardBackView.swift */,
 			);
 			path = "Card Detail";
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */,
 				723FABF5240B0B6900226D43 /* DataServiceLocator.swift in Sources */,
 				723FACA4240B0EEA00226D43 /* CardsDomainServiceLocator.swift in Sources */,
+				723FACAA240B1FB400226D43 /* CardBackView.swift in Sources */,
 				721664C224084B9400C9A0FF /* CardDataModel.swift in Sources */,
 				723FACA2240B0E6E00226D43 /* DomainServiceLocator.swift in Sources */,
 				7231912023F70A9100A3ECFC /* HostingViewController.swift in Sources */,

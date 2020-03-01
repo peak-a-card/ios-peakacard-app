@@ -20,7 +20,7 @@ struct CardDetailView: View {
                         self.store.dispatch(action: .detail(.unselect))
                     })
                 
-                CardView(card: self.store.state.selectedCard!)
+                CardView(card: self.store.state.selectedCard!, isFlipped: .constant(true))
                     .frame(width: 200, height: 200 * 1.4, alignment: .center)
                     .offset(y: self.selectedCardOffset.height)
                     .animation(.interactiveSpring())

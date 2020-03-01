@@ -6,27 +6,28 @@ struct CardsView: View {
     @EnvironmentObject var store: AppStore
     @State private var opacity: Double = 0.0
     @State private var yOffset: CGFloat = 100
+    @State private var isFlipped: Bool = true
 
     var body: some View {
         NavigationView {
             ZStack {
                 GridStack(minCellWidth: 100, spacing: Stylesheet.margin(.large), numItems: self.store.state.cards.count, alignment: .leading) { index, cellWidth in
-                    CardView(card: self.store.state.cards[index])
+                    CardView(card: self.store.state.cards[index], isFlipped: self.$isFlipped)
                         .frame(width: cellWidth, height: cellWidth * 1.3, alignment: .center)
                         .opacity(self.opacity)
                         .offset(x: 0, y: self.yOffset)
-                        .animation(Animation.easeOut(duration: 0.1).delay(Double(index) * 0.1))
+                        .animation(Animation.easeOut(duration: 0.3).delay(0.3 * Double(index)))
+                        .gesture(
+                            TapGesture()
+                                .onEnded { _ in
+                                    let card = self.store.state.cards[index]
+                                    self.store.dispatch(action: .cards(.select(card: card)))
+                            }
+                        )
                         .onAppear {
                             self.opacity = 1.0
                             self.yOffset = .zero
-                    }
-                    .gesture(
-                        TapGesture()
-                            .onEnded { _ in
-                                let card = self.store.state.cards[index]
-                                self.store.dispatch(action: .cards(.select(card: card)))
                         }
-                    )
                 }
                 .background(Stylesheet.color(.background))
                 .edgesIgnoringSafeArea(.bottom)
