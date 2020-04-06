@@ -39,6 +39,9 @@
 		7275F67623F67F6D00A8DF54 /* MainTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67523F67F6D00A8DF54 /* MainTheme.swift */; };
 		7275F67823F67F8000A8DF54 /* StylesheetTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67723F67F8000A8DF54 /* StylesheetTheme.swift */; };
 		7275F70623F6868B00A8DF54 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7275F70423F6868A00A8DF54 /* Localizable.strings */; };
+		72AA2389243B77E200D2D1E6 /* JoinSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA2388243B77E200D2D1E6 /* JoinSessionView.swift */; };
+		72AA238C243B89B700D2D1E6 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA238B243B89B700D2D1E6 /* ActivityIndicator.swift */; };
+		72AA238F243B91B100D2D1E6 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AA238E243B91B100D2D1E6 /* ContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
 		7275F67723F67F8000A8DF54 /* StylesheetTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesheetTheme.swift; sourceTree = "<group>"; };
 		7275F70523F6868A00A8DF54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = "Peak a Card/Base.lproj/Localizable.strings"; sourceTree = SOURCE_ROOT; };
+		72AA2388243B77E200D2D1E6 /* JoinSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSessionView.swift; sourceTree = "<group>"; };
+		72AA238B243B89B700D2D1E6 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		72AA238E243B91B100D2D1E6 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +117,7 @@
 		721664BD24084A4F00C9A0FF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				723FABED240A9EE900226D43 /* Card Detail */,
-				721665782408513C00C9A0FF /* Cards List */,
+				72AA2387243B77B500D2D1E6 /* Features */,
 				7231912B23F89AAF00A3ECFC /* Redux Core */,
 				7231912423F7F1E600A3ECFC /* Presentation */,
 				7232AEE423F477B700FAEAA9 /* AppDelegate.swift */,
@@ -233,23 +238,16 @@
 			isa = PBXGroup;
 			children = (
 				7231912623F7F20400A3ECFC /* Reusable Components */,
-				7231912523F7F1FC00A3ECFC /* Views */,
 				7275F67223F67D5000A8DF54 /* Style */,
 				7275F5BD23F5C80400A8DF54 /* Extensions */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		7231912523F7F1FC00A3ECFC /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		7231912623F7F20400A3ECFC /* Reusable Components */ = {
 			isa = PBXGroup;
 			children = (
+				72AA238A243B89A500D2D1E6 /* ActivityIndicator */,
 				7231911E23F70A8000A3ECFC /* HostingViewController */,
 				7232AF0A23F5BF5100FAEAA9 /* Card */,
 			);
@@ -438,6 +436,41 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		72AA2386243B77AD00D2D1E6 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				72AA2388243B77E200D2D1E6 /* JoinSessionView.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		72AA2387243B77B500D2D1E6 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				72AA238D243B91A100D2D1E6 /* Container */,
+				72AA2386243B77AD00D2D1E6 /* Session */,
+				723FABED240A9EE900226D43 /* Card Detail */,
+				721665782408513C00C9A0FF /* Cards List */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		72AA238A243B89A500D2D1E6 /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				72AA238B243B89B700D2D1E6 /* ActivityIndicator.swift */,
+			);
+			path = ActivityIndicator;
+			sourceTree = "<group>";
+		};
+		72AA238D243B91A100D2D1E6 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				72AA238E243B91B100D2D1E6 /* ContainerView.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
 		AC95BAA14742EAA4D03B34F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -566,9 +599,12 @@
 				7231913123F89B4000A3ECFC /* AppAction.swift in Sources */,
 				7275F67823F67F8000A8DF54 /* StylesheetTheme.swift in Sources */,
 				721664CD24084D1000C9A0FF /* CardDomainModel.swift in Sources */,
+				72AA238F243B91B100D2D1E6 /* ContainerView.swift in Sources */,
 				7231913423F89C1A00A3ECFC /* AppReducer.swift in Sources */,
+				72AA2389243B77E200D2D1E6 /* JoinSessionView.swift in Sources */,
 				7231912E23F89ACF00A3ECFC /* AppState.swift in Sources */,
 				721664D024084D8C00C9A0FF /* GetCardsUseCase.swift in Sources */,
+				72AA238C243B89B700D2D1E6 /* ActivityIndicator.swift in Sources */,
 				721664C924084CAB00C9A0FF /* CardsRepository.swift in Sources */,
 				7275F67623F67F6D00A8DF54 /* MainTheme.swift in Sources */,
 				7231912A23F7F38E00A3ECFC /* Card.swift in Sources */,

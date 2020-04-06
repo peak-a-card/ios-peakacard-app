@@ -18,8 +18,8 @@ enum Margin {
 enum ColorSet {
     case primary
     case onPrimary
-    case primaryDark
-    case accent
+    case primary10
+    case secondary
     case background
 }
 

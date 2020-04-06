@@ -1,8 +1,13 @@
 import Foundation
 
 enum AppAction {
+    case session(SessionAction)
     case cards(CardsAction)
     case detail(CardAction)
+}
+
+enum SessionAction {
+    case start
 }
 
 enum CardsAction {

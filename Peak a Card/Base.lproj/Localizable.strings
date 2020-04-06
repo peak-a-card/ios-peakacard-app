@@ -1,1 +1,11 @@
 "app_name" = "Peak A Card";
+"join_session_join" = "Hooray! Enter your name and the code to join a session!";
+"join_session_name" = "Name";
+"join_session_code" = "Code";
+"join_session_enter" = "Join session";
+"join_session_joining" = "Joining session";
+"join_session_joined" = "Joined to session!";
+"join_session_error_name_required_error" = "Name is required";
+"join_session_error_code_required_error" = "Code is required";
+"join_session_error_no_session" = "Oops! We didn't find the session, did you write it well? Don't worry it happens even in the best of families.";
+"join_session_error_unspecified" = "Oops! Houston we had an unknown error! Try it again please :-)";

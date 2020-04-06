@@ -15,8 +15,8 @@ enum MainTheme: StylesheetTheme {
     static func color(_ color: ColorSet) -> UIColor {
         switch color {
         case .primary: return .primary
-        case .primaryDark: return .primaryDark
-        case .accent: return .accent
+        case .primary10: return .primary10
+        case .secondary: return .secondary
         case .background: return .background
         case .onPrimary: return .onPrimary
         }
@@ -25,8 +25,8 @@ enum MainTheme: StylesheetTheme {
     static func color(_ color: ColorSet) -> Color {
         switch color {
         case .primary: return .primary
-        case .primaryDark: return .primaryDark
-        case .accent: return .accent
+        case .primary10: return .primary10
+        case .secondary: return .secondary
         case .background: return .background
         case .onPrimary: return .onPrimary
         }
