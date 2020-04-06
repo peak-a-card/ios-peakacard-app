@@ -3,10 +3,22 @@ import SwiftUI
 struct CardDetailView: View {
     @EnvironmentObject var store: AppStore
     @State private var selectedCardOffset: CGSize = .zero
-    private let thresholdPercentage: CGFloat = 0.5
 
-    private func getGesturePercentage(_ geometry: GeometryProxy, from gesture: DragGesture.Value) -> CGFloat {
-        gesture.translation.height / geometry.size.height
+    enum InteractionResult {
+        case submit
+        case resetPosition
+        case dismiss
+    }
+    private func getInteractionResult(_ geometry: GeometryProxy, from gesture: DragGesture.Value) -> InteractionResult {
+        let thresholdPercentage: CGFloat = 0.5
+        let percentage = gesture.translation.height / geometry.size.height
+        if percentage <= -thresholdPercentage {
+            return .submit
+        } else if percentage >= thresholdPercentage {
+            return .dismiss
+        } else {
+            return .resetPosition
+        }
     }
 
     var body: some View {
@@ -17,26 +29,29 @@ struct CardDetailView: View {
                     .opacity(0.7)
                     .edgesIgnoringSafeArea(.bottom)
                     .gesture(TapGesture().onEnded { _ in
-                        self.store.dispatch(action: .detail(.unselect))
+                        self.store.dispatch(action: .detail(.dismiss))
                     })
-                
-                CardView(card: self.store.state.selectedCard!, isFlipped: .constant(true))
-                    .frame(width: 200, height: 200 * 1.4, alignment: .center)
-                    .offset(y: self.selectedCardOffset.height)
-                    .animation(.interactiveSpring())
-                    .gesture(DragGesture()
-                        .onChanged { self.selectedCardOffset = $0.translation }
-                        .onEnded { value in
-                            if abs(self.getGesturePercentage(geometry, from: value)) > self.thresholdPercentage {
-                                self.store.dispatch(action: .detail(.submit(card: self.store.state.selectedCard!)))
-                                // TODO: dismiss it
-                                print("submit")
-                            } else {
-                                self.selectedCardOffset = .zero
-                                print("undo")
+
+                if self.store.state.selectedCard != nil {
+                    CardView(card: self.store.state.selectedCard!, isFlipped: .constant(true))
+                        .frame(width: 200, height: 200 * 1.4, alignment: .center)
+                        .offset(y: self.selectedCardOffset.height)
+                        .animation(.interactiveSpring())
+                        .gesture(DragGesture()
+                            .onChanged { self.selectedCardOffset = $0.translation }
+                            .onEnded { value in
+                                let result = self.getInteractionResult(geometry, from: value)
+                                switch result {
+                                case .submit:
+                                    self.store.dispatch(action: .detail(.submit))
+                                case .resetPosition:
+                                    self.selectedCardOffset = .zero
+                                case .dismiss:
+                                    self.store.dispatch(action: .detail(.dismiss))
+                                }
                             }
-                        }
-                )
+                    )
+                }
             }
         }
     }

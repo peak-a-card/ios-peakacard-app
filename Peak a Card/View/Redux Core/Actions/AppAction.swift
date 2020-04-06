@@ -11,6 +11,6 @@ enum CardsAction {
 }
 
 enum CardAction {
-    case unselect
-    case submit(card: Card)
+    case dismiss
+    case submit
 }

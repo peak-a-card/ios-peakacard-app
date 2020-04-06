@@ -27,7 +27,7 @@ fileprivate func reduce(state: AppState, action: CardsAction) -> AppState {
 fileprivate func reduce(state: AppState, action: CardAction) -> AppState {
     var state = state
     switch action {
-    case .unselect:
+    case .dismiss:
         state.selectedCard = nil
     case .submit:
         // TODO: Send card

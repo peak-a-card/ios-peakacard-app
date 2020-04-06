@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CardView: View {
-    var card: Card
+    @State var card: Card
     @Binding var isFlipped: Bool
 
     var body: some View {
