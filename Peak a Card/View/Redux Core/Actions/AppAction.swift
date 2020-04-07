@@ -7,7 +7,9 @@ enum AppAction {
 }
 
 enum SessionAction {
-    case start
+    case start(code: String, participant: String)
+    case started(session: SessionDomainModel)
+    case failed(error: AsynchronousError)
 }
 
 enum CardsAction {

@@ -1,5 +1,6 @@
 import UIKit
 import SwiftUI
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -12,6 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = HostingController(rootView: AnyView(contentView))
             setupNavigationBar()
+            setupFirebase()
             self.window = window
             window.makeKeyAndVisible()
         }
@@ -25,6 +27,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let titleColor: UIColor = Stylesheet.color(.onPrimary)
         navigationBarAppearance.titleTextAttributes = [.foregroundColor: titleColor]
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+    }
+
+    // TODO: Move it to a Firebase initialization task
+    private func setupFirebase() {
+        FirebaseApp.configure()
     }
 }
 

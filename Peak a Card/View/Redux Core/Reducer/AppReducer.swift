@@ -1,28 +1,39 @@
 import Foundation
+import Combine
 
-func appReducer(state: AppState, action: AppAction) -> AppState {
-    var state = state
+typealias Effect = AnyPublisher<AppAction, Never>
+
+func appReducer(state: inout AppState, action: AppAction) -> Effect? {
     switch action {
     case .session(let action):
-        state = reduce(state: &state, action: action)
+        return reduce(state: &state, action: action)
     case .cards(let action):
-        state = reduce(state: &state, action: action)
+        return reduce(state: &state, action: action)
     case .detail(let action):
-        state = reduce(state: &state, action: action)
+        return reduce(state: &state, action: action)
     }
-    return state
 }
 
-fileprivate func reduce(state: inout AppState, action: SessionAction) -> AppState {
+fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect? {
     switch action {
-    case .start:
+    case .start(let code, let participant):
         state.isRequestingSession = true
+        let joinSessionUseCase = DomainServiceLocator.shared.session.provideJoinSessionUseCase()
+        return joinSessionUseCase.joinSession(code: code, participant: participant)
+            .map { AppAction.session(.started(session: $0)) }
+            .catch { error in Just(AppAction.session(.failed(error: error))) }
+            .eraseToAnyPublisher()
+    case .started:
+        state.isRequestingSession = false
         state.sessionStarted = true
+    case .failed(let error):
+        print(error)
+        state.isRequestingSession = false
     }
-    return state
+    return nil
 }
 
-fileprivate func reduce(state: inout AppState, action: CardsAction) -> AppState {
+fileprivate func reduce(state: inout AppState, action: CardsAction) -> Effect? {
     switch action {
     case .get:
         let getCardsUseCase = DomainServiceLocator.shared.cards.provideGetCardsUseCase()
@@ -31,10 +42,10 @@ fileprivate func reduce(state: inout AppState, action: CardsAction) -> AppState 
     case .select(let card):
         state.selectedCard = card
     }
-    return state
+    return nil
 }
 
-fileprivate func reduce(state: inout AppState, action: CardAction) -> AppState {
+fileprivate func reduce(state: inout AppState, action: CardAction) -> Effect? {
     switch action {
     case .dismiss:
         state.selectedCard = nil
@@ -42,5 +53,5 @@ fileprivate func reduce(state: inout AppState, action: CardAction) -> AppState {
         // TODO: Send card
         state.selectedCard = nil
     }
-    return state
+    return nil
 }

@@ -7,6 +7,10 @@ install! 'cocoapods',
           :incremental_installation => true
 
 target 'Peak a Card' do
+  
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  #pod 'CombineFirebase/Firestore'
 
   target 'Peak a CardTests' do
     inherit! :search_paths

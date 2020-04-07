@@ -1,7 +1,9 @@
 import Foundation
+import Combine
 
 final class AppStore: ObservableObject {
     @Published private(set) var state: AppState
+    private var cancelBag = Set<AnyCancellable>()
 
     init(state: AppState) {
         self.state = state
@@ -18,6 +20,13 @@ final class AppStore: ObservableObject {
     }
 
     public func dispatch(action: AppAction) {
-        state = appReducer(state: state, action: action)
+        guard let effect = appReducer(state: &state, action: action) else { return }
+
+        effect
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                // Do I need to do something here?
+            }, receiveValue: dispatch)
+            .store(in: &cancelBag)
     }
 }

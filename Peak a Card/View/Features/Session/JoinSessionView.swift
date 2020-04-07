@@ -39,7 +39,7 @@ struct JoinSessionView: View {
                     .disabled(store.state.isRequestingSession)
 
                 Button(action: {
-                    self.store.dispatch(action: .session(.start))
+                    self.store.dispatch(action: .session(.start(code: self.code, participant: self.username)))
                 }) {
                     HStack {
                         Text("join_session_enter")
