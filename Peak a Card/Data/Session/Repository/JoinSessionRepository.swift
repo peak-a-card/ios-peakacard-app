@@ -15,7 +15,7 @@ class JoinSessionRepository: JoinSessionRepositoryProtocol {
 
     func joinSession(code: String, participant: String) -> AnyPublisher<SessionDomainModel, AsynchronousError> {
         return dataSource.joinSession(code: code, participant: participant)
-            .map { SessionDomainModel(participants: $0.participants, votations: $0.votations) }
+            .map { SessionDomainModel(participants: $0.participants.map { ParticipantDomainModel(name: $0.name) }) }
             .eraseToAnyPublisher()
     }
 }

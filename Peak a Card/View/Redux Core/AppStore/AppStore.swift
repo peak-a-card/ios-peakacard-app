@@ -11,8 +11,9 @@ final class AppStore: ObservableObject {
 
     convenience init() {
         let state = AppState(
-            sessionStarted: false,
+            session: nil,
             isRequestingSession: false,
+            sessionErrored: false,
             cards: [],
             selectedCard: nil
         )

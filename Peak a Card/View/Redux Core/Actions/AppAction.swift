@@ -7,7 +7,7 @@ enum AppAction {
 }
 
 enum SessionAction {
-    case start(code: String, participant: String)
+    case authenticatedWithGoogle(user: User)
     case started(session: SessionDomainModel)
     case failed(error: AsynchronousError)
 }

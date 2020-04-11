@@ -19,6 +19,7 @@ enum MainTheme: StylesheetTheme {
         case .secondary: return .secondary
         case .background: return .background
         case .onPrimary: return .onPrimary
+        case .error: return .error
         }
     }
 
@@ -29,12 +30,15 @@ enum MainTheme: StylesheetTheme {
         case .secondary: return .secondary
         case .background: return .background
         case .onPrimary: return .onPrimary
+        case .error: return .error
         }
     }
 
     static func font(_ scale: FontScale) -> Font {
         switch scale {
-        case .h3: return .largeTitle
+        case .xl: return .largeTitle
+        case .l: return .title
+        case .m: return .body
         }
     }
 }

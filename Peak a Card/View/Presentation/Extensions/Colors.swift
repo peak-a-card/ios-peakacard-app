@@ -6,6 +6,7 @@ extension Color {
     static let secondary = Color("Secondary")
     static let background = Color("Background")
     static let onPrimary = Color("onPrimary")
+    static let error = Color("Error")
 }
 
 extension UIColor {
@@ -19,4 +20,5 @@ extension UIColor {
     static let secondary = UIColor(named: "Secondary")
     static let background = UIColor(named: "Background")
     static let onPrimary = UIColor(named: "onPrimary")
+    static let error = UIColor(named: "Error")
 }

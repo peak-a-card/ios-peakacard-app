@@ -10,7 +10,9 @@ target 'Peak a Card' do
   
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
-  #pod 'CombineFirebase/Firestore'
+  pod 'CombineFirebase/Firestore'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
   target 'Peak a CardTests' do
     inherit! :search_paths

@@ -6,7 +6,7 @@ struct ContainerView: View {
 
     var body: some View {
         ZStack {
-            if store.state.sessionStarted {
+            if store.state.session != nil {
                 CardsView().environmentObject(store)
             } else {
                 JoinSessionView().environmentObject(store)

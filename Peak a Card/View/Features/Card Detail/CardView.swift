@@ -15,7 +15,7 @@ struct CardView: View {
             if isFlipped {
                 Text(card.text)
                     .fontWeight(.medium)
-                    .font(Stylesheet.font(.h3))
+                    .font(Stylesheet.font(.xl))
                     .foregroundColor(Stylesheet.color(.primary))
                     .padding()
                     .lineLimit(.none)

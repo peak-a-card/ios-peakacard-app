@@ -16,18 +16,22 @@ func appReducer(state: inout AppState, action: AppAction) -> Effect? {
 
 fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect? {
     switch action {
-    case .start(let code, let participant):
-        state.isRequestingSession = true
-        let joinSessionUseCase = DomainServiceLocator.shared.session.provideJoinSessionUseCase()
-        return joinSessionUseCase.joinSession(code: code, participant: participant)
-            .map { AppAction.session(.started(session: $0)) }
-            .catch { error in Just(AppAction.session(.failed(error: error))) }
-            .eraseToAnyPublisher()
-    case .started:
+//    case .start(let code, let participant):
+//        state.isRequestingSession = true
+//        let joinSessionUseCase = DomainServiceLocator.shared.session.provideJoinSessionUseCase()
+//        return joinSessionUseCase.joinSession(code: code, participant: participant)
+//            .map { AppAction.session(.started(session: $0)) }
+//            .catch { error in Just(AppAction.session(.failed(error: error))) }
+//            .eraseToAnyPublisher()
+    case .authenticatedWithGoogle(let user):
+        break
+    case .started(let session):
+        let participants = session.participants.map { Participant(name: $0.name) }
+        state.session = Session(participants: participants)
         state.isRequestingSession = false
-        state.sessionStarted = true
-    case .failed(let error):
-        print(error)
+        state.sessionErrored = false
+    case .failed:
+        state.sessionErrored = true
         state.isRequestingSession = false
     }
     return nil

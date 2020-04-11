@@ -21,8 +21,11 @@ enum ColorSet {
     case primary10
     case secondary
     case background
+    case error
 }
 
 enum FontScale {
-    case h3
+    case xl
+    case l
+    case m
 }

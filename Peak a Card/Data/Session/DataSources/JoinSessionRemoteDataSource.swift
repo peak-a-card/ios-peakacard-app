@@ -1,33 +1,32 @@
 import Foundation
+import Combine
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-import Combine
+import CombineFirebaseFirestore
 
 class JoinSessionRemoteDataSource {
     
     private let dataBase = Firestore.firestore()
     
     func joinSession(code: String, participant: String) -> AnyPublisher<SessionDataModel, AsynchronousError> {
-        return Future<SessionDataModel, AsynchronousError> { [weak self] promise in
-            self?.dataBase.collection("session")
-                .document(code)
-                .getDocument(completion: { snapshot, error in
-                    if let error = error {
-                        promise(.failure(.unknown(error: error)))
-                    } else if let snapshot = snapshot {
-                        do {
-                            if let session = try snapshot.data(as: SessionDataModel.self) {
-                                promise(.success(session))
-                            } else {
-                                promise(.failure(.parsing))
-                            }
-                        } catch {
-                            promise(.failure(.parsing))
-                        }
-                    } else {
-                        promise(.failure(.sessionNotFound))
-                    }
-                })
-        }.eraseToAnyPublisher()
+        return dataBase.collection("sessions")
+            .document(code)
+            .publisher(as: SessionParticipantsDataModel.self)
+            .map { $0! }
+            .mapError { _ in AsynchronousError.sessionNotFound }
+            .flatMap { self.sessionParticipants($0) }
+            .map { SessionDataModel(participants: $0) }
+            .eraseToAnyPublisher()
+    }
+
+    private func sessionParticipants(_ participants: SessionParticipantsDataModel) -> AnyPublisher<[ParticipantDataModel], AsynchronousError> {
+        return Publishers.MergeMany(participants.participants.map {
+            $0.getDocument(as: ParticipantDataModel.self)
+                .map { $0! }
+                .mapError { _ in AsynchronousError.sessionNotFound }
+                .eraseToAnyPublisher()
+            })
+            .collect()
+            .eraseToAnyPublisher()
     }
 }

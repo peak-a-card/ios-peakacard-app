@@ -45,6 +45,15 @@
 		724339FB243BA4FE00FCD598 /* SessionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724339FA243BA4FE00FCD598 /* SessionDataModel.swift */; };
 		72433A03243BAADC00FCD598 /* VotationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72433A02243BAADC00FCD598 /* VotationDataModel.swift */; };
 		72433A07243BAB9700FCD598 /* JoinSessionRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72433A06243BAB9700FCD598 /* JoinSessionRemoteDataSource.swift */; };
+		724DCA632440F3910042F6DB /* SessionParticipantsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA622440F3910042F6DB /* SessionParticipantsDataModel.swift */; };
+		724DCA672440F45D0042F6DB /* ParticipantDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA662440F45D0042F6DB /* ParticipantDataModel.swift */; };
+		724DCA6B244110F80042F6DB /* ParticipantDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA6A244110F80042F6DB /* ParticipantDomainModel.swift */; };
+		724DCA6E244112F00042F6DB /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA6D244112F00042F6DB /* Session.swift */; };
+		724DCA70244113150042F6DB /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA6F244113150042F6DB /* Participant.swift */; };
+		724DCB4B244249B00042F6DB /* GoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB4A244249B00042F6DB /* GoogleButton.swift */; };
+		724DCB4E24424BA20042F6DB /* FirebaseInitializationTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB4D24424BA20042F6DB /* FirebaseInitializationTask.swift */; };
+		724DCB5024424C8A0042F6DB /* AppearanceSetupTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB4F24424C8A0042F6DB /* AppearanceSetupTask.swift */; };
+		724DCB5224425DDB0042F6DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB5124425DDB0042F6DB /* User.swift */; };
 		7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F5BE23F5C81800A8DF54 /* Colors.swift */; };
 		7275F67123F5D60400A8DF54 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 7275F67023F5D60400A8DF54 /* GridStack */; };
 		7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67323F67F6000A8DF54 /* Stylesheet.swift */; };
@@ -109,6 +118,15 @@
 		724339FA243BA4FE00FCD598 /* SessionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDataModel.swift; sourceTree = "<group>"; };
 		72433A02243BAADC00FCD598 /* VotationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotationDataModel.swift; sourceTree = "<group>"; };
 		72433A06243BAB9700FCD598 /* JoinSessionRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSessionRemoteDataSource.swift; sourceTree = "<group>"; };
+		724DCA622440F3910042F6DB /* SessionParticipantsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionParticipantsDataModel.swift; sourceTree = "<group>"; };
+		724DCA662440F45D0042F6DB /* ParticipantDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDataModel.swift; sourceTree = "<group>"; };
+		724DCA6A244110F80042F6DB /* ParticipantDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDomainModel.swift; sourceTree = "<group>"; };
+		724DCA6D244112F00042F6DB /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		724DCA6F244113150042F6DB /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		724DCB4A244249B00042F6DB /* GoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleButton.swift; sourceTree = "<group>"; };
+		724DCB4D24424BA20042F6DB /* FirebaseInitializationTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseInitializationTask.swift; sourceTree = "<group>"; };
+		724DCB4F24424C8A0042F6DB /* AppearanceSetupTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSetupTask.swift; sourceTree = "<group>"; };
+		724DCB5124425DDB0042F6DB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7275F5BE23F5C81800A8DF54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7275F67323F67F6000A8DF54 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
@@ -198,6 +216,7 @@
 		721664BD24084A4F00C9A0FF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				724DCB4C24424B7C0042F6DB /* Application Tasks */,
 				72AA2387243B77B500D2D1E6 /* Features */,
 				7231912B23F89AAF00A3ECFC /* Redux Core */,
 				7231912423F7F1E600A3ECFC /* Presentation */,
@@ -217,6 +236,7 @@
 			children = (
 				723FAC9E240B0DF800226D43 /* Base */,
 				7213F6EF243CCAA6003A53E3 /* Session */,
+				724DCA68244110D40042F6DB /* Participant */,
 				721664CA24084CFA00C9A0FF /* Card */,
 			);
 			path = Domain;
@@ -225,6 +245,7 @@
 		721664BF24084A6800C9A0FF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				724DCA642440F43C0042F6DB /* Participant */,
 				724339F8243BA4DD00FCD598 /* Session */,
 				72433A00243BAACC00FCD598 /* Votation */,
 				723FABF3240B0B5D00226D43 /* Base */,
@@ -332,6 +353,7 @@
 		7231912623F7F20400A3ECFC /* Reusable Components */ = {
 			isa = PBXGroup;
 			children = (
+				724DCB49244249A10042F6DB /* GoogleButton */,
 				72AA238A243B89A500D2D1E6 /* ActivityIndicator */,
 				7231911E23F70A8000A3ECFC /* HostingViewController */,
 				7232AF0A23F5BF5100FAEAA9 /* Card */,
@@ -502,6 +524,7 @@
 			isa = PBXGroup;
 			children = (
 				724339FA243BA4FE00FCD598 /* SessionDataModel.swift */,
+				724DCA622440F3910042F6DB /* SessionParticipantsDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -536,6 +559,65 @@
 				7213F6EA243CAB79003A53E3 /* JoinSessionRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		724DCA642440F43C0042F6DB /* Participant */ = {
+			isa = PBXGroup;
+			children = (
+				724DCA652440F4430042F6DB /* Model */,
+			);
+			path = Participant;
+			sourceTree = "<group>";
+		};
+		724DCA652440F4430042F6DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				724DCA662440F45D0042F6DB /* ParticipantDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		724DCA68244110D40042F6DB /* Participant */ = {
+			isa = PBXGroup;
+			children = (
+				724DCA69244110E20042F6DB /* Model */,
+			);
+			path = Participant;
+			sourceTree = "<group>";
+		};
+		724DCA69244110E20042F6DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				724DCA6A244110F80042F6DB /* ParticipantDomainModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		724DCA6C244112E40042F6DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				724DCA6D244112F00042F6DB /* Session.swift */,
+				724DCA6F244113150042F6DB /* Participant.swift */,
+				724DCB5124425DDB0042F6DB /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		724DCB49244249A10042F6DB /* GoogleButton */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB4A244249B00042F6DB /* GoogleButton.swift */,
+			);
+			path = GoogleButton;
+			sourceTree = "<group>";
+		};
+		724DCB4C24424B7C0042F6DB /* Application Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB4D24424BA20042F6DB /* FirebaseInitializationTask.swift */,
+				724DCB4F24424C8A0042F6DB /* AppearanceSetupTask.swift */,
+			);
+			path = "Application Tasks";
 			sourceTree = "<group>";
 		};
 		7275F5BD23F5C80400A8DF54 /* Extensions */ = {
@@ -577,6 +659,7 @@
 		72AA2386243B77AD00D2D1E6 /* Session */ = {
 			isa = PBXGroup;
 			children = (
+				724DCA6C244112E40042F6DB /* Model */,
 				72AA2388243B77E200D2D1E6 /* JoinSessionView.swift */,
 			);
 			path = Session;
@@ -632,6 +715,7 @@
 				7232AEDE23F477B700FAEAA9 /* Frameworks */,
 				7232AEDF23F477B700FAEAA9 /* Resources */,
 				0146560CEF26CFBEC93EB444 /* [CP] Embed Pods Frameworks */,
+				56D082B16CBC3B9ECD4BF965 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -746,6 +830,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Peak a Card/Pods-Peak a Card-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		56D082B16CBC3B9ECD4BF965 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Peak a Card/Pods-Peak a Card-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Peak a Card/Pods-Peak a Card-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Peak a Card/Pods-Peak a Card-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6A5078E95B842BCEB3656EEA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -814,10 +915,15 @@
 				7275F67823F67F8000A8DF54 /* StylesheetTheme.swift in Sources */,
 				721664CD24084D1000C9A0FF /* CardDomainModel.swift in Sources */,
 				72433A03243BAADC00FCD598 /* VotationDataModel.swift in Sources */,
+				724DCA70244113150042F6DB /* Participant.swift in Sources */,
+				724DCA6E244112F00042F6DB /* Session.swift in Sources */,
 				72AA238F243B91B100D2D1E6 /* ContainerView.swift in Sources */,
 				7231913423F89C1A00A3ECFC /* AppReducer.swift in Sources */,
 				72AA2389243B77E200D2D1E6 /* JoinSessionView.swift in Sources */,
+				724DCB5224425DDB0042F6DB /* User.swift in Sources */,
+				724DCB4E24424BA20042F6DB /* FirebaseInitializationTask.swift in Sources */,
 				7231912E23F89ACF00A3ECFC /* AppState.swift in Sources */,
+				724DCA672440F45D0042F6DB /* ParticipantDataModel.swift in Sources */,
 				721664D024084D8C00C9A0FF /* GetCardsUseCase.swift in Sources */,
 				72AA238C243B89B700D2D1E6 /* ActivityIndicator.swift in Sources */,
 				721664C924084CAB00C9A0FF /* CardsRepository.swift in Sources */,
@@ -826,14 +932,18 @@
 				7275F67623F67F6D00A8DF54 /* MainTheme.swift in Sources */,
 				7231912A23F7F38E00A3ECFC /* Card.swift in Sources */,
 				7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */,
+				724DCB4B244249B00042F6DB /* GoogleButton.swift in Sources */,
 				723FABF5240B0B6900226D43 /* DataServiceLocator.swift in Sources */,
 				723FACA4240B0EEA00226D43 /* CardsDomainServiceLocator.swift in Sources */,
 				723FACAA240B1FB400226D43 /* CardBackView.swift in Sources */,
+				724DCA632440F3910042F6DB /* SessionParticipantsDataModel.swift in Sources */,
+				724DCB5024424C8A0042F6DB /* AppearanceSetupTask.swift in Sources */,
 				7213F744243CD4CA003A53E3 /* SessionDomainServiceLocator.swift in Sources */,
 				721664C224084B9400C9A0FF /* CardDataModel.swift in Sources */,
 				723FACA2240B0E6E00226D43 /* DomainServiceLocator.swift in Sources */,
 				7213F6F3243CCBAB003A53E3 /* SessionDomainModel.swift in Sources */,
 				7231912023F70A9100A3ECFC /* HostingViewController.swift in Sources */,
+				724DCA6B244110F80042F6DB /* ParticipantDomainModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
