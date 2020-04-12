@@ -7,13 +7,13 @@ protocol JoinSessionUseCase {
 
 class JoinSession: JoinSessionUseCase {
 
-    private let repository: JoinSessionRepositoryProtocol
+    private let repository: SessionRepositoryProtocol
 
-    init(repository: JoinSessionRepositoryProtocol) {
+    init(repository: SessionRepositoryProtocol) {
         self.repository = repository
     }
 
     func joinSession(code: String, participant: String) -> AnyPublisher<SessionDomainModel, AsynchronousError> {
-        return repository.joinSession(code: code, participant: participant)
+        return repository.join(code: code, participant: participant)
     }
 }

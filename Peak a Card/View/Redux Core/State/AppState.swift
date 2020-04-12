@@ -4,9 +4,11 @@ import Combine
 struct AppState {
 
     // Session
-    var session: Session?
     var isRequestingSession: Bool
     var sessionErrored: Bool
+
+    var sessionId: String?
+    var user: User?
 
     // Cards
     var cards: [Card]

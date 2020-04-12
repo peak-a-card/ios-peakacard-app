@@ -2,11 +2,11 @@ import Foundation
 
 class SessionDataServiceLocator: BaseDataServiceLocator {
 
-    private lazy var repository: JoinSessionRepositoryProtocol = {
-        return JoinSessionRepository(dataSource: JoinSessionRemoteDataSource())
+    private lazy var repository: SessionRepositoryProtocol = {
+        return SessionRepository(dataSource: SessionRemoteDataSource())
     }()
 
-    func provideSessionRepository() -> JoinSessionRepositoryProtocol {
+    func provideSessionRepository() -> SessionRepositoryProtocol {
         return repository
     }
 }

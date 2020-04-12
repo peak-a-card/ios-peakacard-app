@@ -2,6 +2,7 @@ import Foundation
 
 enum AsynchronousError: Error {
     case parsing
-    case sessionNotFound
+    case itemNotFound
     case unknown(error: Error)
+
 }

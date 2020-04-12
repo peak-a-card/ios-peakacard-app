@@ -20,6 +20,7 @@ enum MainTheme: StylesheetTheme {
         case .background: return .background
         case .onPrimary: return .onPrimary
         case .error: return .error
+        case .success: return .success
         }
     }
 
@@ -31,6 +32,7 @@ enum MainTheme: StylesheetTheme {
         case .background: return .background
         case .onPrimary: return .onPrimary
         case .error: return .error
+        case .success: return .success
         }
     }
 

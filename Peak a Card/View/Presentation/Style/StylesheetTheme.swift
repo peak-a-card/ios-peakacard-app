@@ -22,6 +22,7 @@ enum ColorSet {
     case secondary
     case background
     case error
+    case success
 }
 
 enum FontScale {

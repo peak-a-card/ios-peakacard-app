@@ -6,10 +6,7 @@ struct JoinSessionView: View {
     @State private var code: String = ""
     @State private var activityAnimatorIsAnimating = true
     private var shouldDisableButton: Bool {
-        code.isEmpty
-    }
-    private var buttonForegroundColor: Color {
-        shouldDisableButton ? Stylesheet.color(.primary10) : Stylesheet.color(.primary)
+        self.store.state.sessionId == nil
     }
 
     var body: some View {
@@ -22,26 +19,44 @@ struct JoinSessionView: View {
                     .lineLimit(.none)
                     .padding(.top)
 
-                if store.state.sessionErrored {
-                    Text("join_session_error_no_session")
-                        .fontWeight(.regular)
-                        .font(Stylesheet.font(.m))
-                        .foregroundColor(Stylesheet.color(.error))
-                        .lineLimit(.none)
-                        .padding(.top)
+                ZStack(alignment: .trailing) {
+                    TextField("join_session_code", text: $code, onCommit: {
+                        self.store.dispatch(action: .session(.verifySession(code: self.code)))
+                    })
+                        .keyboardType(.numberPad)
+                        .padding()
+                        .foregroundColor(Stylesheet.color(.primary))
+                        .background(Stylesheet.color(.background))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8.0)
+                                .stroke(Stylesheet.color(.primary), lineWidth: 1.5))
+                        .padding(.bottom)
+
+                    if store.state.isRequestingSession {
+                        ActivityIndicator(
+                            isAnimating: self.$activityAnimatorIsAnimating, style: .medium
+                        ).padding([.trailing, .bottom])
+                    }
+
+                    if store.state.sessionId != nil {
+                        Image(systemName: "checkmark.circle.fill")
+                            .padding([.trailing, .bottom])
+                            .font(Stylesheet.font(.m))
+                            .foregroundColor(Stylesheet.color(.success))
+                    }
+
+                    if store.state.sessionErrored {
+                        Image(systemName: "exclamationmark.circle.fill")
+                            .padding([.trailing, .bottom])
+                            .font(Stylesheet.font(.m))
+                            .foregroundColor(Stylesheet.color(.error))
+                    }
                 }
-
-                TextField("join_session_code", text: $code)
-                    .keyboardType(.numberPad)
-                    .padding()
-                    .background(Stylesheet.color(.background))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8.0)
-                            .stroke(Stylesheet.color(.primary), lineWidth: 1.5))
-                    .padding(.bottom)
-                    .disabled(store.state.isRequestingSession)
-
+                AppleButton()
+                    .opacity(shouldDisableButton ? 0.4 : 1.0)
+                    .disabled(shouldDisableButton)
                 GoogleButton()
+                    .opacity(shouldDisableButton ? 0.4 : 1.0)
                     .disabled(shouldDisableButton)
                 Spacer()
             }
@@ -49,7 +64,6 @@ struct JoinSessionView: View {
             .background(Stylesheet.color(.background))
             .navigationBarTitle("app_name", displayMode: .inline)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

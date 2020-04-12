@@ -24,10 +24,20 @@ fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect?
 //            .catch { error in Just(AppAction.session(.failed(error: error))) }
 //            .eraseToAnyPublisher()
     case .authenticatedWithGoogle(let user):
+        state.user = user
+    case .start(let code, let user):
         break
-    case .started(let session):
-        let participants = session.participants.map { Participant(name: $0.name) }
-        state.session = Session(participants: participants)
+    case .verifySession(let code):
+        state.sessionErrored = false
+        state.sessionId = nil
+        state.isRequestingSession = true
+        let verifySessionUseCase = DomainServiceLocator.shared.session.provideVerifySessionUseCase()
+        return verifySessionUseCase.execute(code: code)
+            .map { _ in AppAction.session(.sessionVerified(session: code)) }
+            .catch { error in Just(AppAction.session(.failed(error: error))) }
+            .eraseToAnyPublisher()
+    case .sessionVerified(let session):
+        state.sessionId = session
         state.isRequestingSession = false
         state.sessionErrored = false
     case .failed:

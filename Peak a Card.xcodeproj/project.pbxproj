@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		149E62255A19301EC3B7FEE1 /* Pods_Peak_a_CardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9025946ABC887610E3A3FE56 /* Pods_Peak_a_CardTests.framework */; };
 		5F27C8FC0343DC11FA59DAC1 /* Pods_Peak_a_Card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB07D3E3800C99290B54200 /* Pods_Peak_a_Card.framework */; };
-		7213F6EB243CAB79003A53E3 /* JoinSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7213F6EA243CAB79003A53E3 /* JoinSessionRepository.swift */; };
+		7213F6EB243CAB79003A53E3 /* SessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7213F6EA243CAB79003A53E3 /* SessionRepository.swift */; };
 		7213F6EE243CC85B003A53E3 /* SessionDataServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7213F6ED243CC85B003A53E3 /* SessionDataServiceLocator.swift */; };
 		7213F6F3243CCBAB003A53E3 /* SessionDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7213F6F2243CCBAB003A53E3 /* SessionDomainModel.swift */; };
 		7213F741243CD3E2003A53E3 /* JoinSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7213F740243CD3E2003A53E3 /* JoinSessionUseCase.swift */; };
@@ -44,16 +44,17 @@
 		724339F7243B9C0200FCD598 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 724339F6243B9C0200FCD598 /* GoogleService-Info.plist */; };
 		724339FB243BA4FE00FCD598 /* SessionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724339FA243BA4FE00FCD598 /* SessionDataModel.swift */; };
 		72433A03243BAADC00FCD598 /* VotationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72433A02243BAADC00FCD598 /* VotationDataModel.swift */; };
-		72433A07243BAB9700FCD598 /* JoinSessionRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72433A06243BAB9700FCD598 /* JoinSessionRemoteDataSource.swift */; };
+		72433A07243BAB9700FCD598 /* SessionRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72433A06243BAB9700FCD598 /* SessionRemoteDataSource.swift */; };
 		724DCA632440F3910042F6DB /* SessionParticipantsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA622440F3910042F6DB /* SessionParticipantsDataModel.swift */; };
 		724DCA672440F45D0042F6DB /* ParticipantDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA662440F45D0042F6DB /* ParticipantDataModel.swift */; };
 		724DCA6B244110F80042F6DB /* ParticipantDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA6A244110F80042F6DB /* ParticipantDomainModel.swift */; };
-		724DCA6E244112F00042F6DB /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA6D244112F00042F6DB /* Session.swift */; };
 		724DCA70244113150042F6DB /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA6F244113150042F6DB /* Participant.swift */; };
-		724DCB4B244249B00042F6DB /* GoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB4A244249B00042F6DB /* GoogleButton.swift */; };
 		724DCB4E24424BA20042F6DB /* FirebaseInitializationTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB4D24424BA20042F6DB /* FirebaseInitializationTask.swift */; };
 		724DCB5024424C8A0042F6DB /* AppearanceSetupTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB4F24424C8A0042F6DB /* AppearanceSetupTask.swift */; };
 		724DCB5224425DDB0042F6DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB5124425DDB0042F6DB /* User.swift */; };
+		724DCB5424434E770042F6DB /* VerifySessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB5324434E770042F6DB /* VerifySessionUseCase.swift */; };
+		724DCB5724435DD50042F6DB /* GoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB5624435DD50042F6DB /* GoogleButton.swift */; };
+		724DCB5A244368960042F6DB /* AppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB59244368960042F6DB /* AppleButton.swift */; };
 		7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F5BE23F5C81800A8DF54 /* Colors.swift */; };
 		7275F67123F5D60400A8DF54 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 7275F67023F5D60400A8DF54 /* GridStack */; };
 		7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67323F67F6000A8DF54 /* Stylesheet.swift */; };
@@ -78,7 +79,7 @@
 /* Begin PBXFileReference section */
 		361731B905CE1D83E673837D /* Pods-Peak a CardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peak a CardTests.release.xcconfig"; path = "Target Support Files/Pods-Peak a CardTests/Pods-Peak a CardTests.release.xcconfig"; sourceTree = "<group>"; };
 		5EE77B329CEC8D32A7683171 /* Pods-Peak a Card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peak a Card.debug.xcconfig"; path = "Target Support Files/Pods-Peak a Card/Pods-Peak a Card.debug.xcconfig"; sourceTree = "<group>"; };
-		7213F6EA243CAB79003A53E3 /* JoinSessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSessionRepository.swift; sourceTree = "<group>"; };
+		7213F6EA243CAB79003A53E3 /* SessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRepository.swift; sourceTree = "<group>"; };
 		7213F6ED243CC85B003A53E3 /* SessionDataServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDataServiceLocator.swift; sourceTree = "<group>"; };
 		7213F6F2243CCBAB003A53E3 /* SessionDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDomainModel.swift; sourceTree = "<group>"; };
 		7213F740243CD3E2003A53E3 /* JoinSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSessionUseCase.swift; sourceTree = "<group>"; };
@@ -117,16 +118,18 @@
 		724339F6243B9C0200FCD598 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		724339FA243BA4FE00FCD598 /* SessionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDataModel.swift; sourceTree = "<group>"; };
 		72433A02243BAADC00FCD598 /* VotationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotationDataModel.swift; sourceTree = "<group>"; };
-		72433A06243BAB9700FCD598 /* JoinSessionRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSessionRemoteDataSource.swift; sourceTree = "<group>"; };
+		72433A06243BAB9700FCD598 /* SessionRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRemoteDataSource.swift; sourceTree = "<group>"; };
 		724DCA622440F3910042F6DB /* SessionParticipantsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionParticipantsDataModel.swift; sourceTree = "<group>"; };
 		724DCA662440F45D0042F6DB /* ParticipantDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDataModel.swift; sourceTree = "<group>"; };
 		724DCA6A244110F80042F6DB /* ParticipantDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDomainModel.swift; sourceTree = "<group>"; };
-		724DCA6D244112F00042F6DB /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		724DCA6F244113150042F6DB /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
-		724DCB4A244249B00042F6DB /* GoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleButton.swift; sourceTree = "<group>"; };
 		724DCB4D24424BA20042F6DB /* FirebaseInitializationTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseInitializationTask.swift; sourceTree = "<group>"; };
 		724DCB4F24424C8A0042F6DB /* AppearanceSetupTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSetupTask.swift; sourceTree = "<group>"; };
 		724DCB5124425DDB0042F6DB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		724DCB5324434E770042F6DB /* VerifySessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifySessionUseCase.swift; sourceTree = "<group>"; };
+		724DCB5524435BB90042F6DB /* Peak a Card.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Peak a Card.entitlements"; sourceTree = "<group>"; };
+		724DCB5624435DD50042F6DB /* GoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleButton.swift; sourceTree = "<group>"; };
+		724DCB59244368960042F6DB /* AppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleButton.swift; sourceTree = "<group>"; };
 		7275F5BE23F5C81800A8DF54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7275F67323F67F6000A8DF54 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
@@ -201,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				7213F740243CD3E2003A53E3 /* JoinSessionUseCase.swift */,
+				724DCB5324434E770042F6DB /* VerifySessionUseCase.swift */,
 			);
 			path = "Use Case";
 			sourceTree = "<group>";
@@ -353,6 +357,7 @@
 		7231912623F7F20400A3ECFC /* Reusable Components */ = {
 			isa = PBXGroup;
 			children = (
+				724DCB58244368850042F6DB /* AppleButton */,
 				724DCB49244249A10042F6DB /* GoogleButton */,
 				72AA238A243B89A500D2D1E6 /* ActivityIndicator */,
 				7231911E23F70A8000A3ECFC /* HostingViewController */,
@@ -427,6 +432,7 @@
 		7232AEE323F477B700FAEAA9 /* Peak a Card */ = {
 			isa = PBXGroup;
 			children = (
+				724DCB5524435BB90042F6DB /* Peak a Card.entitlements */,
 				721664BD24084A4F00C9A0FF /* View */,
 				721664BE24084A6200C9A0FF /* Domain */,
 				721664BF24084A6800C9A0FF /* Data */,
@@ -548,7 +554,7 @@
 		72433A04243BAB6A00FCD598 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				72433A06243BAB9700FCD598 /* JoinSessionRemoteDataSource.swift */,
+				72433A06243BAB9700FCD598 /* SessionRemoteDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -556,7 +562,7 @@
 		72433A05243BAB7300FCD598 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				7213F6EA243CAB79003A53E3 /* JoinSessionRepository.swift */,
+				7213F6EA243CAB79003A53E3 /* SessionRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -596,7 +602,6 @@
 		724DCA6C244112E40042F6DB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				724DCA6D244112F00042F6DB /* Session.swift */,
 				724DCA6F244113150042F6DB /* Participant.swift */,
 				724DCB5124425DDB0042F6DB /* User.swift */,
 			);
@@ -606,7 +611,7 @@
 		724DCB49244249A10042F6DB /* GoogleButton */ = {
 			isa = PBXGroup;
 			children = (
-				724DCB4A244249B00042F6DB /* GoogleButton.swift */,
+				724DCB5624435DD50042F6DB /* GoogleButton.swift */,
 			);
 			path = GoogleButton;
 			sourceTree = "<group>";
@@ -618,6 +623,14 @@
 				724DCB4F24424C8A0042F6DB /* AppearanceSetupTask.swift */,
 			);
 			path = "Application Tasks";
+			sourceTree = "<group>";
+		};
+		724DCB58244368850042F6DB /* AppleButton */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB59244368960042F6DB /* AppleButton.swift */,
+			);
+			path = AppleButton;
 			sourceTree = "<group>";
 		};
 		7275F5BD23F5C80400A8DF54 /* Extensions */ = {
@@ -900,6 +913,7 @@
 			files = (
 				721664C624084BE000C9A0FF /* InMemoryCardsDataSource.swift in Sources */,
 				7213F746243CE020003A53E3 /* AsynchronousError.swift in Sources */,
+				724DCB5A244368960042F6DB /* AppleButton.swift in Sources */,
 				7232AEE523F477B700FAEAA9 /* AppDelegate.swift in Sources */,
 				723FAC9D240B0C4900226D43 /* CardsDataServiceLocator.swift in Sources */,
 				7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */,
@@ -910,13 +924,12 @@
 				7232AF0E23F5BFDD00FAEAA9 /* CardView.swift in Sources */,
 				7231913723F89F3100A3ECFC /* AppStore.swift in Sources */,
 				723FABF1240A9F2900226D43 /* CardDetailView.swift in Sources */,
-				7213F6EB243CAB79003A53E3 /* JoinSessionRepository.swift in Sources */,
+				7213F6EB243CAB79003A53E3 /* SessionRepository.swift in Sources */,
 				7231913123F89B4000A3ECFC /* AppAction.swift in Sources */,
 				7275F67823F67F8000A8DF54 /* StylesheetTheme.swift in Sources */,
 				721664CD24084D1000C9A0FF /* CardDomainModel.swift in Sources */,
 				72433A03243BAADC00FCD598 /* VotationDataModel.swift in Sources */,
 				724DCA70244113150042F6DB /* Participant.swift in Sources */,
-				724DCA6E244112F00042F6DB /* Session.swift in Sources */,
 				72AA238F243B91B100D2D1E6 /* ContainerView.swift in Sources */,
 				7231913423F89C1A00A3ECFC /* AppReducer.swift in Sources */,
 				72AA2389243B77E200D2D1E6 /* JoinSessionView.swift in Sources */,
@@ -925,14 +938,15 @@
 				7231912E23F89ACF00A3ECFC /* AppState.swift in Sources */,
 				724DCA672440F45D0042F6DB /* ParticipantDataModel.swift in Sources */,
 				721664D024084D8C00C9A0FF /* GetCardsUseCase.swift in Sources */,
+				724DCB5724435DD50042F6DB /* GoogleButton.swift in Sources */,
 				72AA238C243B89B700D2D1E6 /* ActivityIndicator.swift in Sources */,
 				721664C924084CAB00C9A0FF /* CardsRepository.swift in Sources */,
 				7213F741243CD3E2003A53E3 /* JoinSessionUseCase.swift in Sources */,
-				72433A07243BAB9700FCD598 /* JoinSessionRemoteDataSource.swift in Sources */,
+				72433A07243BAB9700FCD598 /* SessionRemoteDataSource.swift in Sources */,
 				7275F67623F67F6D00A8DF54 /* MainTheme.swift in Sources */,
+				724DCB5424434E770042F6DB /* VerifySessionUseCase.swift in Sources */,
 				7231912A23F7F38E00A3ECFC /* Card.swift in Sources */,
 				7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */,
-				724DCB4B244249B00042F6DB /* GoogleButton.swift in Sources */,
 				723FABF5240B0B6900226D43 /* DataServiceLocator.swift in Sources */,
 				723FACA4240B0EEA00226D43 /* CardsDomainServiceLocator.swift in Sources */,
 				723FACAA240B1FB400226D43 /* CardBackView.swift in Sources */,
@@ -1104,9 +1118,11 @@
 			baseConfigurationReference = 5EE77B329CEC8D32A7683171 /* Pods-Peak a Card.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Peak a Card/Peak a Card.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Peak a Card/View/Preview Content\"";
-				DEVELOPMENT_TEAM = LPUJD23XGU;
+				DEVELOPMENT_TEAM = V45KGQUH5M;
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Peak a Card/View/Info.plist";
@@ -1114,8 +1130,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.peakacard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.peakacard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1126,9 +1143,11 @@
 			baseConfigurationReference = C466A767CAEB1D9B48301DCB /* Pods-Peak a Card.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Peak a Card/Peak a Card.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Peak a Card/View/Preview Content\"";
-				DEVELOPMENT_TEAM = LPUJD23XGU;
+				DEVELOPMENT_TEAM = V45KGQUH5M;
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Peak a Card/View/Info.plist";
@@ -1136,8 +1155,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.peakacard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.peakacard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

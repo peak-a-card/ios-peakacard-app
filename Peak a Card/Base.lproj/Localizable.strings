@@ -9,3 +9,5 @@
 "join_session_error_code_required_error" = "Code is required";
 "join_session_error_no_session" = "Oops! We didn't find the session, did you write it well? Don't worry it happens even in the best of families.";
 "join_session_error_unspecified" = "Oops! Houston we had an unknown error! Try it again please :-)";
+"join_session_sign_in_with_google" = "Sign in with Google";
+"join_session_sign_in_with_Apple" = "Sign in with Apple";
