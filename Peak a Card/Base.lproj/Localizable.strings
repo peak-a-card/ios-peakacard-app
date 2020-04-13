@@ -1,5 +1,5 @@
 "app_name" = "Peak A Card";
-"join_session_join" = "Hooray! Enter your name and the code to join a session!";
+"join_session_join" = "Hooray! Enter the code to join a session!";
 "join_session_name" = "Name";
 "join_session_code" = "Code";
 "join_session_enter" = "Join session";

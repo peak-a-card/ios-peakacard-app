@@ -33,8 +33,8 @@ extension FirebaseInitializationTask: GIDSignInDelegate {
             if error != nil {
                 return
             }
-            guard let email = result?.user.email, let name = result?.user.displayName else { return }
-            let user = User(id: user.userID, name: name, email: email)
+            guard let resultUser = result?.user else { return }
+            let user = User(id: resultUser.uid, name: resultUser.displayName!, email: resultUser.email!)
             self.store.dispatch(action: .session(.authenticatedWithGoogle(user: user)))
         }
     }

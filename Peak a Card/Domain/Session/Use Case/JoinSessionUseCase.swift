@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 protocol JoinSessionUseCase {
-    func joinSession(code: String, participant: String) -> AnyPublisher<SessionDomainModel, AsynchronousError>
+    func execute(code: String, user: UserDomainModel) -> AnyPublisher<Void, AsynchronousError>
 }
 
 class JoinSession: JoinSessionUseCase {
@@ -13,7 +13,7 @@ class JoinSession: JoinSessionUseCase {
         self.repository = repository
     }
 
-    func joinSession(code: String, participant: String) -> AnyPublisher<SessionDomainModel, AsynchronousError> {
-        return repository.join(code: code, participant: participant)
+    func execute(code: String, user: UserDomainModel) -> AnyPublisher<Void, AsynchronousError> {
+        return repository.join(code: code, user: user)
     }
 }

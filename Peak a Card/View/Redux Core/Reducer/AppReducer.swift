@@ -16,30 +16,20 @@ func appReducer(state: inout AppState, action: AppAction) -> Effect? {
 
 fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect? {
     switch action {
-//    case .start(let code, let participant):
-//        state.isRequestingSession = true
-//        let joinSessionUseCase = DomainServiceLocator.shared.session.provideJoinSessionUseCase()
-//        return joinSessionUseCase.joinSession(code: code, participant: participant)
-//            .map { AppAction.session(.started(session: $0)) }
-//            .catch { error in Just(AppAction.session(.failed(error: error))) }
-//            .eraseToAnyPublisher()
     case .authenticatedWithGoogle(let user):
         state.user = user
     case .start(let code, let user):
-        break
-    case .verifySession(let code):
-        state.sessionErrored = false
-        state.sessionId = nil
         state.isRequestingSession = true
-        let verifySessionUseCase = DomainServiceLocator.shared.session.provideVerifySessionUseCase()
-        return verifySessionUseCase.execute(code: code)
-            .map { _ in AppAction.session(.sessionVerified(session: code)) }
+        let userDomainModel = UserDomainModel(id: user.id, name: user.name, email: user.email)
+        let joinSessionUseCase = DomainServiceLocator.shared.session.provideJoinSessionUseCase()
+        return joinSessionUseCase.execute(code: code, user: userDomainModel)
+            .map { AppAction.session(.started(code: code)) }
             .catch { error in Just(AppAction.session(.failed(error: error))) }
             .eraseToAnyPublisher()
-    case .sessionVerified(let session):
-        state.sessionId = session
+    case .started(let code):
         state.isRequestingSession = false
         state.sessionErrored = false
+        state.sessionId = code
     case .failed:
         state.sessionErrored = true
         state.isRequestingSession = false

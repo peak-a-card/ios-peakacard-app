@@ -8,27 +8,31 @@ class SessionRemoteDataSource {
     
     private let dataBase = Firestore.firestore()
     
-    func join(code: String, participant: String) -> AnyPublisher<SessionDataModel, AsynchronousError> {
-        return dataBase.collection("session")
-            .document(code)
-            .publisher(as: SessionParticipantsDataModel.self)
-            .map { $0! }
-            .mapError { _ in .itemNotFound }
-            .flatMap { self.sessionParticipants($0) }
-            .map { SessionDataModel(participants: $0) }
-            .eraseToAnyPublisher()
+    func join(code: String, user: UserDataModel) -> AnyPublisher<Void, AsynchronousError> {
+        return verify(code: code)
+            .mapError { _ in AsynchronousError.itemNotFound }
+            .flatMap { code in
+                self.dataBase.collection("session")
+                .document(code)
+                .collection("participants")
+                .document(user.id)
+                .setData(from: user.information)
+                .eraseToAnyPublisher()
+            }
+        .mapError { _ in AsynchronousError.itemNotFound }
+        .eraseToAnyPublisher()
     }
 
-    private func sessionParticipants(_ participants: SessionParticipantsDataModel) -> AnyPublisher<[ParticipantDataModel], AsynchronousError> {
-        return Publishers.MergeMany(participants.participants.map {
-            $0.getDocument(as: ParticipantDataModel.self)
-                .map { $0! }
-                .mapError { _ in .itemNotFound }
-                .eraseToAnyPublisher()
-            })
-            .collect()
-            .eraseToAnyPublisher()
-    }
+//    private func sessionParticipants(_ participants: SessionParticipantsDataModel) -> AnyPublisher<[ParticipantDataModel], AsynchronousError> {
+//        return Publishers.MergeMany(participants.participants.map {
+//            $0.getDocument(as: ParticipantDataModel.self)
+//                .map { $0! }
+//                .mapError { _ in .itemNotFound }
+//                .eraseToAnyPublisher()
+//            })
+//            .collect()
+//            .eraseToAnyPublisher()
+//    }
 
     func verify(code: String) -> AnyPublisher<String, AsynchronousError> {
         return dataBase.collection("session")

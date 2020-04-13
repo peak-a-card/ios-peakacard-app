@@ -6,7 +6,7 @@ struct JoinSessionView: View {
     @State private var code: String = ""
     @State private var activityAnimatorIsAnimating = true
     private var shouldDisableButton: Bool {
-        self.store.state.sessionId == nil
+        code.isEmpty
     }
 
     var body: some View {
@@ -19,45 +19,48 @@ struct JoinSessionView: View {
                     .lineLimit(.none)
                     .padding(.top)
 
-                ZStack(alignment: .trailing) {
-                    TextField("join_session_code", text: $code, onCommit: {
-                        self.store.dispatch(action: .session(.verifySession(code: self.code)))
-                    })
-                        .keyboardType(.numberPad)
+                if store.state.sessionErrored {
+                    Text("join_session_error_no_session")
+                        .foregroundColor(Stylesheet.color(.error))
+                        .font(Stylesheet.font(.m))
+                        .padding(.top)
+                }
+
+                TextField("join_session_code", text: $code)
+                    .keyboardType(.numberPad)
+                    .padding()
+                    .foregroundColor(Stylesheet.color(.primary))
+                    .background(Stylesheet.color(.background))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8.0)
+                            .stroke(Stylesheet.color(.primary), lineWidth: 1.5))
+                    .padding(.bottom)
+
+                if store.state.user == nil {
+                    AppleButton()
+                        .opacity(shouldDisableButton ? 0.4 : 1.0)
+                        .disabled(shouldDisableButton)
+                    GoogleButton()
+                        .opacity(shouldDisableButton ? 0.4 : 1.0)
+                        .disabled(shouldDisableButton)
+                } else {
+                    Button(action: {
+                        self.store.dispatch(action: .session(.start(code: self.code, user: self.store.state.user!)))
+                    }) {
+                        HStack {
+                            Text("join_session_enter")
+                            if store.state.isRequestingSession {
+                                ActivityIndicator(
+                                    isAnimating: self.$activityAnimatorIsAnimating, style: .medium
+                                )
+                            }
+                        }.frame(maxWidth: .infinity)
                         .padding()
-                        .foregroundColor(Stylesheet.color(.primary))
-                        .background(Stylesheet.color(.background))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8.0)
-                                .stroke(Stylesheet.color(.primary), lineWidth: 1.5))
-                        .padding(.bottom)
-
-                    if store.state.isRequestingSession {
-                        ActivityIndicator(
-                            isAnimating: self.$activityAnimatorIsAnimating, style: .medium
-                        ).padding([.trailing, .bottom])
-                    }
-
-                    if store.state.sessionId != nil {
-                        Image(systemName: "checkmark.circle.fill")
-                            .padding([.trailing, .bottom])
-                            .font(Stylesheet.font(.m))
-                            .foregroundColor(Stylesheet.color(.success))
-                    }
-
-                    if store.state.sessionErrored {
-                        Image(systemName: "exclamationmark.circle.fill")
-                            .padding([.trailing, .bottom])
-                            .font(Stylesheet.font(.m))
-                            .foregroundColor(Stylesheet.color(.error))
+                        .foregroundColor(Stylesheet.color(.onPrimary))
+                        .background(Stylesheet.color(.primary))
+                        .cornerRadius(8.0)
                     }
                 }
-                AppleButton()
-                    .opacity(shouldDisableButton ? 0.4 : 1.0)
-                    .disabled(shouldDisableButton)
-                GoogleButton()
-                    .opacity(shouldDisableButton ? 0.4 : 1.0)
-                    .disabled(shouldDisableButton)
                 Spacer()
             }
             .padding()
