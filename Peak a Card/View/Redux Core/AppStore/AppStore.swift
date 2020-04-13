@@ -3,21 +3,13 @@ import Combine
 
 final class AppStore: ObservableObject {
     @Published private(set) var state: AppState
-    private var cancelBag = Set<AnyCancellable>()
 
     init(state: AppState) {
         self.state = state
     }
 
     convenience init() {
-        let state = AppState(
-            isRequestingSession: false,
-            sessionErrored: false,
-            sessionId: nil,
-            user: nil,
-            cards: [],
-            selectedCard: nil
-        )
+        let state = AppState()
         self.init(state: state)
     }
 
@@ -29,6 +21,6 @@ final class AppStore: ObservableObject {
             .sink(receiveCompletion: { completion in
                 // Do I need to do something here?
             }, receiveValue: dispatch)
-            .store(in: &cancelBag)
+            .store(in: &state.cancelBag)
     }
 }

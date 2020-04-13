@@ -6,8 +6,12 @@ struct ContainerView: View {
 
     var body: some View {
         ZStack {
-            if store.state.sessionId != nil && store.state.user != nil {
+            if store.state.sessionId != nil &&
+                store.state.user != nil &&
+                !store.state.votations.isEmpty {
                 CardsView().environmentObject(store)
+            } else if store.state.waitingForParticipants {
+                WaitVotingView().environmentObject(store)
             } else {
                 JoinSessionView().environmentObject(store)
             }

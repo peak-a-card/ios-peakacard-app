@@ -43,7 +43,6 @@
 		724339F7243B9C0200FCD598 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 724339F6243B9C0200FCD598 /* GoogleService-Info.plist */; };
 		72433A03243BAADC00FCD598 /* VotationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72433A02243BAADC00FCD598 /* VotationDataModel.swift */; };
 		72433A07243BAB9700FCD598 /* SessionRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72433A06243BAB9700FCD598 /* SessionRemoteDataSource.swift */; };
-		724DCA632440F3910042F6DB /* SessionParticipantsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA622440F3910042F6DB /* SessionParticipantsDataModel.swift */; };
 		724DCA672440F45D0042F6DB /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA662440F45D0042F6DB /* UserDataModel.swift */; };
 		724DCA6B244110F80042F6DB /* UserDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA6A244110F80042F6DB /* UserDomainModel.swift */; };
 		724DCA70244113150042F6DB /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCA6F244113150042F6DB /* Participant.swift */; };
@@ -53,6 +52,14 @@
 		724DCB5424434E770042F6DB /* VerifySessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB5324434E770042F6DB /* VerifySessionUseCase.swift */; };
 		724DCB5724435DD50042F6DB /* GoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB5624435DD50042F6DB /* GoogleButton.swift */; };
 		724DCB5A244368960042F6DB /* AppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB59244368960042F6DB /* AppleButton.swift */; };
+		724DCB5F24446CD60042F6DB /* ParticipantDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB5E24446CD60042F6DB /* ParticipantDataModel.swift */; };
+		724DCB6124446CF90042F6DB /* ParticipantsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB6024446CF90042F6DB /* ParticipantsRepository.swift */; };
+		724DCB6524446D420042F6DB /* ParticipantDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB6424446D420042F6DB /* ParticipantDomainModel.swift */; };
+		724DCB6824446DA10042F6DB /* ParticipantRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB6724446DA10042F6DB /* ParticipantRemoteDataSource.swift */; };
+		724DCB6B24446FEB0042F6DB /* GetAllParticipantsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB6A24446FEB0042F6DB /* GetAllParticipantsUseCase.swift */; };
+		724DCB6E244470D60042F6DB /* WaitVotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB6D244470D60042F6DB /* WaitVotingView.swift */; };
+		724DCB75244480370042F6DB /* ParticipantDataServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB74244480370042F6DB /* ParticipantDataServiceLocator.swift */; };
+		724DCB78244480BF0042F6DB /* ParticipantDomainServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB77244480BF0042F6DB /* ParticipantDomainServiceLocator.swift */; };
 		7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F5BE23F5C81800A8DF54 /* Colors.swift */; };
 		7275F67123F5D60400A8DF54 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 7275F67023F5D60400A8DF54 /* GridStack */; };
 		7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67323F67F6000A8DF54 /* Stylesheet.swift */; };
@@ -115,7 +122,6 @@
 		724339F6243B9C0200FCD598 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		72433A02243BAADC00FCD598 /* VotationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotationDataModel.swift; sourceTree = "<group>"; };
 		72433A06243BAB9700FCD598 /* SessionRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRemoteDataSource.swift; sourceTree = "<group>"; };
-		724DCA622440F3910042F6DB /* SessionParticipantsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionParticipantsDataModel.swift; sourceTree = "<group>"; };
 		724DCA662440F45D0042F6DB /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		724DCA6A244110F80042F6DB /* UserDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDomainModel.swift; sourceTree = "<group>"; };
 		724DCA6F244113150042F6DB /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
@@ -126,6 +132,14 @@
 		724DCB5524435BB90042F6DB /* Peak a Card.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Peak a Card.entitlements"; sourceTree = "<group>"; };
 		724DCB5624435DD50042F6DB /* GoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleButton.swift; sourceTree = "<group>"; };
 		724DCB59244368960042F6DB /* AppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleButton.swift; sourceTree = "<group>"; };
+		724DCB5E24446CD60042F6DB /* ParticipantDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDataModel.swift; sourceTree = "<group>"; };
+		724DCB6024446CF90042F6DB /* ParticipantsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParticipantsRepository.swift; path = "Peak a Card/Data/Participant/Model/ParticipantsRepository.swift"; sourceTree = SOURCE_ROOT; };
+		724DCB6424446D420042F6DB /* ParticipantDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDomainModel.swift; sourceTree = "<group>"; };
+		724DCB6724446DA10042F6DB /* ParticipantRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParticipantRemoteDataSource.swift; path = "Peak a Card/Domain/Participant/Model/ParticipantRemoteDataSource.swift"; sourceTree = SOURCE_ROOT; };
+		724DCB6A24446FEB0042F6DB /* GetAllParticipantsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetAllParticipantsUseCase.swift; path = "Peak a Card/Domain/Participant/Model/GetAllParticipantsUseCase.swift"; sourceTree = SOURCE_ROOT; };
+		724DCB6D244470D60042F6DB /* WaitVotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitVotingView.swift; sourceTree = "<group>"; };
+		724DCB74244480370042F6DB /* ParticipantDataServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParticipantDataServiceLocator.swift; path = ../../../../../../../Documents/ParticipantDataServiceLocator.swift; sourceTree = "<group>"; };
+		724DCB77244480BF0042F6DB /* ParticipantDomainServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParticipantDomainServiceLocator.swift; path = ../../../../../../../Documents/ParticipantDomainServiceLocator.swift; sourceTree = "<group>"; };
 		7275F5BE23F5C81800A8DF54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7275F67323F67F6000A8DF54 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
@@ -236,6 +250,7 @@
 				723FAC9E240B0DF800226D43 /* Base */,
 				7213F6EF243CCAA6003A53E3 /* Session */,
 				724DCA68244110D40042F6DB /* User */,
+				724DCB6224446D2D0042F6DB /* Participant */,
 				721664CA24084CFA00C9A0FF /* Card */,
 			);
 			path = Domain;
@@ -244,6 +259,7 @@
 		721664BF24084A6800C9A0FF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				724DCB5B24446C9A0042F6DB /* Participant */,
 				724DCA642440F43C0042F6DB /* User */,
 				724339F8243BA4DD00FCD598 /* Session */,
 				72433A00243BAACC00FCD598 /* Votation */,
@@ -516,17 +532,8 @@
 				7213F6EC243CC83E003A53E3 /* Service Locator */,
 				72433A05243BAB7300FCD598 /* Repository */,
 				72433A04243BAB6A00FCD598 /* DataSources */,
-				724339F9243BA4F000FCD598 /* Model */,
 			);
 			path = Session;
-			sourceTree = "<group>";
-		};
-		724339F9243BA4F000FCD598 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				724DCA622440F3910042F6DB /* SessionParticipantsDataModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		72433A00243BAACC00FCD598 /* Votation */ = {
@@ -627,6 +634,91 @@
 			path = AppleButton;
 			sourceTree = "<group>";
 		};
+		724DCB5B24446C9A0042F6DB /* Participant */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB73244480250042F6DB /* Service Locator */,
+				724DCB5D24446CB70042F6DB /* Model */,
+				724DCB5C24446CA80042F6DB /* Repository */,
+				724DCB6624446D7E0042F6DB /* DataSources */,
+			);
+			path = Participant;
+			sourceTree = "<group>";
+		};
+		724DCB5C24446CA80042F6DB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB6024446CF90042F6DB /* ParticipantsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		724DCB5D24446CB70042F6DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB5E24446CD60042F6DB /* ParticipantDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		724DCB6224446D2D0042F6DB /* Participant */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB762444809E0042F6DB /* Service Locator */,
+				724DCB6924446FDC0042F6DB /* Use Case */,
+				724DCB6324446D380042F6DB /* Model */,
+			);
+			path = Participant;
+			sourceTree = "<group>";
+		};
+		724DCB6324446D380042F6DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB6424446D420042F6DB /* ParticipantDomainModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		724DCB6624446D7E0042F6DB /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB6724446DA10042F6DB /* ParticipantRemoteDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		724DCB6924446FDC0042F6DB /* Use Case */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB6A24446FEB0042F6DB /* GetAllParticipantsUseCase.swift */,
+			);
+			path = "Use Case";
+			sourceTree = "<group>";
+		};
+		724DCB6C2444704D0042F6DB /* Wait Voting */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB6D244470D60042F6DB /* WaitVotingView.swift */,
+			);
+			path = "Wait Voting";
+			sourceTree = "<group>";
+		};
+		724DCB73244480250042F6DB /* Service Locator */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB74244480370042F6DB /* ParticipantDataServiceLocator.swift */,
+			);
+			path = "Service Locator";
+			sourceTree = "<group>";
+		};
+		724DCB762444809E0042F6DB /* Service Locator */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB77244480BF0042F6DB /* ParticipantDomainServiceLocator.swift */,
+			);
+			path = "Service Locator";
+			sourceTree = "<group>";
+		};
 		7275F5BD23F5C80400A8DF54 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,6 +769,7 @@
 			children = (
 				72AA238D243B91A100D2D1E6 /* Container */,
 				72AA2386243B77AD00D2D1E6 /* Session */,
+				724DCB6C2444704D0042F6DB /* Wait Voting */,
 				723FABED240A9EE900226D43 /* Card Detail */,
 				721665782408513C00C9A0FF /* Cards List */,
 			);
@@ -911,11 +1004,14 @@
 				7232AEE523F477B700FAEAA9 /* AppDelegate.swift in Sources */,
 				723FAC9D240B0C4900226D43 /* CardsDataServiceLocator.swift in Sources */,
 				7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */,
+				724DCB6824446DA10042F6DB /* ParticipantRemoteDataSource.swift in Sources */,
 				7232AEE723F477B700FAEAA9 /* SceneDelegate.swift in Sources */,
 				7213F6EE243CC85B003A53E3 /* SessionDataServiceLocator.swift in Sources */,
 				7232AEE923F477B700FAEAA9 /* CardsView.swift in Sources */,
 				7232AF0E23F5BFDD00FAEAA9 /* CardView.swift in Sources */,
 				7231913723F89F3100A3ECFC /* AppStore.swift in Sources */,
+				724DCB6E244470D60042F6DB /* WaitVotingView.swift in Sources */,
+				724DCB6124446CF90042F6DB /* ParticipantsRepository.swift in Sources */,
 				723FABF1240A9F2900226D43 /* CardDetailView.swift in Sources */,
 				7213F6EB243CAB79003A53E3 /* SessionRepository.swift in Sources */,
 				7231913123F89B4000A3ECFC /* AppAction.swift in Sources */,
@@ -928,22 +1024,26 @@
 				72AA2389243B77E200D2D1E6 /* JoinSessionView.swift in Sources */,
 				724DCB5224425DDB0042F6DB /* User.swift in Sources */,
 				724DCB4E24424BA20042F6DB /* FirebaseInitializationTask.swift in Sources */,
+				724DCB6524446D420042F6DB /* ParticipantDomainModel.swift in Sources */,
 				7231912E23F89ACF00A3ECFC /* AppState.swift in Sources */,
 				724DCA672440F45D0042F6DB /* UserDataModel.swift in Sources */,
 				721664D024084D8C00C9A0FF /* GetCardsUseCase.swift in Sources */,
 				724DCB5724435DD50042F6DB /* GoogleButton.swift in Sources */,
+				724DCB75244480370042F6DB /* ParticipantDataServiceLocator.swift in Sources */,
 				72AA238C243B89B700D2D1E6 /* ActivityIndicator.swift in Sources */,
 				721664C924084CAB00C9A0FF /* CardsRepository.swift in Sources */,
+				724DCB6B24446FEB0042F6DB /* GetAllParticipantsUseCase.swift in Sources */,
 				7213F741243CD3E2003A53E3 /* JoinSessionUseCase.swift in Sources */,
 				72433A07243BAB9700FCD598 /* SessionRemoteDataSource.swift in Sources */,
 				7275F67623F67F6D00A8DF54 /* MainTheme.swift in Sources */,
 				724DCB5424434E770042F6DB /* VerifySessionUseCase.swift in Sources */,
 				7231912A23F7F38E00A3ECFC /* Card.swift in Sources */,
+				724DCB78244480BF0042F6DB /* ParticipantDomainServiceLocator.swift in Sources */,
 				7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */,
 				723FABF5240B0B6900226D43 /* DataServiceLocator.swift in Sources */,
+				724DCB5F24446CD60042F6DB /* ParticipantDataModel.swift in Sources */,
 				723FACA4240B0EEA00226D43 /* CardsDomainServiceLocator.swift in Sources */,
 				723FACAA240B1FB400226D43 /* CardBackView.swift in Sources */,
-				724DCA632440F3910042F6DB /* SessionParticipantsDataModel.swift in Sources */,
 				724DCB5024424C8A0042F6DB /* AppearanceSetupTask.swift in Sources */,
 				7213F744243CD4CA003A53E3 /* SessionDomainServiceLocator.swift in Sources */,
 				721664C224084B9400C9A0FF /* CardDataModel.swift in Sources */,

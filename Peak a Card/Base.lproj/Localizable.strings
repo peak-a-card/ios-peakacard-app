@@ -11,3 +11,9 @@
 "join_session_error_unspecified" = "Oops! Houston we had an unknown error! Try it again please :-)";
 "join_session_sign_in_with_google" = "Sign in with Google";
 "join_session_sign_in_with_Apple" = "Sign in with Apple";
+"wait_voting_start_title" = "Waiting for voting to start...";
+"wait_voting_message" = "Time's up! Let's go voting \"%@!\"";
+"close_session_title" = "Logout";
+"close_session_message" = "Do you want to close the current session?";
+"close_session_yes" = "Yes";
+"close_session_no" = "No";

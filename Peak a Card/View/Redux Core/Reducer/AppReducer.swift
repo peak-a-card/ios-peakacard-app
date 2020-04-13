@@ -7,6 +7,8 @@ func appReducer(state: inout AppState, action: AppAction) -> Effect? {
     switch action {
     case .session(let action):
         return reduce(state: &state, action: action)
+    case .participants(let action):
+        return reduce(state: &state, action: action)
     case .cards(let action):
         return reduce(state: &state, action: action)
     case .detail(let action):
@@ -30,9 +32,31 @@ fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect?
         state.isRequestingSession = false
         state.sessionErrored = false
         state.sessionId = code
+        state.waitingForParticipants = true
+        let getAllParticipantsUseCase = DomainServiceLocator.shared.participants.provideGetAllParticipantsUseCase()
+        return getAllParticipantsUseCase.execute(code: code)
+            .map { participants in
+                let models = participants.map { Participant(id: $0.email, name: $0.name) }
+                return AppAction.participants(.received(participants: models))
+            }
+        .catch { _ in Just(AppAction.participants(.failed)) }
+        .eraseToAnyPublisher()
     case .failed:
         state.sessionErrored = true
         state.isRequestingSession = false
+    case .logout:
+        state.cancelBag.forEach { $0.cancel() }
+        state = AppState()
+    }
+    return nil
+}
+
+fileprivate func reduce(state: inout AppState, action: ParticipantsAction) -> Effect? {
+    switch action {
+    case .received(let participants):
+        state.participants = participants
+    case .failed:
+        break
     }
     return nil
 }

@@ -11,16 +11,20 @@ class DomainServiceLocator {
     let data: DataServiceLocator
     let cards: CardsDomainServiceLocator
     let session: SessionDomainServiceLocator
+    let participants: ParticipantDomainServiceLocator
 
     init(data: DataServiceLocator,
          cards: CardsDomainServiceLocator,
-         session: SessionDomainServiceLocator) {
+         session: SessionDomainServiceLocator,
+         participants: ParticipantDomainServiceLocator) {
         self.data = data
         self.cards = cards
         self.session = session
+        self.participants = participants
 
         cards.root = self
         session.root = self
+        participants.root = self
     }
 }
 
@@ -31,6 +35,7 @@ extension DomainServiceLocator {
         private var data = DataServiceLocator.shared
         private var cards = CardsDomainServiceLocator()
         private var session = SessionDomainServiceLocator()
+        private var participants = ParticipantDomainServiceLocator()
 
         func with(serviceLocator data: DataServiceLocator) -> Builder {
             self.data = data
@@ -47,10 +52,16 @@ extension DomainServiceLocator {
             return self
         }
 
+        func with(serviceLocator participants: ParticipantDomainServiceLocator) -> Builder {
+            self.participants = participants
+            return self
+        }
+
         func build() -> DomainServiceLocator {
             return DomainServiceLocator(data: data,
                                         cards: cards,
-                                        session: session
+                                        session: session,
+                                        participants: participants
             )
         }
     }

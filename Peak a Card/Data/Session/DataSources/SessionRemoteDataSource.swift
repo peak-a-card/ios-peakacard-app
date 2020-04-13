@@ -23,17 +23,6 @@ class SessionRemoteDataSource {
         .eraseToAnyPublisher()
     }
 
-//    private func sessionParticipants(_ participants: SessionParticipantsDataModel) -> AnyPublisher<[ParticipantDataModel], AsynchronousError> {
-//        return Publishers.MergeMany(participants.participants.map {
-//            $0.getDocument(as: ParticipantDataModel.self)
-//                .map { $0! }
-//                .mapError { _ in .itemNotFound }
-//                .eraseToAnyPublisher()
-//            })
-//            .collect()
-//            .eraseToAnyPublisher()
-//    }
-
     func verify(code: String) -> AnyPublisher<String, AsynchronousError> {
         return dataBase.collection("session")
             .document(code)

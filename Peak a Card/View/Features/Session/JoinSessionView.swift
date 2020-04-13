@@ -4,7 +4,7 @@ struct JoinSessionView: View {
 
     @EnvironmentObject var store: AppStore
     @State private var code: String = ""
-    @State private var activityAnimatorIsAnimating = true
+    @State private var activityIndicatorIsAnimating = true
     private var shouldDisableButton: Bool {
         code.isEmpty
     }
@@ -51,7 +51,9 @@ struct JoinSessionView: View {
                             Text("join_session_enter")
                             if store.state.isRequestingSession {
                                 ActivityIndicator(
-                                    isAnimating: self.$activityAnimatorIsAnimating, style: .medium
+                                    isAnimating: self.$activityIndicatorIsAnimating,
+                                    style: .medium,
+                                    color: Stylesheet.color(.background)
                                 )
                             }
                         }.frame(maxWidth: .infinity)

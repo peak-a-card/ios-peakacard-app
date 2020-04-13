@@ -1,5 +1,6 @@
 import Foundation
 
-struct Participant {
+struct Participant: Identifiable {
+    var id: String
     let name: String
 }
