@@ -12,6 +12,11 @@ struct ContainerView: View {
                 CardsView().environmentObject(store)
             } else if store.state.waitingForParticipants {
                 WaitVotingView().environmentObject(store)
+            } else if !store.state.startedVotations.isEmpty && store.state.lastVotedVotation != nil {
+                // Waiting users to vote
+            } else if store.state.startedVotations.isEmpty &&
+                store.state.lastVotedVotation != nil {
+                // Waiting 
             } else {
                 JoinSessionView().environmentObject(store)
             }

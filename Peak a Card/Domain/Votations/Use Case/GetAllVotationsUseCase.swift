@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 protocol GetAllVotationsUseCase {
-    func execute(code: String) -> AnyPublisher<[VotationDomainModel], AsynchronousError>
+    func execute(code: String, userId: String) -> AnyPublisher<[VotationDomainModel], AsynchronousError>
 }
 
 class GetAllVotations: GetAllVotationsUseCase {
@@ -19,7 +19,7 @@ class GetAllVotations: GetAllVotationsUseCase {
         self.cardsRepository = cardsRepository
     }
 
-    func execute(code: String) -> AnyPublisher<[VotationDomainModel], AsynchronousError> {
+    func execute(code: String, userId: String) -> AnyPublisher<[VotationDomainModel], AsynchronousError> {
         return Publishers.CombineLatest3(
             votationsRepository.getAll(code: code),
             participantsRepository.getAll(code: code),
@@ -40,7 +40,9 @@ class GetAllVotations: GetAllVotationsUseCase {
                 return VotationDomainModel(
                     name: $0.name,
                     votations: results,
-                    status: VotationDomainStatus(rawValue: $0.status) ?? .ended
+                    status: VotationDomainStatus(rawValue: $0.status) ?? .ended,
+                    alreadyVoted: results.keys.map({ $0.id }).contains(userId),
+                    creationDate: $0.creationDate
                 )
             }
         }.eraseToAnyPublisher()

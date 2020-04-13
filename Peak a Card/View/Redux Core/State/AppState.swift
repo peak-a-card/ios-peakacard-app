@@ -21,6 +21,13 @@ struct AppState {
     // Votations
     var startedVotations: [Votation] = []
     var endedVotations: [Votation] = []
+    var lastVotedVotation: Votation? {
+        let votation = startedVotations.first { $0.alreadyVoted }
+        if votation == nil {
+            return endedVotations.first { $0.alreadyVoted }
+        }
+        return votation
+    }
 
     // Effects Bag
     var cancelBag = Set<AnyCancellable>()

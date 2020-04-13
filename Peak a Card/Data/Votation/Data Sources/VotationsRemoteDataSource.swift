@@ -12,6 +12,7 @@ class VotationsRemoteDataSource {
         dataBase.collection("session")
             .document(code)
             .collection("votations")
+            .order(by: "creationDate", descending: true)
             .publisher(as: VotationDataModel.self)
             .mapError { _ in AsynchronousError.itemNotFound }
             .eraseToAnyPublisher()

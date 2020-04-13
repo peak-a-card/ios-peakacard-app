@@ -81,9 +81,9 @@ fileprivate func reduce(state: inout AppState, action: ParticipantsAction) -> Ef
 fileprivate func reduce(state: inout AppState, action: VotationAction) -> Effect? {
     switch action {
     case .getAll:
-        guard let code = state.sessionId else { return nil }
+        guard let code = state.sessionId, let userId = state.user?.id else { return nil }
         let getAllVotationsUseCase = DomainServiceLocator.shared.votations.provideGetAllVotationsUseCase()
-        return getAllVotationsUseCase.execute(code: code)
+        return getAllVotationsUseCase.execute(code: code, userId: userId)
             .map { votations in
                 votations.map {
                     var results: [Participant: Card] = [:]
@@ -93,7 +93,13 @@ fileprivate func reduce(state: inout AppState, action: VotationAction) -> Effect
                         let card = Card(score: $0.value.score)
                         results[participant] = card
                     }
-                    return Votation(name: $0.name, votations: results, status: $0.status == .started ? .started : .ended) }
+                    return Votation(
+                        name: $0.name,
+                        votations: results,
+                        status: $0.status == .started ? .started : .ended,
+                        alreadyVoted: $0.alreadyVoted,
+                        creationDate: $0.creationDate
+                    ) }
         }
         .map { AppAction.votation(.received(votations: $0)) }
         .catch { _ in Just(AppAction.doNothing) }
