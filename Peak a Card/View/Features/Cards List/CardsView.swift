@@ -7,6 +7,7 @@ struct CardsView: View {
     @State private var opacity: Double = 0.0
     @State private var yOffset: CGFloat = 100
     @State private var isFlipped: Bool = true
+    @State private var showLogoutConfirmationAlert = false
 
     var body: some View {
         NavigationView {
@@ -43,7 +44,24 @@ struct CardsView: View {
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear() {
             self.store.dispatch(action: .cards(.getAll))
-        }
+        }.navigationBarItems(trailing:
+            Button(action: {
+                self.showLogoutConfirmationAlert = true
+            }) {
+                Image(systemName: "power")
+                    .foregroundColor(Stylesheet.color(.onPrimary))
+            }
+            .alert(isPresented: $showLogoutConfirmationAlert) {
+                Alert(
+                    title: Text("close_session_title"),
+                    message: Text("close_session_message"),
+                    primaryButton: .default(Text("close_session_no")),
+                    secondaryButton: .destructive(Text("close_session_yes"), action: {
+                        self.store.dispatch(action: .session(.participantLogout))
+                    })
+                )
+            }
+        )
     }
 }
 
