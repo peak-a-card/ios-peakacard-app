@@ -3,6 +3,7 @@ import Combine
 
 protocol ParticipantsRepositoryProtocol {
     func getAll(code: String) -> AnyPublisher<[ParticipantDomainModel], AsynchronousError>
+    func remove(code: String, id: String) -> AnyPublisher<Void, AsynchronousError>
 }
 
 class ParticipantsRepository: ParticipantsRepositoryProtocol {
@@ -21,5 +22,9 @@ class ParticipantsRepository: ParticipantsRepositoryProtocol {
                 }
             }
         .eraseToAnyPublisher()
+    }
+
+    func remove(code: String, id: String) -> AnyPublisher<Void, AsynchronousError> {
+        return dataSource.remove(code: code, id: id)
     }
 }

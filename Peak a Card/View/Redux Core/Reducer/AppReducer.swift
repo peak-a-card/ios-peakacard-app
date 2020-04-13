@@ -13,7 +13,9 @@ func appReducer(state: inout AppState, action: AppAction) -> Effect? {
         return reduce(state: &state, action: action)
     case .detail(let action):
         return reduce(state: &state, action: action)
+    case .doNothing: return nil
     }
+
 }
 
 fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect? {
@@ -44,9 +46,21 @@ fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect?
     case .failed:
         state.sessionErrored = true
         state.isRequestingSession = false
-    case .logout:
+    case .participantLogout:
+        guard let code = state.sessionId, let userId = state.user?.id else { return nil }
+        let removeParticipantUseCase = DomainServiceLocator.shared.participants.provideRemoveParticipantUseCase()
+        return removeParticipantUseCase.execute(code: code, id: userId)
+            .map { AppAction.session(.exitSession) }
+            .catch { _ in Just(AppAction.doNothing) }
+            .eraseToAnyPublisher()
+    case .exitSession:
         state.cancelBag.forEach { $0.cancel() }
-        state = AppState()
+        state.isRequestingSession = false
+        state.sessionErrored = false
+        state.sessionId = nil
+        state.waitingForParticipants = false
+        state.participants = []
+        state.votations = []
     }
     return nil
 }

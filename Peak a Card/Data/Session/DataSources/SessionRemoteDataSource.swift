@@ -16,7 +16,7 @@ class SessionRemoteDataSource {
                 .document(code)
                 .collection("participants")
                 .document(user.id)
-                .setData(from: user.information)
+                .setData(from: user)
                 .eraseToAnyPublisher()
             }
         .mapError { _ in AsynchronousError.itemNotFound }

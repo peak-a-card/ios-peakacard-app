@@ -51,7 +51,7 @@ struct WaitVotingView: View {
                         message: Text("close_session_message"),
                         primaryButton: .default(Text("close_session_no")),
                         secondaryButton: .destructive(Text("close_session_yes"), action: {
-                            self.store.dispatch(action: .session(.logout))
+                            self.store.dispatch(action: .session(.participantLogout))
                         })
                     )
                 }

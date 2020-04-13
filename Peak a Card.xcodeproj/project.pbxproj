@@ -60,6 +60,7 @@
 		724DCB6E244470D60042F6DB /* WaitVotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB6D244470D60042F6DB /* WaitVotingView.swift */; };
 		724DCB75244480370042F6DB /* ParticipantDataServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB74244480370042F6DB /* ParticipantDataServiceLocator.swift */; };
 		724DCB78244480BF0042F6DB /* ParticipantDomainServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB77244480BF0042F6DB /* ParticipantDomainServiceLocator.swift */; };
+		724DCB7A2444A2E70042F6DB /* RemoveParticipantUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB792444A2E70042F6DB /* RemoveParticipantUseCase.swift */; };
 		7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F5BE23F5C81800A8DF54 /* Colors.swift */; };
 		7275F67123F5D60400A8DF54 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 7275F67023F5D60400A8DF54 /* GridStack */; };
 		7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67323F67F6000A8DF54 /* Stylesheet.swift */; };
@@ -140,6 +141,7 @@
 		724DCB6D244470D60042F6DB /* WaitVotingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitVotingView.swift; sourceTree = "<group>"; };
 		724DCB74244480370042F6DB /* ParticipantDataServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParticipantDataServiceLocator.swift; path = ../../../../../../../Documents/ParticipantDataServiceLocator.swift; sourceTree = "<group>"; };
 		724DCB77244480BF0042F6DB /* ParticipantDomainServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParticipantDomainServiceLocator.swift; path = ../../../../../../../Documents/ParticipantDomainServiceLocator.swift; sourceTree = "<group>"; };
+		724DCB792444A2E70042F6DB /* RemoveParticipantUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RemoveParticipantUseCase.swift; path = ../../../../../../../Documents/RemoveParticipantUseCase.swift; sourceTree = "<group>"; };
 		7275F5BE23F5C81800A8DF54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7275F67323F67F6000A8DF54 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
@@ -691,6 +693,7 @@
 			isa = PBXGroup;
 			children = (
 				724DCB6A24446FEB0042F6DB /* GetAllParticipantsUseCase.swift */,
+				724DCB792444A2E70042F6DB /* RemoveParticipantUseCase.swift */,
 			);
 			path = "Use Case";
 			sourceTree = "<group>";
@@ -1042,6 +1045,7 @@
 				7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */,
 				723FABF5240B0B6900226D43 /* DataServiceLocator.swift in Sources */,
 				724DCB5F24446CD60042F6DB /* ParticipantDataModel.swift in Sources */,
+				724DCB7A2444A2E70042F6DB /* RemoveParticipantUseCase.swift in Sources */,
 				723FACA4240B0EEA00226D43 /* CardsDomainServiceLocator.swift in Sources */,
 				723FACAA240B1FB400226D43 /* CardBackView.swift in Sources */,
 				724DCB5024424C8A0042F6DB /* AppearanceSetupTask.swift in Sources */,

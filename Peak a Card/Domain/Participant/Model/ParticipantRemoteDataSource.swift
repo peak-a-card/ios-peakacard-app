@@ -17,4 +17,13 @@ class ParticipantRemoteDataSource {
             .eraseToAnyPublisher()
     }
 
+    func remove(code: String, id: String) -> AnyPublisher<Void, AsynchronousError> {
+        dataBase.collection("session")
+            .document(code)
+            .collection("participants")
+            .document(id)
+            .delete()
+            .mapError { error in AsynchronousError.unknown(error: error) }
+            .eraseToAnyPublisher()
+    }
 }

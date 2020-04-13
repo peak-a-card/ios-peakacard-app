@@ -1,6 +1,7 @@
 import Foundation
 
 enum AppAction {
+    case doNothing
     case session(SessionAction)
     case participants(ParticipantsAction)
     case cards(CardsAction)
@@ -12,7 +13,8 @@ enum SessionAction {
     case start(code: String, user: User)
     case started(code: String)
     case failed(error: AsynchronousError)
-    case logout
+    case participantLogout
+    case exitSession
 }
 
 enum ParticipantsAction {

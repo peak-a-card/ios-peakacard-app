@@ -15,7 +15,7 @@ class SessionRepository: SessionRepositoryProtocol {
     }
 
     func join(code: String, user: UserDomainModel) -> AnyPublisher<Void, AsynchronousError> {
-        let userDataModel = UserDataModel(id: user.id, information: UserInformationDataModel(name: user.name, email: user.email))
+        let userDataModel = UserDataModel(id: user.id, name: user.name, email: user.email)
         return dataSource.join(code: code, user: userDataModel)
     }
 
