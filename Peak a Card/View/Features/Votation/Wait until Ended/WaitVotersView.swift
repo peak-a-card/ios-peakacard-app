@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct WaitVotingView: View {
+struct WaitVotersView: View {
 
     @EnvironmentObject var store: AppStore
     @State private var activityIndicatorIsAnimating = true
@@ -9,25 +9,30 @@ struct WaitVotingView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Text("wait_voting_start_title")
-                        .fontWeight(.medium)
-                        .font(Stylesheet.font(.l))
-                        .foregroundColor(Stylesheet.color(.primary))
-                        .lineLimit(.none)
-                    ActivityIndicator(
-                        isAnimating: self.$activityIndicatorIsAnimating,
-                        style: .medium,
-                        color: Stylesheet.color(.primary)
-                    )
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top)
+                Text("wait_voters_title")
+                    .fontWeight(.medium)
+                    .font(Stylesheet.font(.l))
+                    .foregroundColor(Stylesheet.color(.primary))
+                    .lineLimit(.none)
+                    .padding(.top)
 
                 List(self.store.state.participants) { participant in
-                    Text(participant.name)
-                        .font(Stylesheet.font(.m))
-                        .foregroundColor(Stylesheet.color(.primary))
+                    HStack {
+                        Text(participant.name)
+                            .font(Stylesheet.font(.m))
+                            .foregroundColor(Stylesheet.color(.primary))
+
+                        if self.store.state.lastVotedVotation!.votations[participant] == nil {
+                            ActivityIndicator(
+                                isAnimating: self.$activityIndicatorIsAnimating,
+                                style: .medium,
+                                color: Stylesheet.color(.primary)
+                            )
+                        } else {
+                            Image(systemName: "checkmark.circle")
+                                .foregroundColor(Stylesheet.color(.success))
+                        }
+                    }
                 }.onAppear {
                     UITableView.appearance().tableFooterView = UIView()
                     UITableView.appearance().separatorStyle = .none
@@ -59,11 +64,5 @@ struct WaitVotingView: View {
         }.onAppear {
             self.store.dispatch(action: .votation(.getAll))
         }
-    }
-}
-
-struct WaitVotingView_Previews: PreviewProvider {
-    static var previews: some View {
-        WaitVotingView()
     }
 }

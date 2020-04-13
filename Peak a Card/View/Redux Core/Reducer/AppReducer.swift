@@ -40,7 +40,7 @@ fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect?
         let getAllParticipantsUseCase = DomainServiceLocator.shared.participants.provideGetAllParticipantsUseCase()
         return getAllParticipantsUseCase.execute(code: code)
             .map { participants in
-                let models = participants.map { Participant(id: $0.email, name: $0.name) }
+                let models = participants.map { Participant(id: $0.id, name: $0.name) }
                 return AppAction.participants(.received(participants: models))
             }
         .catch { _ in Just(AppAction.participants(.failed)) }
@@ -105,6 +105,7 @@ fileprivate func reduce(state: inout AppState, action: VotationAction) -> Effect
         .catch { _ in Just(AppAction.doNothing) }
         .eraseToAnyPublisher()
     case .received(let votations):
+        state.waitingForParticipants = false
         state.startedVotations = votations.filter { $0.status == .started }
         state.endedVotations = votations.filter { $0.status == .ended }
     }

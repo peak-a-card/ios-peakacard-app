@@ -17,3 +17,4 @@
 "close_session_message" = "Do you want to close the current session?";
 "close_session_yes" = "Yes";
 "close_session_no" = "No";
+"wait_voters_title" = "Waiting other participants to vote...";
