@@ -56,6 +56,8 @@ struct WaitVotingView: View {
                     )
                 }
             )
+        }.onAppear {
+            self.store.dispatch(action: .votation(.getAll))
         }
     }
 }

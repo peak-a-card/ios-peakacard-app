@@ -16,6 +16,7 @@ struct CardView: View {
                 Text(card.text)
                     .fontWeight(.medium)
                     .font(Stylesheet.font(.xl))
+                    .frame(maxWidth: .infinity)
                     .foregroundColor(Stylesheet.color(.primary))
                     .padding()
                     .lineLimit(.none)

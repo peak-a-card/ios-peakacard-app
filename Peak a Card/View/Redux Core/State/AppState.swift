@@ -17,7 +17,13 @@ struct AppState {
     // Participants
     var waitingForParticipants = false
     var participants: [Participant] = []
-    var votations: [String] = []
+
+    // Votations
+    var allVotations: [Votation] {
+        startedVotations + endedVotations
+    }
+    var startedVotations: [Votation] = []
+    var endedVotations: [Votation] = []
 
     // Effects Bag
     var cancelBag = Set<AnyCancellable>()

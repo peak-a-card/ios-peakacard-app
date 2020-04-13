@@ -1,6 +1,13 @@
 import Foundation
 
 struct VotationDataModel: Codable {
-    private let name: String
-    private let votations: [String]
+    let name: String
+    let votations: [String: String]
+    let status: String
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case votations = "participant_votation"
+        case status
+    }
 }

@@ -61,6 +61,13 @@
 		724DCB75244480370042F6DB /* ParticipantDataServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB74244480370042F6DB /* ParticipantDataServiceLocator.swift */; };
 		724DCB78244480BF0042F6DB /* ParticipantDomainServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB77244480BF0042F6DB /* ParticipantDomainServiceLocator.swift */; };
 		724DCB7A2444A2E70042F6DB /* RemoveParticipantUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB792444A2E70042F6DB /* RemoveParticipantUseCase.swift */; };
+		724DCB7D2444ACBA0042F6DB /* VotationsRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB7C2444ACBA0042F6DB /* VotationsRemoteDataSource.swift */; };
+		724DCB7F2444AE810042F6DB /* VotationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB7E2444AE810042F6DB /* VotationsRepository.swift */; };
+		724DCB832444AEE80042F6DB /* VotationDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB822444AEE80042F6DB /* VotationDomainModel.swift */; };
+		724DCB872444B38F0042F6DB /* Votation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB862444B38F0042F6DB /* Votation.swift */; };
+		724DCB8A2444B6830042F6DB /* GetAllVotationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB892444B6830042F6DB /* GetAllVotationsUseCase.swift */; };
+		724DCB8E2444B7430042F6DB /* VotationDataServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB8D2444B7430042F6DB /* VotationDataServiceLocator.swift */; };
+		724DCB912444B7D90042F6DB /* VotationDomainServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB902444B7D90042F6DB /* VotationDomainServiceLocator.swift */; };
 		7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F5BE23F5C81800A8DF54 /* Colors.swift */; };
 		7275F67123F5D60400A8DF54 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 7275F67023F5D60400A8DF54 /* GridStack */; };
 		7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67323F67F6000A8DF54 /* Stylesheet.swift */; };
@@ -142,6 +149,13 @@
 		724DCB74244480370042F6DB /* ParticipantDataServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParticipantDataServiceLocator.swift; path = ../../../../../../../Documents/ParticipantDataServiceLocator.swift; sourceTree = "<group>"; };
 		724DCB77244480BF0042F6DB /* ParticipantDomainServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParticipantDomainServiceLocator.swift; path = ../../../../../../../Documents/ParticipantDomainServiceLocator.swift; sourceTree = "<group>"; };
 		724DCB792444A2E70042F6DB /* RemoveParticipantUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RemoveParticipantUseCase.swift; path = ../../../../../../../Documents/RemoveParticipantUseCase.swift; sourceTree = "<group>"; };
+		724DCB7C2444ACBA0042F6DB /* VotationsRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotationsRemoteDataSource.swift; sourceTree = "<group>"; };
+		724DCB7E2444AE810042F6DB /* VotationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotationsRepository.swift; sourceTree = "<group>"; };
+		724DCB822444AEE80042F6DB /* VotationDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotationDomainModel.swift; sourceTree = "<group>"; };
+		724DCB862444B38F0042F6DB /* Votation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Votation.swift; sourceTree = "<group>"; };
+		724DCB892444B6830042F6DB /* GetAllVotationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllVotationsUseCase.swift; sourceTree = "<group>"; };
+		724DCB8D2444B7430042F6DB /* VotationDataServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotationDataServiceLocator.swift; sourceTree = "<group>"; };
+		724DCB902444B7D90042F6DB /* VotationDomainServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotationDomainServiceLocator.swift; sourceTree = "<group>"; };
 		7275F5BE23F5C81800A8DF54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7275F67323F67F6000A8DF54 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
@@ -253,6 +267,7 @@
 				7213F6EF243CCAA6003A53E3 /* Session */,
 				724DCA68244110D40042F6DB /* User */,
 				724DCB6224446D2D0042F6DB /* Participant */,
+				724DCB802444AED20042F6DB /* Votations */,
 				721664CA24084CFA00C9A0FF /* Card */,
 			);
 			path = Domain;
@@ -541,6 +556,9 @@
 		72433A00243BAACC00FCD598 /* Votation */ = {
 			isa = PBXGroup;
 			children = (
+				724DCB8C2444B72E0042F6DB /* Service Locator */,
+				724DCB8B2444B7260042F6DB /* Repository */,
+				724DCB7B2444AC9E0042F6DB /* Data Sources */,
 				72433A01243BAAD200FCD598 /* Model */,
 			);
 			path = Votation;
@@ -698,12 +716,13 @@
 			path = "Use Case";
 			sourceTree = "<group>";
 		};
-		724DCB6C2444704D0042F6DB /* Wait Voting */ = {
+		724DCB6C2444704D0042F6DB /* Votation */ = {
 			isa = PBXGroup;
 			children = (
-				724DCB6D244470D60042F6DB /* WaitVotingView.swift */,
+				724DCB852444B3200042F6DB /* Model */,
+				724DCB842444B3170042F6DB /* Waiting */,
 			);
-			path = "Wait Voting";
+			path = Votation;
 			sourceTree = "<group>";
 		};
 		724DCB73244480250042F6DB /* Service Locator */ = {
@@ -718,6 +737,80 @@
 			isa = PBXGroup;
 			children = (
 				724DCB77244480BF0042F6DB /* ParticipantDomainServiceLocator.swift */,
+			);
+			path = "Service Locator";
+			sourceTree = "<group>";
+		};
+		724DCB7B2444AC9E0042F6DB /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB7C2444ACBA0042F6DB /* VotationsRemoteDataSource.swift */,
+			);
+			path = "Data Sources";
+			sourceTree = "<group>";
+		};
+		724DCB802444AED20042F6DB /* Votations */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB8F2444B7C80042F6DB /* Service Locator */,
+				724DCB882444B6730042F6DB /* Use Case */,
+				724DCB812444AEDC0042F6DB /* Model */,
+			);
+			path = Votations;
+			sourceTree = "<group>";
+		};
+		724DCB812444AEDC0042F6DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB822444AEE80042F6DB /* VotationDomainModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		724DCB842444B3170042F6DB /* Waiting */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB6D244470D60042F6DB /* WaitVotingView.swift */,
+			);
+			path = Waiting;
+			sourceTree = "<group>";
+		};
+		724DCB852444B3200042F6DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB862444B38F0042F6DB /* Votation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		724DCB882444B6730042F6DB /* Use Case */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB892444B6830042F6DB /* GetAllVotationsUseCase.swift */,
+			);
+			path = "Use Case";
+			sourceTree = "<group>";
+		};
+		724DCB8B2444B7260042F6DB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB7E2444AE810042F6DB /* VotationsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		724DCB8C2444B72E0042F6DB /* Service Locator */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB8D2444B7430042F6DB /* VotationDataServiceLocator.swift */,
+			);
+			path = "Service Locator";
+			sourceTree = "<group>";
+		};
+		724DCB8F2444B7C80042F6DB /* Service Locator */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB902444B7D90042F6DB /* VotationDomainServiceLocator.swift */,
 			);
 			path = "Service Locator";
 			sourceTree = "<group>";
@@ -772,7 +865,7 @@
 			children = (
 				72AA238D243B91A100D2D1E6 /* Container */,
 				72AA2386243B77AD00D2D1E6 /* Session */,
-				724DCB6C2444704D0042F6DB /* Wait Voting */,
+				724DCB6C2444704D0042F6DB /* Votation */,
 				723FABED240A9EE900226D43 /* Card Detail */,
 				721665782408513C00C9A0FF /* Cards List */,
 			);
@@ -1003,6 +1096,7 @@
 			files = (
 				721664C624084BE000C9A0FF /* InMemoryCardsDataSource.swift in Sources */,
 				7213F746243CE020003A53E3 /* AsynchronousError.swift in Sources */,
+				724DCB8A2444B6830042F6DB /* GetAllVotationsUseCase.swift in Sources */,
 				724DCB5A244368960042F6DB /* AppleButton.swift in Sources */,
 				7232AEE523F477B700FAEAA9 /* AppDelegate.swift in Sources */,
 				723FAC9D240B0C4900226D43 /* CardsDataServiceLocator.swift in Sources */,
@@ -1011,6 +1105,7 @@
 				7232AEE723F477B700FAEAA9 /* SceneDelegate.swift in Sources */,
 				7213F6EE243CC85B003A53E3 /* SessionDataServiceLocator.swift in Sources */,
 				7232AEE923F477B700FAEAA9 /* CardsView.swift in Sources */,
+				724DCB7D2444ACBA0042F6DB /* VotationsRemoteDataSource.swift in Sources */,
 				7232AF0E23F5BFDD00FAEAA9 /* CardView.swift in Sources */,
 				7231913723F89F3100A3ECFC /* AppStore.swift in Sources */,
 				724DCB6E244470D60042F6DB /* WaitVotingView.swift in Sources */,
@@ -1021,8 +1116,10 @@
 				7275F67823F67F8000A8DF54 /* StylesheetTheme.swift in Sources */,
 				721664CD24084D1000C9A0FF /* CardDomainModel.swift in Sources */,
 				72433A03243BAADC00FCD598 /* VotationDataModel.swift in Sources */,
+				724DCB912444B7D90042F6DB /* VotationDomainServiceLocator.swift in Sources */,
 				724DCA70244113150042F6DB /* Participant.swift in Sources */,
 				72AA238F243B91B100D2D1E6 /* ContainerView.swift in Sources */,
+				724DCB8E2444B7430042F6DB /* VotationDataServiceLocator.swift in Sources */,
 				7231913423F89C1A00A3ECFC /* AppReducer.swift in Sources */,
 				72AA2389243B77E200D2D1E6 /* JoinSessionView.swift in Sources */,
 				724DCB5224425DDB0042F6DB /* User.swift in Sources */,
@@ -1037,6 +1134,7 @@
 				721664C924084CAB00C9A0FF /* CardsRepository.swift in Sources */,
 				724DCB6B24446FEB0042F6DB /* GetAllParticipantsUseCase.swift in Sources */,
 				7213F741243CD3E2003A53E3 /* JoinSessionUseCase.swift in Sources */,
+				724DCB832444AEE80042F6DB /* VotationDomainModel.swift in Sources */,
 				72433A07243BAB9700FCD598 /* SessionRemoteDataSource.swift in Sources */,
 				7275F67623F67F6D00A8DF54 /* MainTheme.swift in Sources */,
 				724DCB5424434E770042F6DB /* VerifySessionUseCase.swift in Sources */,
@@ -1048,7 +1146,9 @@
 				724DCB7A2444A2E70042F6DB /* RemoveParticipantUseCase.swift in Sources */,
 				723FACA4240B0EEA00226D43 /* CardsDomainServiceLocator.swift in Sources */,
 				723FACAA240B1FB400226D43 /* CardBackView.swift in Sources */,
+				724DCB872444B38F0042F6DB /* Votation.swift in Sources */,
 				724DCB5024424C8A0042F6DB /* AppearanceSetupTask.swift in Sources */,
+				724DCB7F2444AE810042F6DB /* VotationsRepository.swift in Sources */,
 				7213F744243CD4CA003A53E3 /* SessionDomainServiceLocator.swift in Sources */,
 				721664C224084B9400C9A0FF /* CardDataModel.swift in Sources */,
 				723FACA2240B0E6E00226D43 /* DomainServiceLocator.swift in Sources */,

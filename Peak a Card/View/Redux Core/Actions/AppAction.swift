@@ -6,6 +6,7 @@ enum AppAction {
     case participants(ParticipantsAction)
     case cards(CardsAction)
     case detail(CardAction)
+    case votation(VotationAction)
 }
 
 enum SessionAction {
@@ -20,6 +21,11 @@ enum SessionAction {
 enum ParticipantsAction {
     case received(participants: [Participant])
     case failed
+}
+
+enum VotationAction {
+    case getAll
+    case received(votations: [Votation])
 }
 
 enum CardsAction {

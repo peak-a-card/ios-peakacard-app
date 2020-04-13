@@ -9,6 +9,8 @@ func appReducer(state: inout AppState, action: AppAction) -> Effect? {
         return reduce(state: &state, action: action)
     case .participants(let action):
         return reduce(state: &state, action: action)
+    case .votation(let action):
+        return reduce(state: &state, action: action)
     case .cards(let action):
         return reduce(state: &state, action: action)
     case .detail(let action):
@@ -60,7 +62,8 @@ fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect?
         state.sessionId = nil
         state.waitingForParticipants = false
         state.participants = []
-        state.votations = []
+        state.startedVotations = []
+        state.endedVotations = []
     }
     return nil
 }
@@ -71,6 +74,25 @@ fileprivate func reduce(state: inout AppState, action: ParticipantsAction) -> Ef
         state.participants = participants
     case .failed:
         break
+    }
+    return nil
+}
+
+fileprivate func reduce(state: inout AppState, action: VotationAction) -> Effect? {
+    switch action {
+    case .getAll:
+        guard let code = state.sessionId else { return nil }
+        let getAllVotationsUseCase = DomainServiceLocator.shared.votations.provideGetAllVotationsUseCase()
+        return getAllVotationsUseCase.execute(code: code)
+            .map { votations in
+                votations.map { Votation(name: $0.name, votations: $0.votations, status: $0.status == .started ? .started : .ended) }
+        }
+        .map { AppAction.votation(.received(votations: $0)) }
+        .catch { _ in Just(AppAction.doNothing) }
+        .eraseToAnyPublisher()
+    case .received(let votations):
+        state.startedVotations = votations.filter { $0.status == .started }
+        state.endedVotations = votations.filter { $0.status == .ended }
     }
     return nil
 }

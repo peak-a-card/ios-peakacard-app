@@ -8,7 +8,7 @@ struct ContainerView: View {
         ZStack {
             if store.state.sessionId != nil &&
                 store.state.user != nil &&
-                !store.state.votations.isEmpty {
+                !store.state.startedVotations.isEmpty {
                 CardsView().environmentObject(store)
             } else if store.state.waitingForParticipants {
                 WaitVotingView().environmentObject(store)

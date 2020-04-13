@@ -11,17 +11,21 @@ class DataServiceLocator {
     let cards: CardsDataServiceLocator
     let session: SessionDataServiceLocator
     let participants: ParticipantDataServiceLocator
+    let votations: VotationDataServiceLocator
 
     init(cards: CardsDataServiceLocator,
          session: SessionDataServiceLocator,
-         participants: ParticipantDataServiceLocator) {
+         participants: ParticipantDataServiceLocator,
+         votations: VotationDataServiceLocator) {
         self.cards = cards
         self.session = session
         self.participants = participants
+        self.votations = votations
 
         cards.root = self
         session.root = self
         participants.root = self
+        votations.root = self
     }
 }
 
@@ -32,6 +36,7 @@ extension DataServiceLocator {
         private var cards = CardsDataServiceLocator()
         private var session = SessionDataServiceLocator()
         private var participants = ParticipantDataServiceLocator()
+        private var votations = VotationDataServiceLocator()
 
         func with(serviceLocator cards: CardsDataServiceLocator) -> Builder {
             self.cards = cards
@@ -48,11 +53,17 @@ extension DataServiceLocator {
             return self
         }
 
+        func with(serviceLocator votations: VotationDataServiceLocator) -> Builder {
+            self.votations = votations
+            return self
+        }
+
         func build() -> DataServiceLocator {
             return DataServiceLocator(
                 cards: cards,
                 session: session,
-                participants: participants
+                participants: participants,
+                votations: votations
             )
         }
     }
