@@ -19,9 +19,6 @@ struct AppState {
     var participants: [Participant] = []
 
     // Votations
-    var allVotations: [Votation] {
-        startedVotations + endedVotations
-    }
     var startedVotations: [Votation] = []
     var endedVotations: [Votation] = []
 

@@ -31,10 +31,29 @@ struct Card: Codable, Identifiable {
             case 20.0: self = .twenty
             case 40.0: self = .fourty
             case 100.0: self = .hundred
-            case Float.infinity: self = .infinity
+            case 999.0: self = .infinity
             case -1.0: self = .unknown
             case -2.0: self = .coffee
             default: self = .unknown
+            }
+        }
+
+        var score: Float {
+            switch self {
+            case .zero: return 0.0
+            case .half: return 0.5
+            case .one: return 1.0
+            case .two: return 2.0
+            case .three: return 3.0
+            case .five: return 5.0
+            case .eight: return 8.0
+            case .thirteen: return 13.0
+            case .twenty: return 20.0
+            case .fourty: return 40.0
+            case .hundred: return 100.0
+            case .infinity: return 999.0
+            case .unknown: return -1.0
+            case .coffee: return -2.0
             }
         }
     }

@@ -42,7 +42,7 @@ struct CardsView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear() {
-            self.store.dispatch(action: .cards(.get))
+            self.store.dispatch(action: .cards(.getAll))
         }
     }
 }

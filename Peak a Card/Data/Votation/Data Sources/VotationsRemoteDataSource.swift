@@ -16,4 +16,14 @@ class VotationsRemoteDataSource {
             .mapError { _ in AsynchronousError.itemNotFound }
             .eraseToAnyPublisher()
     }
+
+    func submit(code: String, votationId: String, participantId: String, score: Float) -> AnyPublisher<Void, AsynchronousError> {
+        dataBase.collection("session")
+            .document(code)
+            .collection("votations")
+            .document(votationId)
+            .setData(["participant_votation": [participantId: score]], merge: true)
+            .mapError { error in AsynchronousError.unknown(error: error) }
+            .eraseToAnyPublisher()
+    }
 }

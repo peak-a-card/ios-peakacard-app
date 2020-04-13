@@ -15,5 +15,11 @@ class GetAllParticipants: GetAllParticipantsUseCase {
 
     func execute(code: String) -> AnyPublisher<[ParticipantDomainModel], AsynchronousError> {
         return repository.getAll(code: code)
+            .map { participants -> [ParticipantDomainModel] in
+                participants.map {
+                    ParticipantDomainModel(id: $0.id, name: $0.name, email: $0.email)
+                }
+        }
+        .eraseToAnyPublisher()
     }
 }

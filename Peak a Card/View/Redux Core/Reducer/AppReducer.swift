@@ -85,7 +85,15 @@ fileprivate func reduce(state: inout AppState, action: VotationAction) -> Effect
         let getAllVotationsUseCase = DomainServiceLocator.shared.votations.provideGetAllVotationsUseCase()
         return getAllVotationsUseCase.execute(code: code)
             .map { votations in
-                votations.map { Votation(name: $0.name, votations: $0.votations, status: $0.status == .started ? .started : .ended) }
+                votations.map {
+                    var results: [Participant: Card] = [:]
+
+                    $0.votations.forEach {
+                        let participant = Participant(id: $0.key.id, name: $0.key.name)
+                        let card = Card(score: $0.value.score)
+                        results[participant] = card
+                    }
+                    return Votation(name: $0.name, votations: results, status: $0.status == .started ? .started : .ended) }
         }
         .map { AppAction.votation(.received(votations: $0)) }
         .catch { _ in Just(AppAction.doNothing) }
@@ -99,10 +107,15 @@ fileprivate func reduce(state: inout AppState, action: VotationAction) -> Effect
 
 fileprivate func reduce(state: inout AppState, action: CardsAction) -> Effect? {
     switch action {
-    case .get:
+    case .getAll:
         let getCardsUseCase = DomainServiceLocator.shared.cards.provideGetCardsUseCase()
-        let cards = getCardsUseCase.getCards()
-        state.cards = cards.map { Card(score: $0.score) }
+        return getCardsUseCase.getAll()
+            .map { $0.map { Card(score: $0.score) } }
+            .map { AppAction.cards(.received(cards: $0)) }
+            .catch { _ in Just(AppAction.doNothing) }
+            .eraseToAnyPublisher()
+    case .received(let cards):
+        state.cards = cards
     case .select(let card):
         state.selectedCard = card
     }
@@ -114,8 +127,17 @@ fileprivate func reduce(state: inout AppState, action: CardAction) -> Effect? {
     case .dismiss:
         state.selectedCard = nil
     case .submit:
-        // TODO: Send card
+        guard
+            let code = state.sessionId,
+            let votationId = state.startedVotations.last?.name,
+            let userId = state.user?.id,
+            let card = state.selectedCard else { return nil }
         state.selectedCard = nil
+        let submitVotationUseCase = DomainServiceLocator.shared.votations.provideSubmitVotationUseCase()
+        return submitVotationUseCase.execute(code: code, votationId: votationId, participantId: userId, score: card.id.score)
+            .map { AppAction.doNothing }
+            .catch { error in Just(AppAction.cards(.select(card: card))) }
+            .eraseToAnyPublisher()
     }
     return nil
 }

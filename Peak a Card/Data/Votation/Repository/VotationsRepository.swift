@@ -2,7 +2,8 @@ import Foundation
 import Combine
 
 protocol VotationsRepositoryProtocol {
-    func getAll(code: String) -> AnyPublisher<[VotationDomainModel], AsynchronousError>
+    func getAll(code: String) -> AnyPublisher<[VotationDataModel], AsynchronousError>
+    func submit(code: String, votationId: String, participantId: String, score: Float) -> AnyPublisher<Void, AsynchronousError>
 }
 
 class VotationsRepository: VotationsRepositoryProtocol {
@@ -13,16 +14,11 @@ class VotationsRepository: VotationsRepositoryProtocol {
         self.dataSource = dataSource
     }
 
-    func getAll(code: String) -> AnyPublisher<[VotationDomainModel], AsynchronousError> {
+    func getAll(code: String) -> AnyPublisher<[VotationDataModel], AsynchronousError> {
         return dataSource.getAll(code: code)
-            .map { votations in
-                votations.map {
-                    VotationDomainModel(
-                        name: $0.name,
-                        votations: $0.votations,
-                        status: VotationDomainStatus(rawValue: $0.status) ?? .ended
-                    )
-                }
-        }.eraseToAnyPublisher()
+    }
+
+    func submit(code: String, votationId: String, participantId: String, score: Float) -> AnyPublisher<Void, AsynchronousError> {
+        return dataSource.submit(code: code, votationId: votationId, participantId: participantId, score: score)
     }
 }

@@ -2,7 +2,8 @@ import Foundation
 import Combine
 
 protocol ParticipantsRepositoryProtocol {
-    func getAll(code: String) -> AnyPublisher<[ParticipantDomainModel], AsynchronousError>
+    func get(code: String, id: String) -> AnyPublisher<ParticipantDataModel, AsynchronousError>
+    func getAll(code: String) -> AnyPublisher<[ParticipantDataModel], AsynchronousError>
     func remove(code: String, id: String) -> AnyPublisher<Void, AsynchronousError>
 }
 
@@ -14,14 +15,12 @@ class ParticipantsRepository: ParticipantsRepositoryProtocol {
         self.dataSource = dataSource
     }
 
-    func getAll(code: String) -> AnyPublisher<[ParticipantDomainModel], AsynchronousError> {
+    func get(code: String, id: String) -> AnyPublisher<ParticipantDataModel, AsynchronousError> {
+        return dataSource.get(code: code, id: id)
+    }
+
+    func getAll(code: String) -> AnyPublisher<[ParticipantDataModel], AsynchronousError> {
         return dataSource.getAll(code: code)
-            .map { participants -> [ParticipantDomainModel] in
-                participants.map {
-                    ParticipantDomainModel(name: $0.name, email: $0.email)
-                }
-            }
-        .eraseToAnyPublisher()
     }
 
     func remove(code: String, id: String) -> AnyPublisher<Void, AsynchronousError> {

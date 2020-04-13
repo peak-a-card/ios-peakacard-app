@@ -68,6 +68,7 @@
 		724DCB8A2444B6830042F6DB /* GetAllVotationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB892444B6830042F6DB /* GetAllVotationsUseCase.swift */; };
 		724DCB8E2444B7430042F6DB /* VotationDataServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB8D2444B7430042F6DB /* VotationDataServiceLocator.swift */; };
 		724DCB912444B7D90042F6DB /* VotationDomainServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB902444B7D90042F6DB /* VotationDomainServiceLocator.swift */; };
+		724DCB932444BF190042F6DB /* SubmitVotationUseCae.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB922444BF190042F6DB /* SubmitVotationUseCae.swift */; };
 		7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F5BE23F5C81800A8DF54 /* Colors.swift */; };
 		7275F67123F5D60400A8DF54 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 7275F67023F5D60400A8DF54 /* GridStack */; };
 		7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67323F67F6000A8DF54 /* Stylesheet.swift */; };
@@ -156,6 +157,7 @@
 		724DCB892444B6830042F6DB /* GetAllVotationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllVotationsUseCase.swift; sourceTree = "<group>"; };
 		724DCB8D2444B7430042F6DB /* VotationDataServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotationDataServiceLocator.swift; sourceTree = "<group>"; };
 		724DCB902444B7D90042F6DB /* VotationDomainServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotationDomainServiceLocator.swift; sourceTree = "<group>"; };
+		724DCB922444BF190042F6DB /* SubmitVotationUseCae.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitVotationUseCae.swift; sourceTree = "<group>"; };
 		7275F5BE23F5C81800A8DF54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7275F67323F67F6000A8DF54 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
@@ -787,6 +789,7 @@
 			isa = PBXGroup;
 			children = (
 				724DCB892444B6830042F6DB /* GetAllVotationsUseCase.swift */,
+				724DCB922444BF190042F6DB /* SubmitVotationUseCae.swift */,
 			);
 			path = "Use Case";
 			sourceTree = "<group>";
@@ -1130,6 +1133,7 @@
 				721664D024084D8C00C9A0FF /* GetCardsUseCase.swift in Sources */,
 				724DCB5724435DD50042F6DB /* GoogleButton.swift in Sources */,
 				724DCB75244480370042F6DB /* ParticipantDataServiceLocator.swift in Sources */,
+				724DCB932444BF190042F6DB /* SubmitVotationUseCae.swift in Sources */,
 				72AA238C243B89B700D2D1E6 /* ActivityIndicator.swift in Sources */,
 				721664C924084CAB00C9A0FF /* CardsRepository.swift in Sources */,
 				724DCB6B24446FEB0042F6DB /* GetAllParticipantsUseCase.swift in Sources */,

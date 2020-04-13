@@ -1,7 +1,8 @@
 import Foundation
+import Combine
 
 protocol GetCardsUseCase {
-    func getCards() -> [CardDomainModel]
+    func getAll() -> AnyPublisher<[CardDomainModel], AsynchronousError>
 }
 
 class GetCards: GetCardsUseCase {
@@ -12,7 +13,9 @@ class GetCards: GetCardsUseCase {
         self.cardsRepository = cardsRepository
     }
 
-    func getCards() -> [CardDomainModel] {
-        return cardsRepository.getCards()
+    func getAll() -> AnyPublisher<[CardDomainModel], AsynchronousError> {
+        return cardsRepository.getAll()
+            .map { $0.map { CardDomainModel(score: $0.score) } }
+            .eraseToAnyPublisher()
     }
 }

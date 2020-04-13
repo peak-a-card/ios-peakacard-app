@@ -2,7 +2,7 @@ import Foundation
 
 struct VotationDataModel: Codable {
     let name: String
-    let votations: [String: String]
+    let votations: [String: Float]
     let status: String
 
     enum CodingKeys: String, CodingKey {

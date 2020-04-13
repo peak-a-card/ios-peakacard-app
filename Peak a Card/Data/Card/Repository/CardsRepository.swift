@@ -1,7 +1,8 @@
 import Foundation
+import Combine
 
 protocol CardsRepositoryProtocol {
-    func getCards() -> [CardDomainModel]
+    func getAll() -> AnyPublisher<[CardDataModel], AsynchronousError>
 }
 
 class CardsRepository: CardsRepositoryProtocol {
@@ -12,7 +13,9 @@ class CardsRepository: CardsRepositoryProtocol {
         self.dataSource = dataSource
     }
 
-    func getCards() -> [CardDomainModel] {
-        dataSource.get().map { CardDomainModel(score: $0.score) }
+    func getAll() -> AnyPublisher<[CardDataModel], AsynchronousError> {
+        return Just(dataSource.get())
+            .mapError { _ in AsynchronousError.itemNotFound }
+            .eraseToAnyPublisher()
     }
 }

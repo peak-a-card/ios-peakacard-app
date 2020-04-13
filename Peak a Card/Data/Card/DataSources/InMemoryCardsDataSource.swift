@@ -14,7 +14,7 @@ class InMemoryCardsDataSource {
         CardDataModel(score: 20.0),
         CardDataModel(score: 40.0),
         CardDataModel(score: 100.0),
-        CardDataModel(score: Float.infinity),
+        CardDataModel(score: 999.0),
         CardDataModel(score: -1.0),
         CardDataModel(score: -2.0),
     ]

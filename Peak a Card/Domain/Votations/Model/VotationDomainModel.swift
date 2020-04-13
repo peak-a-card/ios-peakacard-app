@@ -7,6 +7,6 @@ enum VotationDomainStatus: String  {
 
 struct VotationDomainModel {
     let name: String
-    let votations: [String: String]
+    let votations: [ParticipantDomainModel: CardDomainModel]
     let status: VotationDomainStatus
 }

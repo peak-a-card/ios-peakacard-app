@@ -29,7 +29,8 @@ enum VotationAction {
 }
 
 enum CardsAction {
-    case get
+    case getAll
+    case received(cards: [Card])
     case select(card: Card)
 }
 

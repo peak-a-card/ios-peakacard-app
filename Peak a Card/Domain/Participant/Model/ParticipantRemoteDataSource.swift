@@ -8,6 +8,17 @@ class ParticipantRemoteDataSource {
 
     private let dataBase = Firestore.firestore()
 
+    func get(code: String, id: String) -> AnyPublisher<ParticipantDataModel, AsynchronousError> {
+        dataBase.collection("session")
+            .document(code)
+            .collection("participants")
+            .document(id)
+            .getDocument(as: ParticipantDataModel.self)
+            .map { $0! }
+            .mapError { _ in AsynchronousError.itemNotFound }
+            .eraseToAnyPublisher()
+    }
+
     func getAll(code: String) -> AnyPublisher<[ParticipantDataModel], AsynchronousError> {
         dataBase.collection("session")
             .document(code)
