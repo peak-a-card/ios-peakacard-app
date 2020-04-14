@@ -70,6 +70,7 @@
 		724DCB912444B7D90042F6DB /* VotationDomainServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB902444B7D90042F6DB /* VotationDomainServiceLocator.swift */; };
 		724DCB932444BF190042F6DB /* SubmitVotationUseCae.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB922444BF190042F6DB /* SubmitVotationUseCae.swift */; };
 		724DCB962444E5420042F6DB /* WaitVotersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB952444E5420042F6DB /* WaitVotersView.swift */; };
+		724DCB992444F46A0042F6DB /* VotingResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB982444F46A0042F6DB /* VotingResultsView.swift */; };
 		7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F5BE23F5C81800A8DF54 /* Colors.swift */; };
 		7275F67123F5D60400A8DF54 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 7275F67023F5D60400A8DF54 /* GridStack */; };
 		7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67323F67F6000A8DF54 /* Stylesheet.swift */; };
@@ -160,6 +161,7 @@
 		724DCB902444B7D90042F6DB /* VotationDomainServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotationDomainServiceLocator.swift; sourceTree = "<group>"; };
 		724DCB922444BF190042F6DB /* SubmitVotationUseCae.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitVotationUseCae.swift; sourceTree = "<group>"; };
 		724DCB952444E5420042F6DB /* WaitVotersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitVotersView.swift; sourceTree = "<group>"; };
+		724DCB982444F46A0042F6DB /* VotingResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingResultsView.swift; sourceTree = "<group>"; };
 		7275F5BE23F5C81800A8DF54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7275F67323F67F6000A8DF54 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
@@ -726,6 +728,7 @@
 				724DCB852444B3200042F6DB /* Model */,
 				724DCB842444B3170042F6DB /* Waiting Other Participants */,
 				724DCB942444E4EF0042F6DB /* Wait until Ended */,
+				724DCB972444F44F0042F6DB /* Results */,
 			);
 			path = Votation;
 			sourceTree = "<group>";
@@ -827,6 +830,14 @@
 				724DCB952444E5420042F6DB /* WaitVotersView.swift */,
 			);
 			path = "Wait until Ended";
+			sourceTree = "<group>";
+		};
+		724DCB972444F44F0042F6DB /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				724DCB982444F46A0042F6DB /* VotingResultsView.swift */,
+			);
+			path = Results;
 			sourceTree = "<group>";
 		};
 		7275F5BD23F5C80400A8DF54 /* Extensions */ = {
@@ -1135,6 +1146,7 @@
 				724DCA70244113150042F6DB /* Participant.swift in Sources */,
 				72AA238F243B91B100D2D1E6 /* ContainerView.swift in Sources */,
 				724DCB8E2444B7430042F6DB /* VotationDataServiceLocator.swift in Sources */,
+				724DCB992444F46A0042F6DB /* VotingResultsView.swift in Sources */,
 				7231913423F89C1A00A3ECFC /* AppReducer.swift in Sources */,
 				72AA2389243B77E200D2D1E6 /* JoinSessionView.swift in Sources */,
 				724DCB5224425DDB0042F6DB /* User.swift in Sources */,

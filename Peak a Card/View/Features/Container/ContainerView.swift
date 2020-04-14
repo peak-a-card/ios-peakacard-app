@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct ContainerView: View {
-    
+
     @EnvironmentObject var store: AppStore
-    
+
     var body: some View {
         ZStack {
             if store.state.waitingForParticipants {
@@ -12,7 +12,7 @@ struct ContainerView: View {
                 WaitVotersView().environmentObject(store)
             } else if store.state.startedVotations.isEmpty &&
                 store.state.lastVotedVotation != nil {
-                // Show votations
+                VotingResultsView().environmentObject(store)
             } else if store.state.sessionId != nil &&
                 store.state.user != nil &&
                 !store.state.startedVotations.isEmpty {
