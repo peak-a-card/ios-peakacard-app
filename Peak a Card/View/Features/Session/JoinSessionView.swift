@@ -57,10 +57,10 @@ struct JoinSessionView: View {
                                 )
                             }
                         }.frame(maxWidth: .infinity)
-                        .padding()
-                        .foregroundColor(Stylesheet.color(.onPrimary))
-                        .background(Stylesheet.color(.primary))
-                        .cornerRadius(8.0)
+                            .padding()
+                            .foregroundColor(Stylesheet.color(.onPrimary))
+                            .background(Stylesheet.color(.primary))
+                            .cornerRadius(8.0)
                     }
                 }
                 Spacer()

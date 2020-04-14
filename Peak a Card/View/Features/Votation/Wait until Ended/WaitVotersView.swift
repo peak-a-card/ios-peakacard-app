@@ -22,7 +22,7 @@ struct WaitVotersView: View {
                             .font(Stylesheet.font(.m))
                             .foregroundColor(Stylesheet.color(.primary))
 
-                        if self.store.state.lastVotedVotation!.votations[participant] == nil {
+                        if self.store.state.lastVotedVotation?.votations[participant] == nil {
                             ActivityIndicator(
                                 isAnimating: self.$activityIndicatorIsAnimating,
                                 style: .medium,

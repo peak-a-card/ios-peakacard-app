@@ -15,7 +15,9 @@ func appReducer(state: inout AppState, action: AppAction) -> Effect? {
         return reduce(state: &state, action: action)
     case .detail(let action):
         return reduce(state: &state, action: action)
-    case .doNothing: return nil
+    case .doNothing:
+        state.shouldWait = false
+        return nil
     }
 
 }
@@ -50,12 +52,14 @@ fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect?
         state.isRequestingSession = false
     case .participantLogout:
         guard let code = state.sessionId, let userId = state.user?.id else { return nil }
+        state.shouldWait = true
         let removeParticipantUseCase = DomainServiceLocator.shared.participants.provideRemoveParticipantUseCase()
         return removeParticipantUseCase.execute(code: code, id: userId)
             .map { AppAction.session(.exitSession) }
             .catch { _ in Just(AppAction.doNothing) }
             .eraseToAnyPublisher()
     case .exitSession:
+        state.shouldWait = false
         state.cancelBag.forEach { $0.cancel() }
         state.isRequestingSession = false
         state.sessionErrored = false
@@ -125,6 +129,7 @@ fileprivate func reduce(state: inout AppState, action: CardsAction) -> Effect? {
         state.cards = cards
     case .select(let card):
         state.selectedCard = card
+        state.shouldWait = false
     }
     return nil
 }
@@ -139,6 +144,7 @@ fileprivate func reduce(state: inout AppState, action: CardAction) -> Effect? {
             let votationId = state.startedVotations.last?.name,
             let userId = state.user?.id,
             let card = state.selectedCard else { return nil }
+        state.shouldWait = true
         state.selectedCard = nil
         let submitVotationUseCase = DomainServiceLocator.shared.votations.provideSubmitVotationUseCase()
         return submitVotationUseCase.execute(code: code, votationId: votationId, participantId: userId, score: card.id.score)

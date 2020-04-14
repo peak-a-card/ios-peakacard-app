@@ -39,7 +39,7 @@ struct CardsView: View {
                     CardDetailView().environmentObject(self.store)
                 }
             }
-            .navigationBarTitle("app_name", displayMode: .inline)
+            .navigationBarTitle(Text(self.store.state.startedVotations.first?.name ?? ""), displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear() {

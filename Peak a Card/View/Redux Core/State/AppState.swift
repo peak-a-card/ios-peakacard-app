@@ -3,6 +3,9 @@ import Combine
 
 struct AppState {
 
+    // General
+    var shouldWait: Bool = false
+
     // Session
     var isRequestingSession: Bool = false
     var sessionErrored: Bool = false

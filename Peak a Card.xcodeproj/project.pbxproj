@@ -71,6 +71,8 @@
 		724DCB932444BF190042F6DB /* SubmitVotationUseCae.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB922444BF190042F6DB /* SubmitVotationUseCae.swift */; };
 		724DCB962444E5420042F6DB /* WaitVotersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB952444E5420042F6DB /* WaitVotersView.swift */; };
 		724DCB992444F46A0042F6DB /* VotingResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB982444F46A0042F6DB /* VotingResultsView.swift */; };
+		724DCD8224460D430042F6DB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCD8124460D430042F6DB /* LoadingView.swift */; };
+		724DCD8524460E590042F6DB /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCD8424460E590042F6DB /* BlurView.swift */; };
 		7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F5BE23F5C81800A8DF54 /* Colors.swift */; };
 		7275F67123F5D60400A8DF54 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 7275F67023F5D60400A8DF54 /* GridStack */; };
 		7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67323F67F6000A8DF54 /* Stylesheet.swift */; };
@@ -162,6 +164,8 @@
 		724DCB922444BF190042F6DB /* SubmitVotationUseCae.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitVotationUseCae.swift; sourceTree = "<group>"; };
 		724DCB952444E5420042F6DB /* WaitVotersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitVotersView.swift; sourceTree = "<group>"; };
 		724DCB982444F46A0042F6DB /* VotingResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingResultsView.swift; sourceTree = "<group>"; };
+		724DCD8124460D430042F6DB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		724DCD8424460E590042F6DB /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		7275F5BE23F5C81800A8DF54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7275F67323F67F6000A8DF54 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
@@ -391,6 +395,8 @@
 		7231912623F7F20400A3ECFC /* Reusable Components */ = {
 			isa = PBXGroup;
 			children = (
+				724DCD8324460E400042F6DB /* BlurView */,
+				724DCD8024460D240042F6DB /* Loading View */,
 				724DCB58244368850042F6DB /* AppleButton */,
 				724DCB49244249A10042F6DB /* GoogleButton */,
 				72AA238A243B89A500D2D1E6 /* ActivityIndicator */,
@@ -840,6 +846,22 @@
 			path = Results;
 			sourceTree = "<group>";
 		};
+		724DCD8024460D240042F6DB /* Loading View */ = {
+			isa = PBXGroup;
+			children = (
+				724DCD8124460D430042F6DB /* LoadingView.swift */,
+			);
+			path = "Loading View";
+			sourceTree = "<group>";
+		};
+		724DCD8324460E400042F6DB /* BlurView */ = {
+			isa = PBXGroup;
+			children = (
+				724DCD8424460E590042F6DB /* BlurView.swift */,
+			);
+			path = BlurView;
+			sourceTree = "<group>";
+		};
 		7275F5BD23F5C80400A8DF54 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1124,6 +1146,7 @@
 				724DCB8A2444B6830042F6DB /* GetAllVotationsUseCase.swift in Sources */,
 				724DCB5A244368960042F6DB /* AppleButton.swift in Sources */,
 				7232AEE523F477B700FAEAA9 /* AppDelegate.swift in Sources */,
+				724DCD8224460D430042F6DB /* LoadingView.swift in Sources */,
 				723FAC9D240B0C4900226D43 /* CardsDataServiceLocator.swift in Sources */,
 				724DCB962444E5420042F6DB /* WaitVotersView.swift in Sources */,
 				7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */,
@@ -1140,6 +1163,7 @@
 				7213F6EB243CAB79003A53E3 /* SessionRepository.swift in Sources */,
 				7231913123F89B4000A3ECFC /* AppAction.swift in Sources */,
 				7275F67823F67F8000A8DF54 /* StylesheetTheme.swift in Sources */,
+				724DCD8524460E590042F6DB /* BlurView.swift in Sources */,
 				721664CD24084D1000C9A0FF /* CardDomainModel.swift in Sources */,
 				72433A03243BAADC00FCD598 /* VotationDataModel.swift in Sources */,
 				724DCB912444B7D90042F6DB /* VotationDomainServiceLocator.swift in Sources */,

@@ -6,19 +6,27 @@ struct ContainerView: View {
 
     var body: some View {
         ZStack {
-            if store.state.waitingForParticipants {
-                WaitVotingView().environmentObject(store)
-            } else if !store.state.startedVotations.isEmpty && store.state.lastVotedVotation != nil {
-                WaitVotersView().environmentObject(store)
-            } else if store.state.startedVotations.isEmpty &&
-                store.state.lastVotedVotation != nil {
-                VotingResultsView().environmentObject(store)
-            } else if store.state.sessionId != nil &&
-                store.state.user != nil &&
-                !store.state.startedVotations.isEmpty {
-                CardsView().environmentObject(store)
-            } else {
-                JoinSessionView().environmentObject(store)
+            ZStack {
+                if store.state.waitingForParticipants {
+                    WaitVotingView().environmentObject(store)
+                } else if !store.state.startedVotations.isEmpty &&
+                    store.state.lastVotedVotation != nil &&
+                    store.state.startedVotations.first!.alreadyVoted {
+                    WaitVotersView().environmentObject(store)
+                } else if store.state.startedVotations.isEmpty &&
+                    store.state.lastVotedVotation != nil {
+                    VotingResultsView().environmentObject(store)
+                } else if store.state.sessionId != nil &&
+                    store.state.user != nil &&
+                    !store.state.startedVotations.isEmpty {
+                    CardsView().environmentObject(store)
+                } else {
+                    JoinSessionView().environmentObject(store)
+                }
+            }.blur(radius: store.state.shouldWait ? 15 : 0)
+
+            if store.state.shouldWait {
+                LoadingView()
             }
         }
     }
