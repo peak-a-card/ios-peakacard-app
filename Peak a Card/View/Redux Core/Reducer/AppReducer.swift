@@ -24,8 +24,15 @@ func appReducer(state: inout AppState, action: AppAction) -> Effect? {
 
 fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect? {
     switch action {
+    case .endEditingSession(let code):
+        state.currentCode = code
+    case .authenticatingWithGoogle:
+        state.shouldWait = true
     case .authenticatedWithGoogle(let user):
         state.user = user
+        if let code = state.currentCode {
+            return reduce(state: &state, action: .start(code: code, user: user))
+        }
     case .start(let code, let user):
         state.isRequestingSession = true
         let userDomainModel = UserDomainModel(id: user.id, name: user.name, email: user.email)
@@ -35,6 +42,7 @@ fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect?
             .catch { error in Just(AppAction.session(.failed(error: error))) }
             .eraseToAnyPublisher()
     case .started(let code):
+        state.shouldWait = false
         state.isRequestingSession = false
         state.sessionErrored = false
         state.sessionId = code

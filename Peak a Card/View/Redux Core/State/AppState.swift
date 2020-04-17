@@ -7,6 +7,7 @@ struct AppState {
     var shouldWait: Bool = false
 
     // Session
+    var currentCode: String? = nil
     var isRequestingSession: Bool = false
     var sessionErrored: Bool = false
 

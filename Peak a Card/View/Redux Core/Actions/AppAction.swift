@@ -10,6 +10,8 @@ enum AppAction {
 }
 
 enum SessionAction {
+    case endEditingSession(code: String)
+    case authenticatingWithGoogle
     case authenticatedWithGoogle(user: User)
     case start(code: String, user: User)
     case started(code: String)

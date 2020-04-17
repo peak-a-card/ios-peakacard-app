@@ -37,7 +37,9 @@ struct JoinSessionView: View {
                     .padding(.bottom)
 
                 if store.state.user == nil {
-                    GoogleButton()
+                    GoogleButton(action: {
+                        self.store.dispatch(action: .session(.endEditingSession(code: self.code)))
+                    })
                         .opacity(shouldDisableButton ? 0.4 : 1.0)
                         .disabled(shouldDisableButton)
                 } else {
@@ -53,11 +55,14 @@ struct JoinSessionView: View {
                                     color: Stylesheet.color(.background)
                                 )
                             }
-                        }.frame(maxWidth: .infinity)
-                            .padding()
-                            .foregroundColor(Stylesheet.color(.onPrimary))
-                            .background(Stylesheet.color(.primary))
-                            .cornerRadius(8.0)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .foregroundColor(Stylesheet.color(.onPrimary))
+                        .background(Stylesheet.color(.primary))
+                        .cornerRadius(8.0)
+                        .opacity(shouldDisableButton ? 0.4 : 1.0)
+                        .disabled(shouldDisableButton)
                     }
                 }
                 Spacer()

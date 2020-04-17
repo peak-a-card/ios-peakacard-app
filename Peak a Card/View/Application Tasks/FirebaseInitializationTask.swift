@@ -24,6 +24,7 @@ extension FirebaseInitializationTask: GIDSignInDelegate {
             return
         }
 
+        store.dispatch(action: .session(.authenticatingWithGoogle))
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(
             withIDToken: authentication.idToken,

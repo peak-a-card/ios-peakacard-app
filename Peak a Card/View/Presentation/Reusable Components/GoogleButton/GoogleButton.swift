@@ -2,8 +2,12 @@ import SwiftUI
 import GoogleSignIn
 
 struct GoogleButton: View {
+
+    var action: () -> Void
+
     var body: some View {
         Button(action: {
+            self.action()
             UIApplication.shared.endEditing()
             GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.first?.rootViewController
             GIDSignIn.sharedInstance()?.signIn()
@@ -20,11 +24,5 @@ struct GoogleButton: View {
                 .stroke(Color.gray, lineWidth: 0.5))
         .foregroundColor(Color.gray)
         .background(Color.white)
-    }
-}
-
-struct GoogleButton_Previews: PreviewProvider {
-    static var previews: some View {
-        GoogleButton()
     }
 }
