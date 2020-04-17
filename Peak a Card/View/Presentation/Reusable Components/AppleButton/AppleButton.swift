@@ -7,7 +7,8 @@ struct AppleButton: View {
             // Do something
         }) {
             HStack {
-                Image("appleIcon")
+                Image("AppleIcon")
+                    .foregroundColor(.white)
                 Text("join_session_sign_in_with_Apple")
                     .font(Stylesheet.font(.m))
                     .foregroundColor(Color.white)

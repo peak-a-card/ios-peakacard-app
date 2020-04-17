@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>305183755879-aaeeqoj02og0tr3o2hnjsoklb3hnjoaa.apps.googleusercontent.com</string>
+	<string>305183755879-g4nj6idc9h9btj97tv1nvalrqc9761k3.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.305183755879-aaeeqoj02og0tr3o2hnjsoklb3hnjoaa</string>
+	<string>com.googleusercontent.apps.305183755879-g4nj6idc9h9btj97tv1nvalrqc9761k3</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>305183755879-v8tqc50ou5l1sqcbnuf374k5v6mog7ho.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAG01_-oVXXYv-_4cEztYjIzJ0JZm3pdvM</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.peakacard</string>
+	<string>com.app.peakacard</string>
 	<key>PROJECT_ID</key>
 	<string>peak-a-card</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:305183755879:ios:59d3d36227cf5a9e858ec2</string>
+	<string>1:305183755879:ios:6c2be119ce72688c858ec2</string>
 	<key>DATABASE_URL</key>
 	<string>https://peak-a-card.firebaseio.com</string>
 </dict>

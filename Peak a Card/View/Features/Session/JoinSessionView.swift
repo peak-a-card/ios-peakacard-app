@@ -37,9 +37,6 @@ struct JoinSessionView: View {
                     .padding(.bottom)
 
                 if store.state.user == nil {
-                    AppleButton()
-                        .opacity(shouldDisableButton ? 0.4 : 1.0)
-                        .disabled(shouldDisableButton)
                     GoogleButton()
                         .opacity(shouldDisableButton ? 0.4 : 1.0)
                         .disabled(shouldDisableButton)
@@ -75,5 +72,11 @@ struct JoinSessionView: View {
 struct JoinSessionView_Previews: PreviewProvider {
     static var previews: some View {
         JoinSessionView()
+    }
+}
+
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

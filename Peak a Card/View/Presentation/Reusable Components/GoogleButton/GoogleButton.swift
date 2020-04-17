@@ -4,7 +4,8 @@ import GoogleSignIn
 struct GoogleButton: View {
     var body: some View {
         Button(action: {
-            GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+            UIApplication.shared.endEditing()
+            GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.first?.rootViewController
             GIDSignIn.sharedInstance()?.signIn()
         }) {
             HStack {
