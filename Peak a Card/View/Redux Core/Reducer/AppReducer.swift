@@ -56,6 +56,7 @@ fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect?
         .catch { _ in Just(AppAction.participants(.failed)) }
         .eraseToAnyPublisher()
     case .failed:
+        state.shouldWait = false
         state.sessionErrored = true
         state.isRequestingSession = false
     case .participantLogout:
