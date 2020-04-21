@@ -12,7 +12,7 @@ struct VotingResultsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text(store.state.lastVotedVotation!.name)
+                Text(store.state.lastVotedVotation?.name ?? "")
                     .fontWeight(.medium)
                     .font(Stylesheet.font(.l))
                     .foregroundColor(Stylesheet.color(.primary))
@@ -27,6 +27,13 @@ struct VotingResultsView: View {
                         }
                     }
                 }
+                .onAppear {
+                    UITableView.appearance().tableFooterView = UIView()
+                    UITableView.appearance().separatorStyle = .none
+                    UITableView.appearance().bounces = false
+                    UITableViewCell.appearance().backgroundColor = Stylesheet.color(.background)
+                    UITableView.appearance().backgroundColor = Stylesheet.color(.background)
+                }
                 Spacer()
             }
             .padding()
@@ -38,6 +45,7 @@ struct VotingResultsView: View {
                 }) {
                     Image(systemName: "power")
                         .foregroundColor(Stylesheet.color(.onPrimary))
+                        .padding()
                 }
                 .alert(isPresented: $showLogoutConfirmationAlert) {
                     Alert(
@@ -53,5 +61,6 @@ struct VotingResultsView: View {
         }.onAppear {
             self.store.dispatch(action: .votation(.getAll))
         }
+        .edgesIgnoringSafeArea(.bottom)
     }
 }

@@ -46,6 +46,7 @@ struct CardsView: View {
                 }) {
                     Image(systemName: "power")
                         .foregroundColor(Stylesheet.color(.onPrimary))
+                        .padding()
                 }
                 .alert(isPresented: $showLogoutConfirmationAlert) {
                     Alert(
@@ -68,6 +69,7 @@ struct CardsView: View {
             }) {
                 Image(systemName: "power")
                     .foregroundColor(Stylesheet.color(.onPrimary))
+                    .padding()
             }
             .alert(isPresented: $showLogoutConfirmationAlert) {
                 Alert(

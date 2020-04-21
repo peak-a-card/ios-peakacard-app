@@ -21,8 +21,9 @@ struct GoogleButton: View {
         .padding(Stylesheet.margin(.medium))
         .overlay(
             RoundedRectangle(cornerRadius: 8.0)
-                .stroke(Color.gray, lineWidth: 0.5))
+                .stroke(Color.gray, lineWidth: 0.5)
+                .foregroundColor(Color.white))
         .foregroundColor(Color.gray)
-        .background(Color.white)
+        .background(Color.clear)
     }
 }

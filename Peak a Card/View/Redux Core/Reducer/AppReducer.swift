@@ -118,9 +118,9 @@ fileprivate func reduce(state: inout AppState, action: VotationAction) -> Effect
         .catch { _ in Just(AppAction.doNothing) }
         .eraseToAnyPublisher()
     case .received(let votations):
-        state.waitingForParticipants = false
         state.startedVotations = votations.filter { $0.status == .started }
         state.endedVotations = votations.filter { $0.status == .ended }
+        state.waitingForParticipants = state.startedVotations.isEmpty && state.endedVotations.isEmpty
     }
     return nil
 }

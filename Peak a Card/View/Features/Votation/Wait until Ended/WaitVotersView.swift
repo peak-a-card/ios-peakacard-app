@@ -33,10 +33,13 @@ struct WaitVotersView: View {
                                 .foregroundColor(Stylesheet.color(.success))
                         }
                     }
-                }.onAppear {
+                }
+                .onAppear {
                     UITableView.appearance().tableFooterView = UIView()
                     UITableView.appearance().separatorStyle = .none
                     UITableView.appearance().bounces = false
+                    UITableViewCell.appearance().backgroundColor = Stylesheet.color(.background)
+                    UITableView.appearance().backgroundColor = Stylesheet.color(.background)
                 }
                 Spacer()
             }
@@ -49,6 +52,7 @@ struct WaitVotersView: View {
                 }) {
                     Image(systemName: "power")
                         .foregroundColor(Stylesheet.color(.onPrimary))
+                        .padding()
                 }
                 .alert(isPresented: $showLogoutConfirmationAlert) {
                     Alert(
@@ -64,5 +68,6 @@ struct WaitVotersView: View {
         }.onAppear {
             self.store.dispatch(action: .votation(.getAll))
         }
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
