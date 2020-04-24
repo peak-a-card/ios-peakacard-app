@@ -6,7 +6,7 @@ struct VotingResultsView: View {
     @State private var activityIndicatorIsAnimating = true
     @State private var showLogoutConfirmationAlert = false
     var results: [Participant: Card] {
-        store.state.lastVotedVotation!.votations
+        store.state.lastVotedVotation?.votations ?? [:]
     }
 
     var body: some View {
@@ -61,6 +61,5 @@ struct VotingResultsView: View {
         }.onAppear {
             self.store.dispatch(action: .votation(.getAll))
         }
-        .edgesIgnoringSafeArea(.bottom)
     }
 }
