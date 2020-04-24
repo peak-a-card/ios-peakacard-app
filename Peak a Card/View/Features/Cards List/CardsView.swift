@@ -40,25 +40,6 @@ struct CardsView: View {
                 }
             }
             .navigationBarTitle(Text(self.store.state.startedVotations.first?.name ?? ""), displayMode: .inline)
-            .navigationBarItems(trailing:
-                Button(action: {
-                    self.showLogoutConfirmationAlert = true
-                }) {
-                    Image(systemName: "power")
-                        .foregroundColor(Stylesheet.color(.onPrimary))
-                        .padding()
-                }
-                .alert(isPresented: $showLogoutConfirmationAlert) {
-                    Alert(
-                        title: Text("close_session_title"),
-                        message: Text("close_session_message"),
-                        primaryButton: .default(Text("close_session_no")),
-                        secondaryButton: .destructive(Text("close_session_yes"), action: {
-                            self.store.dispatch(action: .session(.participantLogout))
-                        })
-                    )
-                }
-            )
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear() {

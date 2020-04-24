@@ -31,6 +31,7 @@ struct WaitVotersView: View {
                         } else {
                             Image(systemName: "checkmark.circle")
                                 .foregroundColor(Stylesheet.color(.success))
+                                .padding()
                         }
                     }
                 }
@@ -68,6 +69,5 @@ struct WaitVotersView: View {
         }.onAppear {
             self.store.dispatch(action: .votation(.getAll))
         }
-        .edgesIgnoringSafeArea(.bottom)
     }
 }

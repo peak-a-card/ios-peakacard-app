@@ -1369,7 +1369,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Peak a Card/Peak a Card.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Peak a Card/View/Preview Content\"";
 				DEVELOPMENT_TEAM = V45KGQUH5M;
 				ENABLE_PREVIEWS = YES;
@@ -1395,7 +1395,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Peak a Card/Peak a Card.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Peak a Card/View/Preview Content\"";
 				DEVELOPMENT_TEAM = V45KGQUH5M;
 				ENABLE_PREVIEWS = YES;

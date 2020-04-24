@@ -70,7 +70,6 @@ struct JoinSessionView: View {
             .padding()
             .background(Stylesheet.color(.background))
             .navigationBarTitle("app_name", displayMode: .inline)
-            .edgesIgnoringSafeArea(.bottom)
         }
     }
 }
