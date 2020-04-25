@@ -30,13 +30,6 @@ struct WaitVotingView: View {
                         .foregroundColor(Stylesheet.color(.primary))
                 }
                 .background(Stylesheet.color(.background))
-                .onAppear {
-                    UITableView.appearance().tableFooterView = UIView()
-                    UITableView.appearance().separatorStyle = .none
-                    UITableView.appearance().bounces = false
-                    UITableViewCell.appearance().backgroundColor = Stylesheet.color(.background)
-                    UITableView.appearance().backgroundColor = Stylesheet.color(.background)
-                }
                 Spacer()
             }
             .padding()

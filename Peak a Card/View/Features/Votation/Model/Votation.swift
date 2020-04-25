@@ -7,7 +7,7 @@ enum VotationStatus  {
 
 struct Votation {
     let name: String
-    let votations: [Participant: Card]
+    let votations: [ParticipantVotation]
     let status: VotationDomainStatus
     let alreadyVoted: Bool
     let creationDate: Date

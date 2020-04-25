@@ -9,5 +9,11 @@ class AppearanceSetupTask: UIResponder, UIWindowSceneDelegate {
         let titleColor: UIColor = Stylesheet.color(.onPrimary)
         navigationBarAppearance.titleTextAttributes = [.foregroundColor: titleColor]
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+
+        // Table View
+        UITableView.appearance().tableFooterView = UIView()
+        UITableView.appearance().separatorStyle = .none
+        UITableViewCell.appearance().backgroundColor = Stylesheet.color(.background)
+        UITableView.appearance().backgroundColor = Stylesheet.color(.background)
     }
 }

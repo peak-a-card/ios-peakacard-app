@@ -1,6 +1,6 @@
 import Foundation
 
-struct Card: Codable, Identifiable {
+struct Card: Codable, Identifiable, Hashable {
 
     enum Identifier: String, Codable, CaseIterable {
         case zero = "0"

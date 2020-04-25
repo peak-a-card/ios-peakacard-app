@@ -22,7 +22,7 @@ struct WaitVotersView: View {
                             .font(Stylesheet.font(.m))
                             .foregroundColor(Stylesheet.color(.primary))
 
-                        if self.store.state.lastVotedVotation?.votations[participant] == nil {
+                        if self.store.state.lastVotedVotation?.votations.first(where: { $0.participant == participant }) == nil {
                             ActivityIndicator(
                                 isAnimating: self.$activityIndicatorIsAnimating,
                                 style: .medium,
@@ -34,13 +34,6 @@ struct WaitVotersView: View {
                                 .padding()
                         }
                     }
-                }
-                .onAppear {
-                    UITableView.appearance().tableFooterView = UIView()
-                    UITableView.appearance().separatorStyle = .none
-                    UITableView.appearance().bounces = false
-                    UITableViewCell.appearance().backgroundColor = Stylesheet.color(.background)
-                    UITableView.appearance().backgroundColor = Stylesheet.color(.background)
                 }
                 Spacer()
             }

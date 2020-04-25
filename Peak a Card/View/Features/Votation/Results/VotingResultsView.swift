@@ -5,38 +5,47 @@ struct VotingResultsView: View {
     @EnvironmentObject var store: AppStore
     @State private var activityIndicatorIsAnimating = true
     @State private var showLogoutConfirmationAlert = false
-    var results: [Participant: Card] {
-        store.state.lastVotedVotation?.votations ?? [:]
+    var results: [GroupedVotation] {
+        let votations = store.state.lastVotedVotation?.votations ?? []
+
+        let groupedResults = Dictionary(grouping: votations, by: { $0.card.id.score })
+        let groupedVotations = groupedResults.map { key, value in
+            return GroupedVotation(card: Card(score: key), participants: value.map { $0.participant })
+        }
+        return groupedVotations.sorted(by: { $0.card.id.score < $1.card.id.score })
     }
 
     var body: some View {
         NavigationView {
             VStack {
-                Text(store.state.lastVotedVotation?.name ?? "")
-                    .fontWeight(.medium)
-                    .font(Stylesheet.font(.l))
-                    .foregroundColor(Stylesheet.color(.primary))
-                    .lineLimit(.none)
-                    .padding(.top)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                List {
-                    ForEach(Array(results.keys)) { key in
-                        HStack {
-                            Text(key.name)
-                            Text(self.results[key]!.text)
-                        }
+                ZStack {
+                    Text(store.state.lastVotedVotation?.name ?? "")
+                        .fontWeight(.medium)
+                        .font(Stylesheet.font(.l))
+                        .foregroundColor(Stylesheet.color(.primary))
+                        .lineLimit(.none)
+                        .padding(.top)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                List(results, id: \.card) { group in
+                    VStack(alignment: .leading) {
+                        Text(group.card.text)
+                            .padding(Stylesheet.margin(.medium))
+                            .foregroundColor(Stylesheet.color(.onPrimary))
+                            .font(Stylesheet.font(.l).weight(.medium))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .background(Stylesheet.color(.primary))
+                            .cornerRadius(8)
+
+                        ForEach(group.participants) { participant in
+                            Text(participant.name).padding(.leading)
+                        }.padding(.top, Stylesheet.margin(.small))
                     }
                 }
-                .onAppear {
-                    UITableView.appearance().tableFooterView = UIView()
-                    UITableView.appearance().separatorStyle = .none
-                    UITableView.appearance().bounces = false
-                    UITableViewCell.appearance().backgroundColor = Stylesheet.color(.background)
-                    UITableView.appearance().backgroundColor = Stylesheet.color(.background)
-                }
+                .padding(.horizontal, -20)
                 Spacer()
             }
-            .padding()
+            .padding(.horizontal)
             .background(Stylesheet.color(.background))
             .navigationBarTitle("app_name", displayMode: .inline)
             .navigationBarItems(trailing:
@@ -61,5 +70,11 @@ struct VotingResultsView: View {
         }.onAppear {
             self.store.dispatch(action: .votation(.getAll))
         }
+    }
+}
+
+struct VotingResultsView_Previews: PreviewProvider {
+    static var previews: some View {
+        VotingResultsView()
     }
 }

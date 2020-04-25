@@ -26,22 +26,28 @@ class GetAllVotations: GetAllVotationsUseCase {
             cardsRepository.getAll()
         ).map { votations, participants, cards in
             return votations.map {
-                var results: [ParticipantDomainModel: CardDomainModel] = [:]
+                var results: [ParticipantVotationDomainModel] = []
                 $0.votations.forEach { key, value in
                     let participantDataModel = participants.first { $0.id == key }
                     let cardDataModel = cards.first { $0.score == value }
                     if let participantDataModel = participantDataModel, let cardDataModel = cardDataModel {
                         let participant = ParticipantDomainModel(id: participantDataModel.id, name: participantDataModel.name, email: participantDataModel.email)
                         let card = CardDomainModel(score: cardDataModel.score)
-                        results[participant] = card
+                        results.append(
+                            ParticipantVotationDomainModel(
+                                participant: participant,
+                                card: card
+                            )
+                        )
                     }
                 }
 
+                let alreadyVoted = results.contains { $0.participant.id == userId }
                 return VotationDomainModel(
                     name: $0.name,
                     votations: results,
                     status: VotationDomainStatus(rawValue: $0.status) ?? .ended,
-                    alreadyVoted: results.keys.map({ $0.id }).contains(userId),
+                    alreadyVoted: alreadyVoted,
                     creationDate: $0.creationDate
                 )
             }

@@ -99,13 +99,16 @@ fileprivate func reduce(state: inout AppState, action: VotationAction) -> Effect
         return getAllVotationsUseCase.execute(code: code, userId: userId)
             .map { votations in
                 votations.map {
-                    var results: [Participant: Card] = [:]
+                    var results: [ParticipantVotation] = []
 
                     $0.votations.forEach {
-                        let participant = Participant(id: $0.key.id, name: $0.key.name)
-                        let card = Card(score: $0.value.score)
-                        results[participant] = card
+                        let participantVotation = ParticipantVotation(
+                            participant: Participant(id: $0.participant.id, name: $0.participant.name),
+                            card: Card(score: $0.card.score)
+                        )
+                        results.append(participantVotation)
                     }
+
                     return Votation(
                         name: $0.name,
                         votations: results,

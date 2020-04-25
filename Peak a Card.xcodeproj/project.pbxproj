@@ -69,6 +69,9 @@
 		724DCB992444F46A0042F6DB /* VotingResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCB982444F46A0042F6DB /* VotingResultsView.swift */; };
 		724DCD8224460D430042F6DB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCD8124460D430042F6DB /* LoadingView.swift */; };
 		724DCD8524460E590042F6DB /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DCD8424460E590042F6DB /* BlurView.swift */; };
+		726FF3AB2454315400929564 /* ParticipantVotationDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FF3AA2454315400929564 /* ParticipantVotationDomainModel.swift */; };
+		726FF3AD24543C9200929564 /* ParticipantVotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FF3AC24543C9200929564 /* ParticipantVotation.swift */; };
+		726FF3AF24543ED300929564 /* GroupedVotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FF3AE24543ED300929564 /* GroupedVotations.swift */; };
 		7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F5BE23F5C81800A8DF54 /* Colors.swift */; };
 		7275F67123F5D60400A8DF54 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 7275F67023F5D60400A8DF54 /* GridStack */; };
 		7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67323F67F6000A8DF54 /* Stylesheet.swift */; };
@@ -162,6 +165,9 @@
 		724DCB982444F46A0042F6DB /* VotingResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingResultsView.swift; sourceTree = "<group>"; };
 		724DCD8124460D430042F6DB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		724DCD8424460E590042F6DB /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		726FF3AA2454315400929564 /* ParticipantVotationDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantVotationDomainModel.swift; sourceTree = "<group>"; };
+		726FF3AC24543C9200929564 /* ParticipantVotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantVotation.swift; sourceTree = "<group>"; };
+		726FF3AE24543ED300929564 /* GroupedVotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedVotations.swift; sourceTree = "<group>"; };
 		7275F5BE23F5C81800A8DF54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7275F67323F67F6000A8DF54 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
@@ -769,6 +775,7 @@
 			isa = PBXGroup;
 			children = (
 				724DCB822444AEE80042F6DB /* VotationDomainModel.swift */,
+				726FF3AA2454315400929564 /* ParticipantVotationDomainModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -785,6 +792,8 @@
 			isa = PBXGroup;
 			children = (
 				724DCB862444B38F0042F6DB /* Votation.swift */,
+				726FF3AC24543C9200929564 /* ParticipantVotation.swift */,
+				726FF3AE24543ED300929564 /* GroupedVotations.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1151,6 +1160,7 @@
 				724DCB962444E5420042F6DB /* WaitVotersView.swift in Sources */,
 				7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */,
 				724DCB6824446DA10042F6DB /* ParticipantRemoteDataSource.swift in Sources */,
+				726FF3AF24543ED300929564 /* GroupedVotations.swift in Sources */,
 				7232AEE723F477B700FAEAA9 /* SceneDelegate.swift in Sources */,
 				7213F6EE243CC85B003A53E3 /* SessionDataServiceLocator.swift in Sources */,
 				7232AEE923F477B700FAEAA9 /* CardsView.swift in Sources */,
@@ -1158,6 +1168,7 @@
 				7232AF0E23F5BFDD00FAEAA9 /* CardView.swift in Sources */,
 				72955A0F244A1D5A00C7F363 /* ParticipantDataServiceLocator.swift in Sources */,
 				7231913723F89F3100A3ECFC /* AppStore.swift in Sources */,
+				726FF3AD24543C9200929564 /* ParticipantVotation.swift in Sources */,
 				724DCB6E244470D60042F6DB /* WaitVotingView.swift in Sources */,
 				724DCB6124446CF90042F6DB /* ParticipantsRepository.swift in Sources */,
 				723FABF1240A9F2900226D43 /* CardDetailView.swift in Sources */,
@@ -1192,6 +1203,7 @@
 				724DCB5424434E770042F6DB /* VerifySessionUseCase.swift in Sources */,
 				7231912A23F7F38E00A3ECFC /* Card.swift in Sources */,
 				7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */,
+				726FF3AB2454315400929564 /* ParticipantVotationDomainModel.swift in Sources */,
 				723FABF5240B0B6900226D43 /* DataServiceLocator.swift in Sources */,
 				724DCB5F24446CD60042F6DB /* ParticipantDataModel.swift in Sources */,
 				723FACA4240B0EEA00226D43 /* CardsDomainServiceLocator.swift in Sources */,
