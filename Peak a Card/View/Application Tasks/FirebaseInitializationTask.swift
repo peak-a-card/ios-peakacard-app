@@ -14,7 +14,10 @@ class FirebaseInitializationTask: UIResponder, UIWindowSceneDelegate {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        store.dispatch(action: .session(.getUser))
+        if let gUser = Auth.auth().currentUser {
+            let user = User(id: gUser.uid, name: gUser.displayName!, email: gUser.email!)
+            self.store.dispatch(action: .session(.authenticatedWithGoogle(user: user)))
+        }
     }
 }
 

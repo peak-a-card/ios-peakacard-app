@@ -24,19 +24,12 @@ func appReducer(state: inout AppState, action: AppAction) -> Effect? {
 
 fileprivate func reduce(state: inout AppState, action: SessionAction) -> Effect? {
     switch action {
-    case .getUser:
-        let useCase = DomainServiceLocator.shared.user.provideGetUserUseCase()
-        if let user = useCase.execute() {
-            return reduce(state: &state, action: .authenticatedWithGoogle(user: User(id: user.id, name: user.name, email: user.email)))
-        }
     case .endEditingSession(let code):
         state.currentCode = code
     case .authenticatingWithGoogle:
         state.shouldWait = true
     case .authenticatedWithGoogle(let user):
         state.user = user
-        let useCase = DomainServiceLocator.shared.user.provideSaveUserUseCase()
-        useCase.execute(user: UserDomainModel(id: user.id, name: user.name, email: user.email))
         if let code = state.currentCode {
             return reduce(state: &state, action: .start(code: code, user: user))
         }
