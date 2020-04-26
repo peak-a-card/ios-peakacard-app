@@ -5,7 +5,7 @@ struct VotingResultsView: View {
     @EnvironmentObject var store: AppStore
     @State private var activityIndicatorIsAnimating = true
     @State private var showLogoutConfirmationAlert = false
-    var results: [GroupedVotation] {
+    private var results: [GroupedVotation] {
         let votations = store.state.lastVotedVotation?.votations ?? []
 
         let groupedResults = Dictionary(grouping: votations, by: { $0.card.id.score })
@@ -13,6 +13,9 @@ struct VotingResultsView: View {
             return GroupedVotation(card: Card(score: key), participants: value.map { $0.participant })
         }
         return groupedVotations.sorted(by: { $0.card.id.score < $1.card.id.score })
+    }
+    private var mode: [Card] {
+        store.state.lastVotedVotation?.mode ?? []
     }
 
     var body: some View {
@@ -29,13 +32,24 @@ struct VotingResultsView: View {
                 }
                 List(results, id: \.card) { group in
                     VStack(alignment: .leading) {
-                        Text(group.card.text)
-                            .padding(Stylesheet.margin(.medium))
-                            .foregroundColor(Stylesheet.color(.onPrimary))
-                            .font(Stylesheet.font(.l).weight(.medium))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .background(Stylesheet.color(.primary))
-                            .cornerRadius(8)
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(Stylesheet.color(.primary))
+                                .cornerRadius(8)
+                            HStack {
+                                Text(group.card.text)
+                                    .padding(Stylesheet.margin(.medium))
+                                    .foregroundColor(Stylesheet.color(.onPrimary))
+                                    .font(Stylesheet.font(.l).weight(.medium))
+
+                                Spacer()
+                                Image(systemName: "person.3.fill")
+                                    .foregroundColor(Stylesheet.color(.onPrimary))
+                                    .padding(Stylesheet.margin(.medium))
+                                    .opacity(self.mode.contains(group.card) ? 1.0 : 0.0)
+
+                            }
+                        }
 
                         ForEach(group.participants) { participant in
                             Text(participant.name).padding(.leading)

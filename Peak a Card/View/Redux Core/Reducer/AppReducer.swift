@@ -109,11 +109,15 @@ fileprivate func reduce(state: inout AppState, action: VotationAction) -> Effect
                         results.append(participantVotation)
                     }
 
+                    let scores = results.map { $0.card.id.score }
+                    let modes = scores.mode().map { Card(score: $0) }
+
                     return Votation(
                         name: $0.name,
                         votations: results,
                         status: $0.status == .started ? .started : .ended,
                         alreadyVoted: $0.alreadyVoted,
+                        mode: modes,
                         creationDate: $0.creationDate
                     ) }
         }
