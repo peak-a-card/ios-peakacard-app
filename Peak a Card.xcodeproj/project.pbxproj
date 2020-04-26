@@ -73,6 +73,13 @@
 		726FF3AD24543C9200929564 /* ParticipantVotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FF3AC24543C9200929564 /* ParticipantVotation.swift */; };
 		726FF3AF24543ED300929564 /* GroupedVotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FF3AE24543ED300929564 /* GroupedVotations.swift */; };
 		726FF3B124549D3400929564 /* Array+Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FF3B024549D3300929564 /* Array+Mode.swift */; };
+		726FF4AB2455DA2600929564 /* Codable+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FF4AA2455DA2500929564 /* Codable+Utils.swift */; };
+		726FF4AE2455DAA000929564 /* UserStorageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FF4AD2455DAA000929564 /* UserStorageDataSource.swift */; };
+		726FF4B12455DC9C00929564 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FF4B02455DC9C00929564 /* UserRepository.swift */; };
+		726FF4B42455DD2900929564 /* UserDataServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FF4B32455DD2900929564 /* UserDataServiceLocator.swift */; };
+		726FF4B72455DDE200929564 /* SaveUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FF4B62455DDE200929564 /* SaveUserUseCase.swift */; };
+		726FF4B92455DDEB00929564 /* GetUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FF4B82455DDEB00929564 /* GetUserUseCase.swift */; };
+		726FF4BC2455DEE400929564 /* UserDomainServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726FF4BB2455DEE400929564 /* UserDomainServiceLocator.swift */; };
 		7275F5BF23F5C81800A8DF54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F5BE23F5C81800A8DF54 /* Colors.swift */; };
 		7275F67123F5D60400A8DF54 /* GridStack in Frameworks */ = {isa = PBXBuildFile; productRef = 7275F67023F5D60400A8DF54 /* GridStack */; };
 		7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275F67323F67F6000A8DF54 /* Stylesheet.swift */; };
@@ -170,6 +177,13 @@
 		726FF3AC24543C9200929564 /* ParticipantVotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantVotation.swift; sourceTree = "<group>"; };
 		726FF3AE24543ED300929564 /* GroupedVotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedVotations.swift; sourceTree = "<group>"; };
 		726FF3B024549D3300929564 /* Array+Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Mode.swift"; sourceTree = "<group>"; };
+		726FF4AA2455DA2500929564 /* Codable+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Utils.swift"; sourceTree = "<group>"; };
+		726FF4AD2455DAA000929564 /* UserStorageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorageDataSource.swift; sourceTree = "<group>"; };
+		726FF4B02455DC9C00929564 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		726FF4B32455DD2900929564 /* UserDataServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataServiceLocator.swift; sourceTree = "<group>"; };
+		726FF4B62455DDE200929564 /* SaveUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserUseCase.swift; sourceTree = "<group>"; };
+		726FF4B82455DDEB00929564 /* GetUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserUseCase.swift; sourceTree = "<group>"; };
+		726FF4BB2455DEE400929564 /* UserDomainServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDomainServiceLocator.swift; sourceTree = "<group>"; };
 		7275F5BE23F5C81800A8DF54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7275F67323F67F6000A8DF54 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		7275F67523F67F6D00A8DF54 /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
@@ -535,6 +549,7 @@
 			children = (
 				723FABF4240B0B6900226D43 /* DataServiceLocator.swift */,
 				7213F745243CE020003A53E3 /* AsynchronousError.swift */,
+				726FF4AA2455DA2500929564 /* Codable+Utils.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -611,6 +626,9 @@
 		724DCA642440F43C0042F6DB /* User */ = {
 			isa = PBXGroup;
 			children = (
+				726FF4B22455DD0A00929564 /* ServiceLocator */,
+				726FF4AF2455DC8700929564 /* Repository */,
+				726FF4AC2455DA7100929564 /* DataSource */,
 				724DCA652440F4430042F6DB /* Model */,
 			);
 			path = User;
@@ -627,6 +645,8 @@
 		724DCA68244110D40042F6DB /* User */ = {
 			isa = PBXGroup;
 			children = (
+				726FF4BA2455DEC200929564 /* ServiceLocator */,
+				726FF4B52455DDD000929564 /* Use Case */,
 				724DCA69244110E20042F6DB /* Model */,
 			);
 			path = User;
@@ -863,6 +883,47 @@
 				724DCD8424460E590042F6DB /* BlurView.swift */,
 			);
 			path = BlurView;
+			sourceTree = "<group>";
+		};
+		726FF4AC2455DA7100929564 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				726FF4AD2455DAA000929564 /* UserStorageDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		726FF4AF2455DC8700929564 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				726FF4B02455DC9C00929564 /* UserRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		726FF4B22455DD0A00929564 /* ServiceLocator */ = {
+			isa = PBXGroup;
+			children = (
+				726FF4B32455DD2900929564 /* UserDataServiceLocator.swift */,
+			);
+			path = ServiceLocator;
+			sourceTree = "<group>";
+		};
+		726FF4B52455DDD000929564 /* Use Case */ = {
+			isa = PBXGroup;
+			children = (
+				726FF4B62455DDE200929564 /* SaveUserUseCase.swift */,
+				726FF4B82455DDEB00929564 /* GetUserUseCase.swift */,
+			);
+			path = "Use Case";
+			sourceTree = "<group>";
+		};
+		726FF4BA2455DEC200929564 /* ServiceLocator */ = {
+			isa = PBXGroup;
+			children = (
+				726FF4BB2455DEE400929564 /* UserDomainServiceLocator.swift */,
+			);
+			path = ServiceLocator;
 			sourceTree = "<group>";
 		};
 		7275F5BD23F5C80400A8DF54 /* Extensions */ = {
@@ -1173,11 +1234,13 @@
 				7231913723F89F3100A3ECFC /* AppStore.swift in Sources */,
 				726FF3AD24543C9200929564 /* ParticipantVotation.swift in Sources */,
 				724DCB6E244470D60042F6DB /* WaitVotingView.swift in Sources */,
+				726FF4AB2455DA2600929564 /* Codable+Utils.swift in Sources */,
 				724DCB6124446CF90042F6DB /* ParticipantsRepository.swift in Sources */,
 				723FABF1240A9F2900226D43 /* CardDetailView.swift in Sources */,
 				7213F6EB243CAB79003A53E3 /* SessionRepository.swift in Sources */,
 				7231913123F89B4000A3ECFC /* AppAction.swift in Sources */,
 				7275F67823F67F8000A8DF54 /* StylesheetTheme.swift in Sources */,
+				726FF4B92455DDEB00929564 /* GetUserUseCase.swift in Sources */,
 				724DCD8524460E590042F6DB /* BlurView.swift in Sources */,
 				721664CD24084D1000C9A0FF /* CardDomainModel.swift in Sources */,
 				72433A03243BAADC00FCD598 /* VotationDataModel.swift in Sources */,
@@ -1190,8 +1253,10 @@
 				72AA2389243B77E200D2D1E6 /* JoinSessionView.swift in Sources */,
 				724DCB5224425DDB0042F6DB /* User.swift in Sources */,
 				724DCB4E24424BA20042F6DB /* FirebaseInitializationTask.swift in Sources */,
+				726FF4B12455DC9C00929564 /* UserRepository.swift in Sources */,
 				724DCB6524446D420042F6DB /* ParticipantDomainModel.swift in Sources */,
 				7231912E23F89ACF00A3ECFC /* AppState.swift in Sources */,
+				726FF4B72455DDE200929564 /* SaveUserUseCase.swift in Sources */,
 				724DCA672440F45D0042F6DB /* UserDataModel.swift in Sources */,
 				721664D024084D8C00C9A0FF /* GetCardsUseCase.swift in Sources */,
 				724DCB5724435DD50042F6DB /* GoogleButton.swift in Sources */,
@@ -1208,6 +1273,7 @@
 				726FF3B124549D3400929564 /* Array+Mode.swift in Sources */,
 				7275F67423F67F6000A8DF54 /* Stylesheet.swift in Sources */,
 				726FF3AB2454315400929564 /* ParticipantVotationDomainModel.swift in Sources */,
+				726FF4B42455DD2900929564 /* UserDataServiceLocator.swift in Sources */,
 				723FABF5240B0B6900226D43 /* DataServiceLocator.swift in Sources */,
 				724DCB5F24446CD60042F6DB /* ParticipantDataModel.swift in Sources */,
 				723FACA4240B0EEA00226D43 /* CardsDomainServiceLocator.swift in Sources */,
@@ -1218,8 +1284,10 @@
 				7213F744243CD4CA003A53E3 /* SessionDomainServiceLocator.swift in Sources */,
 				721664C224084B9400C9A0FF /* CardDataModel.swift in Sources */,
 				727BF63A244A1A0A0001F8D4 /* ParticipantDomainServiceLocator.swift in Sources */,
+				726FF4AE2455DAA000929564 /* UserStorageDataSource.swift in Sources */,
 				723FACA2240B0E6E00226D43 /* DomainServiceLocator.swift in Sources */,
 				7231912023F70A9100A3ECFC /* HostingViewController.swift in Sources */,
+				726FF4BC2455DEE400929564 /* UserDomainServiceLocator.swift in Sources */,
 				727BF63C244A1A130001F8D4 /* RemoveParticipantUseCase.swift in Sources */,
 				724DCA6B244110F80042F6DB /* UserDomainModel.swift in Sources */,
 			);

@@ -61,9 +61,9 @@ struct JoinSessionView: View {
                         .foregroundColor(Stylesheet.color(.onPrimary))
                         .background(Stylesheet.color(.primary))
                         .cornerRadius(8.0)
-                        .opacity(shouldDisableButton ? 0.4 : 1.0)
-                        .disabled(shouldDisableButton)
                     }
+                    .opacity(shouldDisableButton ? 0.4 : 1.0)
+                    .disabled(shouldDisableButton)
                 }
                 Spacer()
             }

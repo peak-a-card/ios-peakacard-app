@@ -14,6 +14,7 @@ class FirebaseInitializationTask: UIResponder, UIWindowSceneDelegate {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        store.dispatch(action: .session(.getUser))
     }
 }
 
