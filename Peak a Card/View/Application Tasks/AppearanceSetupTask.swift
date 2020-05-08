@@ -14,6 +14,7 @@ class AppearanceSetupTask: UIResponder, UIWindowSceneDelegate {
         UITableView.appearance().tableFooterView = UIView()
         UITableView.appearance().separatorStyle = .none
         UITableViewCell.appearance().backgroundColor = Stylesheet.color(.background)
+        UITableViewCell.appearance().selectionStyle = .none
         UITableView.appearance().backgroundColor = Stylesheet.color(.background)
     }
 }

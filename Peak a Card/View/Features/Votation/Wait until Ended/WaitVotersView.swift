@@ -31,7 +31,17 @@ struct WaitVotersView: View {
                         } else {
                             Image(systemName: "checkmark.circle")
                                 .foregroundColor(Stylesheet.color(.success))
-                                .padding()
+                                .padding(.init(top: 0, leading: Stylesheet.margin(.small), bottom: 0, trailing: 0))
+                        }
+
+                        if participant.id == self.store.state.user!.id {
+                            Button(action: {
+                                self.store.dispatch(action: .votation(.edit))
+                            }) {
+                                Image(systemName: "pencil.circle")
+                                .foregroundColor(Stylesheet.color(.primary))
+                                    .padding([.top, .bottom, .trailing])
+                            }
                         }
                     }
                 }

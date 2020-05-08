@@ -11,14 +11,17 @@ struct ContainerView: View {
                     WaitVotingView().environmentObject(store)
                 } else if !store.state.startedVotations.isEmpty &&
                     store.state.lastVotedVotation != nil &&
-                    store.state.startedVotations.first!.alreadyVoted {
+                    store.state.startedVotations.first!.alreadyVoted &&
+                    !store.state.edit {
                     WaitVotersView().environmentObject(store)
                 } else if store.state.startedVotations.isEmpty &&
-                    store.state.lastVotedVotation != nil {
+                    store.state.lastVotedVotation != nil &&
+                    !store.state.edit {
                     VotingResultsView().environmentObject(store)
-                } else if store.state.sessionId != nil &&
+                } else if (store.state.sessionId != nil &&
                     store.state.user != nil &&
-                    !store.state.startedVotations.isEmpty {
+                    !store.state.startedVotations.isEmpty) ||
+                    store.state.edit {
                     CardsView().environmentObject(store)
                 } else {
                     JoinSessionView().environmentObject(store)

@@ -32,6 +32,7 @@ struct AppState {
         }
         return votation
     }
+    var edit: Bool = false
 
     // Effects Bag
     var cancelBag = Set<AnyCancellable>()

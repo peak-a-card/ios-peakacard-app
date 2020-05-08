@@ -128,6 +128,8 @@ fileprivate func reduce(state: inout AppState, action: VotationAction) -> Effect
         state.startedVotations = votations.filter { $0.status == .started }
         state.endedVotations = votations.filter { $0.status == .ended }
         state.waitingForParticipants = state.startedVotations.isEmpty && state.endedVotations.isEmpty
+    case .edit:
+        state.edit = true
     }
     return nil
 }
@@ -155,13 +157,20 @@ fileprivate func reduce(state: inout AppState, action: CardAction) -> Effect? {
     case .dismiss:
         state.selectedCard = nil
     case .submit:
+        var targetVotationId: String?
+        if state.startedVotations.last?.name != nil {
+            targetVotationId = state.startedVotations.last?.name
+        } else {
+            targetVotationId = state.lastVotedVotation?.name
+        }
         guard
             let code = state.sessionId,
-            let votationId = state.startedVotations.last?.name,
+            let votationId = targetVotationId,
             let userId = state.user?.id,
             let card = state.selectedCard else { return nil }
         state.shouldWait = true
         state.selectedCard = nil
+        state.edit = false
         let submitVotationUseCase = DomainServiceLocator.shared.votations.provideSubmitVotationUseCase()
         return submitVotationUseCase.execute(code: code, votationId: votationId, participantId: userId, score: card.id.score)
             .map { AppAction.doNothing }

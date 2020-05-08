@@ -52,9 +52,21 @@ struct VotingResultsView: View {
                         }
 
                         ForEach(group.participants) { participant in
-                            Text(participant.name)
-                                .foregroundColor(.primary)
-                                .padding(.leading)
+                            HStack {
+                                Text(participant.name)
+                                    .foregroundColor(.primary)
+                                    .padding(.leading)
+                                
+                                if participant.id == self.store.state.user!.id {
+                                    Button(action: {
+                                        self.store.dispatch(action: .votation(.edit))
+                                    }) {
+                                        Image(systemName: "pencil.circle")
+                                            .foregroundColor(Stylesheet.color(.primary))
+                                            .padding([.top, .bottom, .trailing])
+                                    }
+                                }
+                            }
                         }.padding(.top, Stylesheet.margin(.small))
                     }
                 }
