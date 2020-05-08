@@ -19,7 +19,6 @@ enum ColorSet {
     case primary
     case onPrimary
     case primary10
-    case secondary
     case background
     case error
     case success

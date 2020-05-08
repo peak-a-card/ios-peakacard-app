@@ -16,7 +16,6 @@ enum MainTheme: StylesheetTheme {
         switch color {
         case .primary: return .primary
         case .primary10: return .primary10
-        case .secondary: return .secondary
         case .background: return .background
         case .onPrimary: return .onPrimary
         case .error: return .error
@@ -28,7 +27,6 @@ enum MainTheme: StylesheetTheme {
         switch color {
         case .primary: return .primary
         case .primary10: return .primary10
-        case .secondary: return .secondary
         case .background: return .background
         case .onPrimary: return .onPrimary
         case .error: return .error

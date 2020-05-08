@@ -52,7 +52,9 @@ struct VotingResultsView: View {
                         }
 
                         ForEach(group.participants) { participant in
-                            Text(participant.name).padding(.leading)
+                            Text(participant.name)
+                                .foregroundColor(.primary)
+                                .padding(.leading)
                         }.padding(.top, Stylesheet.margin(.small))
                     }
                 }
