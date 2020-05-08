@@ -8,7 +8,6 @@ struct BlurView: UIViewRepresentable {
         let style: UIBlurEffect.Style = colorScheme == .light ?
             .dark :
             .light
-        print(style.rawValue)
         let effect = UIBlurEffect(style: style)
         let view = UIVisualEffectView(effect: effect)
 
