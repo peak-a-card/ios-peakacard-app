@@ -19,3 +19,4 @@
 "close_session_no" = "No";
 "wait_voters_title" = "Waiting other participants to vote...";
 "common_loading_title" = "Please wait";
+"card_detail_submit" = "Submit";
